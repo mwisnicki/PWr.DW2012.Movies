@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Movies.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="MoviesTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Movies" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="MoviesContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movies" EntityType="Movies.Movie" />
+          <EntitySet Name="People" EntityType="Movies.Person" />
+          <AssociationSet Name="MovieDirector" Association="Movies.MovieDirector">
+            <End EntitySet="Movies" Role="Movie" />
+            <End EntitySet="People" Role="Person" />
+          </AssociationSet>
+          <EntitySet Name="MovieMajorSections" EntityType="Movies.MovieMajorSection" />
+          <EntitySet Name="MovieMinorSections" EntityType="Movies.MovieMinorSection" />
+          <AssociationSet Name="MovieMajorSectionMovieMinorSection" Association="Movies.MovieMajorSectionMovieMinorSection">
+            <End Role="MovieMajorSection" EntitySet="MovieMajorSections" />
+            <End Role="MovieMinorSection" EntitySet="MovieMinorSections" />
+          </AssociationSet>
+          <AssociationSet Name="MovieMinorSectionMovie" Association="Movies.MovieMinorSectionMovie">
+            <End Role="MovieMinorSection" EntitySet="MovieMinorSections" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="MoviePerson" Association="Movies.MoviePerson">
+            <End Role="Movie" EntitySet="Movies" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Property" Nullable="false" />
+          <Property Type="DateTime" Name="Year" Nullable="false" />
+          <NavigationProperty Name="Director" Relationship="Movies.MovieDirector" FromRole="Movie" ToRole="Person" />
+          <Property Type="String" Name="PersonId" Nullable="false" />
+          <NavigationProperty Name="MinorSection" Relationship="Movies.MovieMinorSectionMovie" FromRole="Movie" ToRole="MovieMinorSection" />
+          <Property Type="String" Name="MovieMinorSectionName" Nullable="false" />
+          <NavigationProperty Name="Producers" Relationship="Movies.MoviePerson" FromRole="Movie" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="DirectedMovies" Relationship="Movies.MovieDirector" FromRole="Person" ToRole="Movie" />
+          <Property Type="Boolean" Name="IsApproxSpelling" Nullable="false" />
+          <NavigationProperty Name="ProducedMovies" Relationship="Movies.MoviePerson" FromRole="Person" ToRole="Movie" />
+        </EntityType>
+        <Association Name="MovieDirector">
+          <End Type="Movies.Movie" Multiplicity="*" Role="Movie" />
+          <End Type="Movies.Person" Multiplicity="1" Role="Person" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MovieMajorSection">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="MinorSections" Relationship="Movies.MovieMajorSectionMovieMinorSection" FromRole="MovieMajorSection" ToRole="MovieMinorSection" />
+        </EntityType>
+        <EntityType Name="MovieMinorSection">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="MajorSection" Relationship="Movies.MovieMajorSectionMovieMinorSection" FromRole="MovieMinorSection" ToRole="MovieMajorSection" />
+          <Property Type="String" Name="MovieMajorSectionName" Nullable="false" />
+          <NavigationProperty Name="Movies" Relationship="Movies.MovieMinorSectionMovie" FromRole="MovieMinorSection" ToRole="Movie" />
+        </EntityType>
+        <Association Name="MovieMajorSectionMovieMinorSection">
+          <End Type="Movies.MovieMajorSection" Role="MovieMajorSection" Multiplicity="1" />
+          <End Type="Movies.MovieMinorSection" Role="MovieMinorSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieMajorSection">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="MovieMinorSection">
+              <PropertyRef Name="MovieMajorSectionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MovieMinorSectionMovie">
+          <End Type="Movies.MovieMinorSection" Role="MovieMinorSection" Multiplicity="1" />
+          <End Type="Movies.Movie" Role="Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieMinorSection">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="MovieMinorSectionName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MoviePerson">
+          <End Type="Movies.Movie" Role="Movie" Multiplicity="*" />
+          <End Type="Movies.Person" Role="Person" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Movies" />
+        <Alias Key="Target" Value="Movies.Store" />
+        <EntityContainerMapping CdmEntityContainer="MoviesContainer" StorageEntityContainer="MoviesTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Movies" DisplayType="true" >
+        <EntityTypeShape EntityType="Movies.Movie" Width="1.5" PointX="3" PointY="4.625" Height="2.5571907552083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Movies.Person" Width="1.5" PointX="7.5" PointY="1.5" Height="1.59568359375" />
+        <AssociationConnector Association="Movies.MovieDirector">
+          <ConnectorPoint PointX="4.5" PointY="5.9035953776041659" />
+          <ConnectorPoint PointX="8.25" PointY="5.9035953776041659" />
+          <ConnectorPoint PointX="8.25" PointY="3.09568359375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Movies.MovieMajorSection" Width="1.5" PointX="0.75" PointY="1.375" Height="1.5956835937499998" />
+        <EntityTypeShape EntityType="Movies.MovieMinorSection" Width="1.5" PointX="3" PointY="1.25" Height="1.9802864583333335" />
+        <AssociationConnector Association="Movies.MovieMajorSectionMovieMinorSection">
+          <ConnectorPoint PointX="2.25" PointY="2.172841796875" />
+          <ConnectorPoint PointX="3" PointY="2.172841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Movies.MovieMinorSectionMovie">
+          <ConnectorPoint PointX="3.75" PointY="3.2302864583333335" />
+          <ConnectorPoint PointX="3.75" PointY="4.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Movies.MoviePerson">
+          <ConnectorPoint PointX="4.5" PointY="5.433131844075521" />
+          <ConnectorPoint PointX="7.929684375" PointY="5.433131844075521" />
+          <ConnectorPoint PointX="7.929684375" PointY="3.2879850260416661" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
