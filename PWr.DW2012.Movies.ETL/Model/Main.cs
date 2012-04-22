@@ -143,6 +143,8 @@ namespace PWr.DW2012.Movies.Model {
         public string Id { get; set; }
         public string Name { get; set; }
 
+        public ISet<Movie> Movies { get; set; }
+
         public static readonly MovieCategory BioP = new MovieCategory { Id = "BioP", Name = "Biography?" };
         public static readonly MovieCategory Disa = new MovieCategory { Id = "Disa", Name = "Disaster" };
         public static readonly MovieCategory Dram = new MovieCategory { Id = "Dram", Name = "Drama" };
