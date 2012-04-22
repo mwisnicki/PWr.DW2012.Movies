@@ -1,4 +1,4 @@
-set HtmlCleanerCmd=java -jar ../htmlcleaner-2.2.jar
+set HtmlCleanerCmd=java -Dfile.encoding=utf-8 -jar ../htmlcleaner-2.2.jar
 set DestDir=Clean
 
 cd Data
