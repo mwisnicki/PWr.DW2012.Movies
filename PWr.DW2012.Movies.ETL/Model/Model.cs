@@ -15,13 +15,15 @@ namespace PWr.DW2012.Movies.Model {
         public DbSet<MovieCategory> MovieCategories { get; set; }
         public DbSet<ProcessCode> ProcessCodes { get; set; }
 
-        public void InitializeDb() {
+        protected void Seed() {
             MovieCategory.Values.ForEach(c => MovieCategories.Add(c));
             ProcessCode.Values.ForEach(c => ProcessCodes.Add(c));
         }
 
-        private void Insert<T>(IEnumerable<T> list) {
-            throw new NotImplementedException();
+        public class DropCreateDatabaseAlways : DropCreateDatabaseAlways<MoviesContext> {
+            protected override void Seed(MoviesContext context) {
+                context.Seed();
+            }
         }
     }
 
