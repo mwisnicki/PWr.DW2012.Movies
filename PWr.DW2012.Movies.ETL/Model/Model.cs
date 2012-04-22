@@ -11,6 +11,7 @@ namespace PWr.DW2012.Movies.Model {
         public DbSet<MovieMajorSection> MovieMajorSections { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Person> People { get; set; }
+        public DbSet<Award> Awards { get; set; }
 
         public DbSet<MovieCategory> MovieCategories { get; set; }
         public DbSet<ProcessCode> ProcessCodes { get; set; }

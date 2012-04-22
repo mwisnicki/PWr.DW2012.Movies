@@ -14,6 +14,8 @@ namespace PWr.DW2012.Movies.Model {
         public string Colloquial { get; set; }
         public string Year { get; set; }
         public string Notes { get; set; }
+
+        public ISet<Movie> Movies { get; set; }
     }
 
 }
