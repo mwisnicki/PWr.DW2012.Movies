@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
 namespace PWr.DW2012.Movies.Model {
 
     public class Person {
+        [Key]
         public string Id { get; set; } // Ref_name
 
         public bool IsDirector { get; set; }

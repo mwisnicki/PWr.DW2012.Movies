@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
 namespace PWr.DW2012.Movies.Model {
 
     public class MovieMajorSection {
+        [Key]
         public string Name { get; set; }
         public string Description { get; set; }
         public ISet<MovieMinorSection> MinorSections { get; set; }
     }
 
     public class MovieMinorSection {
+        [Key]
         public string Name { get; set; }
         public string Description { get; set; }
         public ISet<Movie> Movies { get; set; }
     }
 
     public class Movie {
+        [Key]
         public string Id { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
@@ -91,11 +95,15 @@ namespace PWr.DW2012.Movies.Model {
     }
 
     public class AlternateTitle {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Reason { get; set; }
     }
 
     public class MovieLocation {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
         /// <summary>
         /// A hierachy like: somewhere, London, England
         /// <remarks>
@@ -116,6 +124,7 @@ namespace PWr.DW2012.Movies.Model {
     }
 
     public class ProcessCode {
+        [Key]
         public string Id { get; set; }
 
         public static readonly ProcessCode BWS = new ProcessCode { Id = "bws" };
@@ -130,6 +139,7 @@ namespace PWr.DW2012.Movies.Model {
     }
 
     public class MovieCategory {
+        [Key]
         public string Id { get; set; }
         public string Name { get; set; }
 
