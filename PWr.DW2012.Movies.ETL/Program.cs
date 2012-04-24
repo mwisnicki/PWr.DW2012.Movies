@@ -43,6 +43,7 @@ namespace PWr.DW2012.Movies {
         void LoadData() {
             LoadAwards();
             LoadActors();
+            LoadMovies();
         }
 
         void LoadAwards() {
@@ -144,6 +145,58 @@ namespace PWr.DW2012.Movies {
                 }
 
                 db.Actors.Add(actor);
+                log.Write(".");
+                if (++n % 200 == 0)
+                    saved += db.SaveChanges();
+            }
+            log.WriteLine(saved + db.SaveChanges());
+        }
+
+
+        void LoadMovies() {
+            var doc = LoadHtml("main.htm");
+            var table = doc; //.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
+            var saved = 0;
+            log.Write("Adding movies: ");
+            var n = 0;
+            foreach (var row in table.XPathSelectElements(".//tr")) {
+                if (IsTableHeader(row))
+                    continue;
+                var cells = row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+                var r = new string[13];
+                var i = 0;
+                var j = 0;
+
+                while (i < cells.Length && j < r.Length && cells[i] != "|") {
+                    if (i < 2 && IsDateLike(cells[i]))
+                        j = 2;
+                    r[j] = cells[i];
+                    i++;
+                    j++;
+                }
+
+
+
+                var movie = new Movie();
+                movie.RefName = r[0];
+                movie.Title = r[1];
+                var year = 0;
+                if (int.TryParse(r[2], out year))
+                    movie.Year = year;
+                //movie.Director = r[3];
+                //movie.Producers.Add(r[4]);
+                //movie.Studios.Add(r[5]);
+                //movie.Process = r[6];
+                //movie.Categories.Add(r[7]);
+                //movie.Awards.Add(r[8]);
+                //movie.Locations.Add(r[9]);
+                movie.Notes = r[10];
+
+                if (movie.RefName != null)
+                    db.Movies.Add(movie);
+                else
+                    log.Write("!");
+
                 log.Write(".");
                 if (++n % 200 == 0)
                     saved += db.SaveChanges();

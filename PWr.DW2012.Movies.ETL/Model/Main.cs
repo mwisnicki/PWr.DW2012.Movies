@@ -21,10 +21,16 @@ namespace PWr.DW2012.Movies.Model {
     }
 
     public class Movie {
+#if true // temp hack for duped keys
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+#else
         [Key]
-        public string Id { get; set; }
+#endif
+        public string RefName { get; set; }
         public string Title { get; set; }
-        public int Year { get; set; }
+        public int? Year { get; set; }
+#if false
         public Person Director { get; set; }
         /// <summary>
         /// <remarks>
@@ -63,13 +69,15 @@ namespace PWr.DW2012.Movies.Model {
         public ISet<MovieCategory> Categories { get; set; }
         public ISet<Award> Awards { get; set; }
         public ISet<MovieLocation> Locations { get; set; }
-        public MovieTime LocationTime { get; set; }
+        public DateTime? /*MovieTime*/ LocationTime { get; set; }
         /// <summary>
         /// Anything that's left of last column after parsing
         /// </summary>
         public string NotesRemaining { get; set; }
+#endif
         // XXX this really ought to be in separate tables
         #region Notes
+#if fale
         public ISet<AlternateTitle> AlternateTitles { get; set; }
         // XXX can be multiple, includes titles
         public string OriginalAuthor { get; set; }
@@ -85,10 +93,11 @@ namespace PWr.DW2012.Movies.Model {
         public string NotesLang { get; set; }
         public string SerialName { get; set; }
         public string LengthString { get; set; }
-        public int LengthMinutes { get; set; } // computed from above
+        public int? LengthMinutes { get; set; } // computed from above
         public string Rating { get; set; }
         public string IncomeString { get; set; }
-        public int IncomeDollars { get; set; } // computed
+        public int? IncomeDollars { get; set; } // computed
+#endif
         public string Notes { get; set; } // Nt()
         // ignore: Seen, VT
         #endregion
