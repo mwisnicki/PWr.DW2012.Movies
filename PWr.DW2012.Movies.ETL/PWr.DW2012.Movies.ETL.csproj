@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Actors.cs" />
     <Compile Include="Model\Award.cs" />
     <Compile Include="Model\Main.cs" />
     <Compile Include="Model\Model.cs" />

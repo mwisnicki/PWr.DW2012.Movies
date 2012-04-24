@@ -30,19 +30,19 @@ namespace PWr.DW2012.Movies {
                 log.Write("Create database: ");
                 db.Configuration.AutoDetectChangesEnabled = false;
                 db.Database.CreateIfNotExists();
-                db.SaveChanges();
-                log.WriteLine("ok");
+                log.WriteLine(db.SaveChanges());
 
                 LoadData();
 
-                int recordsAffected = db.SaveChanges();
-                Console.WriteLine("Saved {0} entities to the database, press any key to exit.", recordsAffected);
+                db.SaveChanges();
+                Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
         }
 
         void LoadData() {
             LoadAwards();
+            LoadActors();
         }
 
         void LoadAwards() {
@@ -78,7 +78,93 @@ namespace PWr.DW2012.Movies {
                 db.Awards.Add(award);
                 log.Write(".");
             }
-            log.WriteLine("ok");
+            log.WriteLine(db.SaveChanges());
+        }
+
+        void LoadActors() {
+            var doc = LoadHtml("actors.htm");
+            var table = doc; //.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
+            var saved = 0;
+            log.Write("Adding actors: ");
+            var n = 0;
+            foreach (var row in table.XPathSelectElements(".//tr")) {
+                if (IsTableHeader(row))
+                    continue;
+                var cells = row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+                var r = new string[11];
+                var i = 0;
+                var j = 0;
+
+                while (i < cells.Length && j < r.Length && cells[i] != "|") {
+                    if (i < 1 && IsDateLike(cells[i]))
+                        j = 1;
+                    r[j] = cells[i];
+                    i++;
+                    j++;
+                }
+
+
+
+                var actor = new Actor {
+                    StageName = r[0],
+                    FamilyName = r[2],
+                    FirstName = r[3],
+                    /*
+                    WorkStart = r[1],
+                    WorkEnd = r[1],
+                    DateOfBirth = r[5],
+                    DateOfDeath = r[6],
+                     */
+                    Type = r[7],
+                    Origin = r[8],
+                    Notes = r[9],
+                    Family = r[10]
+                };
+
+                
+                if (r[1] != null && r[1] != "dow") {
+                    var cDow = r[1].Split('-');
+                    if (cDow[0] != "")
+                        actor.WorkStart = ParseYear(cDow[0]);
+                    if (cDow.Length > 1 && cDow[1] != "")
+                        actor.WorkEnd = ParseYear(cDow[1]);
+                }
+                if (r[5] != null && IsDateLike(r[5]))
+                    actor.DateOfBirth = ParseYear(r[5]);
+                if (r[6] != null && IsDateLike(r[6]))
+                    actor.DateOfDeath = ParseYear(r[6]);
+
+                switch (r[4]) {
+                case "M":
+                    actor.Gender = Gender.Male;
+                    break;
+                case "F":
+                    actor.Gender = Gender.Female;
+                    break;
+                }
+
+                db.Actors.Add(actor);
+                log.Write(".");
+                if (++n % 200 == 0)
+                    saved += db.SaveChanges();
+            }
+            log.WriteLine(saved + db.SaveChanges());
+        }
+
+        private DateTime? ParseYear(string p) {
+            try {
+                p = p.Replace('x', '5');
+                var y = int.Parse(p);
+                if (y < 200 && y > 180) { // missing last digit
+                    y *= 10;
+                } else if (y < 1800 && y > 1000) { // second digit is invalid
+                    y = 1900 + y % 100;
+                }
+                return new DateTime(y, 1, 1);
+            } catch (Exception e) {
+                log.Write("!"); // for now swallow errors
+                return null;
+            }
         }
 
         bool IsTableHeader(XElement row)
