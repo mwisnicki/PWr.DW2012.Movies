@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -41,33 +42,35 @@ namespace PWr.DW2012.Movies {
         }
 
         void LoadData() {
-            LoadAwards();
-            LoadActors();
-            LoadMovies();
+            new AwardsLoader(this).Load();
+            new ActorsLoader(this).Load();
+            new MoviesLoader(this).Load();
         }
 
-        void LoadAwards() {
-            var doc = LoadHtml("awtypes.htm");
-            var table = doc.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
+        class AwardsLoader : TableLoader<Award, string> {
+            
+            public AwardsLoader(Program session) : base("awtypes.htm", session) { }
 
-            log.Write("Adding awards: ");
-            foreach (var row in table.XPathSelectElements(".//tr")) {
-                if (IsTableHeader(row))
-                    continue;
-                var cells = row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+            protected override string GetKey(Award row) {
+                return row.Id;
+            }
+
+            protected override XNode GetTable(XDocument doc) {
+                return doc.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
+            }
+
+            protected override void ProcessRow(XElement row, string[] cells) {
                 var r = new string[6]; // see award below
                 var i = 0;
 
-                while (i < cells.Length && i < r.Length && cells[i] != "|")
-                {
+                while (i < cells.Length && i < r.Length && cells[i] != "|") {
                     if (i < 4 && IsDateLike(cells[i]))
                         i = 4;
                     r[i] = cells[i];
                     i++;
                 }
 
-                var award = new Award
-                {
+                var award = new Award {
                     Id = r[0],
                     Organization = r[1],
                     Country = r[2],
@@ -76,22 +79,19 @@ namespace PWr.DW2012.Movies {
                     Notes = r[5]
                 };
 
-                db.Awards.Add(award);
-                log.Write(".");
+                TryAddRow(award, db.Awards);
             }
-            log.WriteLine(db.SaveChanges());
         }
 
-        void LoadActors() {
-            var doc = LoadHtml("actors.htm");
-            var table = doc; //.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
-            var saved = 0;
-            log.Write("Adding actors: ");
-            var n = 0;
-            foreach (var row in table.XPathSelectElements(".//tr")) {
-                if (IsTableHeader(row))
-                    continue;
-                var cells = row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+        class ActorsLoader : TableLoader<Actor, string> {
+            
+            public ActorsLoader(Program session) : base("actors.htm", session) { }
+
+            protected override string GetKey(Actor row) {
+                return row.StageName;
+            }
+
+            protected override void ProcessRow(XElement row, string[] cells) {
                 var r = new string[11];
                 var i = 0;
                 var j = 0;
@@ -103,8 +103,6 @@ namespace PWr.DW2012.Movies {
                     i++;
                     j++;
                 }
-
-
 
                 var actor = new Actor {
                     StageName = r[0],
@@ -122,7 +120,6 @@ namespace PWr.DW2012.Movies {
                     Family = r[10]
                 };
 
-                
                 if (r[1] != null && r[1] != "dow") {
                     var cDow = r[1].Split('-');
                     if (cDow[0] != "")
@@ -144,27 +141,21 @@ namespace PWr.DW2012.Movies {
                     break;
                 }
 
-                db.Actors.Add(actor);
-                log.Write(".");
-                if (++n % 200 == 0)
-                    saved += db.SaveChanges();
+                TryAddRow(actor, db.Actors);
+                // FIXME some actors have same names with no way to distinguish them
+                // maybe both existing and duplicate rows should be dropped ?
             }
-            log.WriteLine(saved + db.SaveChanges());
         }
 
+        class MoviesLoader : TableLoader<Movie, string> {
 
-        void LoadMovies() {
-            var s = new Status("Movies", log);
+            public MoviesLoader(Program session) : base("main.htm", session) { }
 
-            var doc = LoadHtml("main.htm");
-            var table = doc; //.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
-            var saved = 0;
-            s.BeginTable();
-            var n = 0;
-            foreach (var row in table.XPathSelectElements(".//tr")) {
-                if (IsTableHeader(row))
-                    continue;
-                var cells = row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+            protected override string GetKey(Movie row) {
+                return row.RefName;
+            }
+
+            protected override void ProcessRow(XElement row, string[] cells) {
                 var r = new string[13];
                 var i = 0;
                 var j = 0;
@@ -176,8 +167,6 @@ namespace PWr.DW2012.Movies {
                     i++;
                     j++;
                 }
-
-
 
                 var movie = new Movie();
                 movie.RefName = r[0];
@@ -194,92 +183,165 @@ namespace PWr.DW2012.Movies {
                 //movie.Locations.Add(r[9]);
                 movie.Notes = r[10];
 
-                if (movie.RefName != null) {
-                    var existing = db.Movies.Find(movie.RefName);
-                    if (existing == null) {
-                        db.Movies.Add(movie);
-                        s.RowComplete(movie);
-                    } else
-                        // TODO usually ID is off by 1 and can be guessed by looking at neighouring rows
-                        s.RowDuplicate(movie.RefName, existing.RefName);
-                } else
-                    s.RowSkipped(movie);
-                
-                if (++n % 200 == 0)
-                    saved += db.SaveChanges();
+                TryAddRow(movie, db.Movies);
             }
-            s.FinishTable(saved + db.SaveChanges());
         }
 
-        class Status {
-            public string Table { get; private set; }
+        abstract class TableLoader<TRow, TKey>
+            where TRow : class {
+
+            public string FileName { get; protected set; }
+            protected MoviesContext db { get; private set; }
+            protected XDocument doc;
+            protected XNode table;
+            private Program program;
             private TextWriter log;
-            public List<object> DuplicateKeys { get; private set; }
-            public List<object> SkippedRows { get; private set; }
 
-            public Status(string table, TextWriter log) {
-                this.Table = table;
-                this.log = log;
-                this.DuplicateKeys = new List<object>();
-                this.SkippedRows = new List<object>();
+            public TableLoader(string file, Program session) {
+                this.FileName = file;
+                this.TableName = typeof(TRow).Name;
+                this.program = session;
+                this.log = session.log;
+                this.db = session.db;
+                this.DuplicateKeys = new List<TRow>();
+                this.SkippedRows = new List<TRow>();
             }
 
-            public void BeginTable() {
-                log.Write("Adding {0}: ", Table);
+            public string TableName { get; protected set; }
+
+            protected abstract TKey GetKey(TRow row);
+
+            protected virtual void TryAddRow(TRow row, DbSet<TRow> table) {
+                var key = GetKey(row);
+                if (key != null) {
+                    var existing = table.Find(key);
+                    if (existing == null) {
+                        table.Add(row);
+                        OnRowComplete(row);
+                    } else
+                        // TODO usually ID is off by 1 and can be guessed by looking at neighouring rows
+                        OnRowDuplicate(row, existing);
+                } else
+                    OnRowSkipped(row);
             }
 
-            public void RowComplete(object added) {
+            protected virtual XNode GetTable(XDocument doc) {
+                return doc;
+            }
+
+            protected virtual IEnumerable<XElement> GetRows(XNode table) {
+                return table.XPathSelectElements(".//tr");
+            }
+
+            protected virtual string[] GetCells(XElement row) {
+                return row.XPathSelectElements(".//td").Select(td => td.Value.Trim()).ToArray();
+            }
+
+            #region Processing
+
+            public void Load() {
+                LoadDocument();
+                ProcessDocument();
+            }
+
+            protected void LoadDocument() {
+                doc = LoadHtml(FileName);
+            }
+
+            protected void ProcessDocument() {
+                table = GetTable(doc);
+                ProcessTable();
+            }
+
+            protected void ProcessTable() {
+                OnTableBegin();
+                var saved = 0;
+                var n = 0;
+
+                foreach (var row in GetRows(table)) {
+                    if (IsTableHeader(row))
+                        continue;
+
+                    var cells = GetCells(row);
+                    ProcessRow(row, cells);
+
+                    if (++n % 2000 == 0)
+                        saved += db.SaveChanges();
+                }
+
+                saved += db.SaveChanges();
+                OnTableFinished(saved);
+            }
+
+            protected abstract void ProcessRow(XElement row, string[] cells);
+
+            #endregion Processing
+
+            #region Reporting
+
+            public List<TRow> DuplicateKeys { get; private set; }
+            public List<TRow> SkippedRows { get; private set; }
+
+            public void OnTableBegin() {
+                log.Write("Adding {0}: ", TableName);
+            }
+
+            public void OnTableFinished(int saved) {
+                log.WriteLine("{0} [{1} duplicates, {2} skipped]", saved, DuplicateKeys.Count, SkippedRows.Count);
+            }
+
+            public void OnRowComplete(TRow added) {
                 log.Write(".");
             }
 
-            public void RowDuplicate(object duplicateKey, object existingKey) {
-                DuplicateKeys.Add(duplicateKey);
+            public void OnRowDuplicate(TRow duplicate, TRow existing) {
+                DuplicateKeys.Add(duplicate);
                 log.Write("D");
             }
 
-            public void RowSkipped(object skipped) {
+            public void OnRowSkipped(TRow skipped) {
                 SkippedRows.Add(skipped);
-                log.Write("!");
+                log.Write("S");
             }
 
-            public void FinishTable(int changes) {
-                log.WriteLine("{0} [{1} duplicates, {2} skipped]", changes, DuplicateKeys.Count, SkippedRows.Count);
-            }
-        }
+            #endregion Reporting
 
-        private DateTime? ParseYear(string p) {
-            try {
-                p = p.Replace('x', '5');
-                var y = int.Parse(p);
-                if (y < 200 && y > 180) { // missing last digit
-                    y *= 10;
-                } else if (y < 1800 && y > 1000) { // second digit is invalid
-                    y = 1900 + y % 100;
+            #region Parsing
+
+            protected DateTime? ParseYear(string p) {
+                try {
+                    p = p.Replace('x', '5');
+                    var y = int.Parse(p);
+                    if (y < 200 && y > 180) { // missing last digit
+                        y *= 10;
+                    } else if (y < 1800 && y > 1000) { // second digit is invalid
+                        y = 1900 + y % 100;
+                    }
+                    return new DateTime(y, 1, 1);
+                } catch (Exception e) {
+                    log.Write("!"); // for now swallow errors
+                    return null;
                 }
-                return new DateTime(y, 1, 1);
-            } catch (Exception e) {
-                log.Write("!"); // for now swallow errors
-                return null;
             }
+
+            protected static bool IsTableHeader(XElement row) {
+                return row.Descendants("th").FirstOrDefault() != null;
+            }
+
+            protected static readonly Regex ReDateLike = new Regex(@"(1[789]|2)[0-9][0-9]");
+            protected static bool IsDateLike(string text) {
+                return ReDateLike.IsMatch(text);
+            }
+
+            protected XDocument LoadHtml(string fileName) {
+                var path = Path.Combine(program.dataDir.FullName, fileName);
+                var html = File.ReadAllText(path);
+                var doc = XDocument.Load(path);
+                return doc;
+            }
+
+            #endregion Parsing
         }
 
-        bool IsTableHeader(XElement row)
-        {
-            return row.Descendants("th").FirstOrDefault() != null;
-        }
-
-        static readonly Regex ReDateLike = new Regex(@"(1[789]|2)[0-9][0-9]");
-        bool IsDateLike(string text)
-        {
-            return ReDateLike.IsMatch(text);
-        }
-
-        private XDocument LoadHtml(string fileName)
-        {
-            var path = Path.Combine(dataDir.FullName, fileName);
-            var html = File.ReadAllText(path);
-            var doc = XDocument.Load(path);
-            return doc;
-        }
     }
 }
