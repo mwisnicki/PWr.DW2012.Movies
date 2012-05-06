@@ -154,10 +154,12 @@ namespace PWr.DW2012.Movies {
 
 
         void LoadMovies() {
+            var s = new Status("Movies", log);
+
             var doc = LoadHtml("main.htm");
             var table = doc; //.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
             var saved = 0;
-            log.Write("Adding movies: ");
+            s.BeginTable();
             var n = 0;
             foreach (var row in table.XPathSelectElements(".//tr")) {
                 if (IsTableHeader(row))
@@ -192,16 +194,57 @@ namespace PWr.DW2012.Movies {
                 //movie.Locations.Add(r[9]);
                 movie.Notes = r[10];
 
-                if (movie.RefName != null)
-                    db.Movies.Add(movie);
-                else
-                    log.Write("!");
-
-                log.Write(".");
+                if (movie.RefName != null) {
+                    var existing = db.Movies.Find(movie.RefName);
+                    if (existing == null) {
+                        db.Movies.Add(movie);
+                        s.RowComplete(movie);
+                    } else
+                        // TODO usually ID is off by 1 and can be guessed by looking at neighouring rows
+                        s.RowDuplicate(movie.RefName, existing.RefName);
+                } else
+                    s.RowSkipped(movie);
+                
                 if (++n % 200 == 0)
                     saved += db.SaveChanges();
             }
-            log.WriteLine(saved + db.SaveChanges());
+            s.FinishTable(saved + db.SaveChanges());
+        }
+
+        class Status {
+            public string Table { get; private set; }
+            private TextWriter log;
+            public List<object> DuplicateKeys { get; private set; }
+            public List<object> SkippedRows { get; private set; }
+
+            public Status(string table, TextWriter log) {
+                this.Table = table;
+                this.log = log;
+                this.DuplicateKeys = new List<object>();
+                this.SkippedRows = new List<object>();
+            }
+
+            public void BeginTable() {
+                log.Write("Adding {0}: ", Table);
+            }
+
+            public void RowComplete(object added) {
+                log.Write(".");
+            }
+
+            public void RowDuplicate(object duplicateKey, object existingKey) {
+                DuplicateKeys.Add(duplicateKey);
+                log.Write("D");
+            }
+
+            public void RowSkipped(object skipped) {
+                SkippedRows.Add(skipped);
+                log.Write("!");
+            }
+
+            public void FinishTable(int changes) {
+                log.WriteLine("{0} [{1} duplicates, {2} skipped]", changes, DuplicateKeys.Count, SkippedRows.Count);
+            }
         }
 
         private DateTime? ParseYear(string p) {

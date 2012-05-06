@@ -21,12 +21,7 @@ namespace PWr.DW2012.Movies.Model {
     }
 
     public class Movie {
-#if true // temp hack for duped keys
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-#else
         [Key]
-#endif
         public string RefName { get; set; }
         public string Title { get; set; }
         public int? Year { get; set; }
