@@ -23,9 +23,16 @@ namespace PWr.DW2012.Movies {
         MoviesContext db;
         TextWriter log = Console.Out;
 
+        DateTime timeStart;
+        DateTime timeEnd;
+        TimeSpan time;
+
         void Run() {
             dataDir = new DirectoryInfo("../../../Data/Clean");
             Debug.Assert(dataDir.Exists);
+
+            timeStart = DateTime.Now;
+            log.WriteLine("Started at: {0}", timeStart);
 
             using (db = new MoviesContext()) {
                 log.Write("Create database: ");
@@ -34,8 +41,13 @@ namespace PWr.DW2012.Movies {
                 log.WriteLine(db.SaveChanges());
 
                 LoadData();
-
                 db.SaveChanges();
+
+                timeEnd = DateTime.Now;
+                time = timeEnd - timeStart;
+                log.WriteLine("Finished at: {0}", timeEnd);
+                log.WriteLine("Took: {0}", time);
+
                 Console.WriteLine("Press any key to exit...");
                 Console.ReadKey();
             }
@@ -48,7 +60,7 @@ namespace PWr.DW2012.Movies {
         }
 
         class AwardsLoader : TableLoader<Award, string> {
-            
+
             public AwardsLoader(Program session) : base("awtypes.htm", session) { }
 
             protected override string GetKey(Award row) {
@@ -84,7 +96,7 @@ namespace PWr.DW2012.Movies {
         }
 
         class ActorsLoader : TableLoader<Actor, string> {
-            
+
             public ActorsLoader(Program session) : base("actors.htm", session) { }
 
             protected override string GetKey(Actor row) {
@@ -257,15 +269,18 @@ namespace PWr.DW2012.Movies {
                 OnTableBegin();
                 var saved = 0;
                 var n = 0;
-
-                foreach (var row in GetRows(table)) {
-                    if (IsTableHeader(row))
+                var rows = GetRows(table);
+                nTotalRows = rows.Count();
+                foreach (var row in rows) {
+                    if (IsTableHeader(row)) {
+                        nTotalRows--;
                         continue;
+                    }
 
                     var cells = GetCells(row);
                     ProcessRow(row, cells);
 
-                    if (++n % 2000 == 0)
+                    if (++n % 200 == 0)
                         saved += db.SaveChanges();
                 }
 
@@ -282,31 +297,49 @@ namespace PWr.DW2012.Movies {
             public List<TRow> DuplicateKeys { get; private set; }
             public List<TRow> SkippedRows { get; private set; }
 
+            const string StatusFmt = "Adding {0}: {1:P} total={2}/{3} ok={4} dup={5} skip={6} parse={7}";
+
             public void OnTableBegin() {
                 log.Write("Adding {0}: ", TableName);
             }
 
             public void OnTableFinished(int saved) {
-                log.WriteLine("{0} [{1} duplicates, {2} skipped]", saved, DuplicateKeys.Count, SkippedRows.Count);
+                PrintStatus();
+                log.WriteLine();
+            }
+
+            int nTotalRows;
+            int nDoneRows;
+            int nOkRows;
+
+            private void PrintStatus() {
+                log.Write("\r" + StatusFmt, TableName, (double)nDoneRows / nTotalRows, nDoneRows, nTotalRows,
+                    nOkRows, DuplicateKeys.Count, SkippedRows.Count, nParseErrors);
             }
 
             public void OnRowComplete(TRow added) {
-                log.Write(".");
+                nDoneRows++;
+                nOkRows++;
+                PrintStatus();
             }
 
             public void OnRowDuplicate(TRow duplicate, TRow existing) {
+                nDoneRows++;
                 DuplicateKeys.Add(duplicate);
-                log.Write("D");
+                PrintStatus();
             }
 
             public void OnRowSkipped(TRow skipped) {
+                nDoneRows++;
                 SkippedRows.Add(skipped);
-                log.Write("S");
+                PrintStatus();
             }
 
             #endregion Reporting
 
             #region Parsing
+
+            int nParseErrors;
 
             protected DateTime? ParseYear(string p) {
                 try {
@@ -319,7 +352,7 @@ namespace PWr.DW2012.Movies {
                     }
                     return new DateTime(y, 1, 1);
                 } catch (Exception e) {
-                    log.Write("!"); // for now swallow errors
+                    nParseErrors++; // for now swallow errors
                     return null;
                 }
             }
