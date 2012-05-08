@@ -11,7 +11,9 @@ namespace PWr.DW2012.Movies.Model {
         public string Id { get; set; } // Ref_name
 
         public bool IsDirector { get; set; }
+        public ISet<Movie> DirectedMovies { get; set; }
         public bool IsProducer { get; set; }
+        //public ISet<Movie> ProducedMovies { get; set; }
         public bool IsWriter { get; set; }
         public bool IsActor { get; set; }
         public bool IsCinematographer { get; set; }

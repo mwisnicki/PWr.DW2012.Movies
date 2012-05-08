@@ -20,7 +20,8 @@ namespace PWr.DW2012.Movies.Model {
         [Column(TypeName = "datetime2")]
         public DateTime? DateOfDeath { get; set; }
         public string Type { get; set; } // TODO split roles
-        public string Origin { get; set; } // Country of birth ?
+        //public string Origin { get; set; } // Country of birth ?
+        public Country Origin { get; set; }
         // pict ignored
         public string Notes { get; set; }
         public string Family { get; set; }

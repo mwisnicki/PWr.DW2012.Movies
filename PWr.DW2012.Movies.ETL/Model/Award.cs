@@ -16,6 +16,7 @@ namespace PWr.DW2012.Movies.Model {
         public string Notes { get; set; }
 
         public ISet<Movie> Movies { get; set; }
+        public ISet<Cast> Cast { get; set; } 
     }
 
 }

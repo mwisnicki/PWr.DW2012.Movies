@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Model\Actors.cs" />
     <Compile Include="Model\Award.cs" />
+    <Compile Include="Model\Cast.cs" />
     <Compile Include="Model\Main.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\People.cs" />

@@ -40,7 +40,7 @@ namespace PWr.DW2012.Movies {
                 db.Database.CreateIfNotExists();
                 log.WriteLine(db.SaveChanges());
 
-                LoadData();
+                //LoadData();
                 db.SaveChanges();
 
                 timeEnd = DateTime.Now;
@@ -127,7 +127,7 @@ namespace PWr.DW2012.Movies {
                     DateOfDeath = r[6],
                      */
                     Type = r[7],
-                    Origin = r[8],
+                    //Origin = r[8],
                     Notes = r[9],
                     Family = r[10]
                 };

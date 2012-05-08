@@ -25,8 +25,8 @@ namespace PWr.DW2012.Movies.Model {
         public string RefName { get; set; }
         public string Title { get; set; }
         public int? Year { get; set; }
-#if false
         public Person Director { get; set; }
+#if false
         /// <summary>
         /// <remarks>
         /// P => Existing Person
@@ -50,11 +50,13 @@ namespace PWr.DW2012.Movies.Model {
         /// </remarks>
         /// </summary>
         public ISet<Studio> Distributors { get; set; }
+#endif
         /// <summary>
         /// When Studio is SL
         /// XXX is it a production location or a national studio (eg. commie country)
         /// </summary>
         public ISet<Country> Countries { get; set; }
+#if false
         /// <summary>
         /// <remarks>
         /// XXX Couple of movies have multiple processes, but for now they are ignored
@@ -62,7 +64,10 @@ namespace PWr.DW2012.Movies.Model {
         /// </summary>
         public ProcessCode Process { get; set; }
         public ISet<MovieCategory> Categories { get; set; }
+#endif
         public ISet<Award> Awards { get; set; }
+        public ISet<Cast> Cast { get; set; }
+#if false
         public ISet<MovieLocation> Locations { get; set; }
         public DateTime? /*MovieTime*/ LocationTime { get; set; }
         /// <summary>

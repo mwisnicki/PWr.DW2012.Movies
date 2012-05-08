@@ -8,7 +8,9 @@ using System.Text;
 namespace PWr.DW2012.Movies.Model {
 
     public class MoviesContext : DbContext {
+#if false
         public DbSet<MovieMajorSection> MovieMajorSections { get; set; }
+#endif
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Award> Awards { get; set; }
@@ -43,5 +45,8 @@ namespace PWr.DW2012.Movies.Model {
         public string Id { get; set; }
         public string AlternativeId { get; set; } // Person.Country
         public string Name { get; set; }
+
+        public ISet<Actor> Actors { get; set; }
+        public ISet<Movie> Movies { get; set; }
     }
 }
