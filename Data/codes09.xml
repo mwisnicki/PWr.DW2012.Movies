@@ -3,10 +3,10 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns="http://www.semanticweb.org/movies/codes#">
 <!-- File containing a variety of code tables for the movie database -->
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Includes Process codes, Category Codes, Location codes, Award codes, Rating codes, Roletypes, Notes codes, Error codes, and literature references -->
 <!-- Some codes are used in multiple places in the movie files. -->
-<!-- ------------------------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Process  codes:  Used in prc field in Main -->
 <!-- Process codes tale DTD  prcodentry (prcode, prexplain )   -->
 <process>
@@ -43,7 +43,7 @@
 <prcodentry><prcode>Pan</prcode><prexplain>PanaVision   -- compressed wide screen, only noted at times.</prexplain></prcodentry>
 <prcodentry><prcode>Vst</prcode><prexplain>Vistavision </prexplain></prcodentry>
  .</process>
-<!-- ------------------------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Category  codes:  Used in cat field in Main -->
 <!-- Category  code table DTD: catcodeentry ( catcode, catexplain) --> 
 <categories>
@@ -76,7 +76,7 @@
 <catcodeentry><catcode>TVmini</catcode><catexplain>TV miniseries</catexplain></catcodeentry>
 <catcodeentry></catcode>West</catcode><catexplain>western</catexplain></catcodeentry>
 </categories>
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- award codes, used in Main, People, Actors, Cast -->
 <!-- Award type table DTD awcodeentry(awcode, awname?, aworg, awcountry, awyear, awexplain?, awref?, awnotes?) -->
 <!--  Awardcodes have been reduced, by allowing tagging for Honorary, SDpecial, Lifetime, foreign -->
@@ -148,7 +148,7 @@
 <!-- <tr><td> WAMPAS<td> Western Association of Motion Picture Advertisers<td> USA<td> WAMPAS<td> promising actress 1922-1934<td>not in actors<td>|  -->
 </awardtypes>
 
-<!-- ------------------------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Site classification codes:  Used in siteclass  field in Main -->
 <!-- Sitetype codes tale DTD  aitetypecodeentry (sitetypecode, sitetypeexplain )   -->
 <siteclasses>
@@ -191,7 +191,7 @@
 <sitecodeentry><sitecode>village</sitecode><siteexplain>village</siteexplain><ditetypecodeentry>   
 <sitecodeentry><sitecode>work</sitecode><siteexplain>workplace, factory, office, store</siteexplain></sitecodeentry>   
 </siteclasses>
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Location codes, used in Main, actors, and people -->
 	<!-- Comment: Codes for countries, where movie plays, and origins and background of people. Also used for site location where actual countries are indicated. -->
 <!-- Major film producing countries -->
@@ -278,7 +278,7 @@
 <locentry><lccode></lccode><lcname>World</lcname><lcadjective></lcadjective><lcsite>world</lcsite></locentry> 
 
 </countries>
-<!-- ------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Rating codes -->
 <ratings>
 <ratingentry><rtcode>R<\rtcode><rtexplain>restricted rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
@@ -289,7 +289,7 @@
 <ratingentry><rtcode>PG13<\rtcode><rtexplain>parental guidance for children under 13</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
 <ratingentry><rtcode>TV14<\rtcode><rtexplain>restricted rating for TV films</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
 </ratings>
-<!-- ------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Function codes, mainly used in PEOPLE, and ALSO notes, also used for errors, and roleattr. --> 
 <functions>
 <functionenty><fcode>A</fcode><fexplain>actors</fexplain></functionentry>
@@ -303,9 +303,9 @@
 <functionenty><fcode>V<TD> visual art director</fexplain></functionentry>
 <functionenty><fcode>W</fcode><fexplain>screenwriter</fexplain></functionentry>
 </functions>
-<!-- ------------------------------------------------------------------------ -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- People reference codes, used mainly for Prodk producers in Main, Select codes exclusive of function --> 
-<!-- Could be added to directors names, other people names ac cinematographers. --------------------------- -->
+<!-- Could be added to directors names, other people names ac cinematographers. - - - - - - - - - - - - -  -->
 <PeopleRefernces>
 <peoplerefentry><rcode>R</rcode><fexplain>reference, appears in people file</fexplain></peopelrefentry>
 <peoplerefentry><rcode>A</rcode><fexplain>reference, appears in actors file</fexplain></peopelrefentry>
@@ -317,7 +317,7 @@
 <peoplerefentry><rcode>Y</rcode><fexplain>producer of reissue, in people file</fexplain></peopelrefentry>
 <peoplerefentry><rcode>Z</rcode><fexplain>producer of reissue, not in people file</fexplain></peopelrefentry>
 </PeopleRefernces>
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Role types (always three characters), used in actors and casts -->
 <roletypes>
 <roleentry><rlcode>Adv</rlcode><rlexplain> adversary</rlexplain></roleentry> 
@@ -345,7 +345,7 @@
 <roleentry><rlcode>Voi</rlcode><rlexplain> voice only, narrator</rlexplain></roleentry>
 <roleentry><rlcode>Wmp</rlcode><rlexplain> wimp</rlexplain></roleentry>
 <roletypes>
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Relationship codes.  Used in Actors, People -->
 <!--  Relationship code table DTD rlentry (rlcode, rlexplain, usedin, refersto, rlnotes)  -->
 <relationshiptypes>
@@ -361,7 +361,7 @@
 <rlentry><rlcode>Si</rlcode><rlexplain>sibling, brother, sister</rlexplain><usedin> PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
 <rlentry><rlcode>Ww</rlcode><rlexplain>worked with</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
 <relationshiptypes>
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- Notes codes. Many are being converted to specific labels -->
 <notetypes>
 <ntentry><ntcode>Alias</ntcode><ntexplain>other professional names</ntcode></ntexplain><ntused>PEOPLE, ACTORS</ntused></ntentry> 
@@ -380,22 +380,22 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <ntentry><ntcode>W</ntcode><ntexplain>Script writer</ntexplain><ntused>MAIN</ntused></ntentry> 
 </notetypes>
 
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- error codes -->
 </erentry><ercode>SP<\ercode><erexplain>the spelling is uncertain</erexplain></erentry>
 
-<!-- ----------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- miscellaneous codes -->  <!-- only denoted as comments now -->
-<!--  NKT for "No Known Title" --- used in Main file for titles --> 
-<!-- unknown for unknown --- used in <roletype>, <origin> in Actors  --> 
+<!--  NKT for "No Known Title" -  used in Main file for titles --> 
+<!-- unknown for unknown -  used in <roletype>, <origin> in Actors  --> 
 <!-- <tr><TH>Code<TH>Contents<TH>Ocurrs in<TH>References what<TH>|
 <functionenty><fcode>Alias<TD>other professional names<TD> PEOPLE, ACTORS<TD>none <td>|  -->
 <!-- <tr><TD>Also<TD>other professions<TD>MAIN, ACTORS<TD>PEOPLE <td>|  --> 
 <!-- <tr><TD>Alt<TD>alternative title<TD>MAIN (SYNONYMS)<TD>none <td>|  --> 
-<!-- ---------------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 	
 
-<!-- ---------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-: References, cited in [] in various fields, as pictures, awards, errors</H2>
 <!-- BOOKS -->
 <references>
@@ -505,6 +505,6 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <rfentry><rfid>[MO]</rfid><rfpub>Musee d'Orsay, Paris</rfpub><rfyear>1987</rfyear></rfentry>
 <rfentry><rfid>[AM]</rfid><rfpub>Musee d'Arts et Metiers, Paris</rfpub><rfyear>1987</rfyear></rfentry>
 </references>
-<!-- ------------------------------------------------------------------------------- -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- ================================================ -->
 
