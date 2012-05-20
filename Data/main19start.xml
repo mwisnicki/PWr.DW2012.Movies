@@ -1364,10 +1364,8 @@ early British</coverage></director><films>
    <film><fid>RW1</fid><t>Das Kabinett des Dr.~Caligari</t><alts><alt><altt>The Cabinet of Dr.~Caligari</altt><altwhy>USA</altwhy></alt></alts> <year>1919</year><dirs><dir><dirk>R</dirk><dirn>Wiene</dirn></dir></dirs> <prods><prod><prodk>N</prodk><pname>Erich Pommer</pname></prod></prods> <studios><studio>Decla-Bioscoop</studio></studios><prcs><prc>bws</prc></prcs><cats><cat>Horr</cat></cats> <awards><aw><awtype>H</awtype><awattr>***</awattr></aw></awards> <loc><site><sitedes>asylum</sitedes><siteclass>hospital</siteclass><siteplace>Germany</siteplace></site></loc> <people><writers><names><name>Karl~Mayer</name><name>Hans Janowitz</name></names></writers><visuals><names><name>Hermann Warm</name><name>Walter Reiman</name><name>Walter R\"ohrig</name></names><fnote>cubist</fnote></visuals><cingraphs><names><name>Willy Hameister</name></names></cingraphs></people> <notes><money><cost>18K</cost></money></notes></film>
    <film><fid>RW10</fid><t>Genuine</t> <year>1920</year><dirs><dir><dirk>R</dirk><dirn>Wiene</dirn></dir></dirs> <prods></prods> <studios></studios><prcs></prcs><cats></cats> <awards></awards> <loc></loc><notes/></film>
    <film><fid>RW20</fid><t>Raskolnikov</t> <year>1923</year><dirs><dir><dirk>R</dirk><dirn>Wiene</dirn></dir></dirs> <prods></prods> <studios></studios><prcs></prcs><cats></cats> <awards></awards> <loc></loc><notes/></film>
-   <film><fid>RW30</fid><t>The Hands of Orlac</t> <year>1924</year><dirs><di
-
+   <film><fid>RW30</fid><t>The Hands of Orlac</t> <year>1924</year><dirs></dirs></film>
+   <!-- XXX seems to be cut here -->
+   </films></directorfilms>
 
 </movies>
-19start
-</body>
-</html>
