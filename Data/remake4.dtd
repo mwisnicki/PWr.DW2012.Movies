@@ -1,0 +1,13 @@
+<!-- Draft of DTD for Remakes XML file -->
+
+<!Element remakes (remake*) >
+<!Element remake>(fid, t, year, frac, sid, st, syear) 
+<!Element rfid >	<!- Comment: remake filmid -->
+<!Element t >		<!- Comment: remake title (redundant with main) -->
+<!Element year>	<!- Comment: remake year (redundant with main) -->
+<!Element frac >	<!- Comment: estimate of fraction copied from source  -->
+<!Element sid >	<!- Comment: source filmid -->
+<!Element st>		<!- Comment: source title (redundant with main) -->
+<!Element syear >	<!- Comment: source year (redundant with main) -->
+
+>

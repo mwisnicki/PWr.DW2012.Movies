@@ -1,0 +1,18 @@
+<!-- Draft of DTD for Studios XML file -->
+
+<!Element studios (studio*) >
+<!Element studio>(studioname,company, city, country, firstyear, last year+, founders, successor, notes >
+<!Element studioname>	<!- Comment: studio identifier -->
+<!Element company>		<!- Comment: full company name -->
+<!Element city>		<!- Comment: where based -->
+<!Element country>		<!- Comment: country based  -->
+<!Element  firstyear>		<!- Comment: year started -->
+<!Element  lastyear>		<!- Comment: year closed -->
+<!Element founders (founder, predecessor)  >		<!- Comment: founders are people or studios-->
+	<!Element founder (listed, foundername) >		<!- Comment: person info -->
+		<!Element listed>				<!- Comment: indicator if person in people or Actors file -->
+		<!Element foundername >			<!- Comment: person formal name if listed  -->
+<!Element predecessor>	<!- Comment: founding studio -->
+<!Element successor>		<!- Comment: successor studio, if any-->
+<!Element notes >		<!- Comment: notes, to be expanded-->
+>

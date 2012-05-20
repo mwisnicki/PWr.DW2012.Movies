@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<rdf:RDF xmlns:s="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://www.semanticweb.org/movies/codes#">
+<!-- File containing a variety of code tables for the movie database ->
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- Includes Process codes, Category Codes, Location codes, Award codes, Rating codes, Roletypes, Notes codes, Error codes, and literature references ->
+<!-- Some codes are used in multiple places in the movie files. ->
+<!-- ------------------------------------------------------------------------------------------ ->
+<!-- Process  codes:  Used in prc field in Main ->
+<!-- Process codes tale DTD  prcodentry (prcode, prexplain )   ->
+<process>
+<prcodentry><prcode>bnw</prcode><prexplain>black and white</prexplain></prcodentry>
+<prcodentry><prcode>col</prcode><prexplain>color, unspecified method</prexplain></prcodentry>
+<prcodentry><prcode>cld</prcode><prexplain>black-and-white movies that have been colorized</prexplain></prcodentry>
+<prcodentry><prcode>prc</prcode><prexplain>unknown process, likely bnw prior to 1945, col after 1955</prexplain></prcodentry>
+<prcodentry><prcode>bws</prcode><prexplain>black and white silent</prexplain></prcodentry>
+<prcodentry><prcode>bnw</prcode><prexplain>black and white</prexplain></prcodentry>
+<prcodentry><prcode>TV</prcode><prexplain>film made for TV - various processes</prexplain></prcodentry>
+<prcodentry><prcode>col</prcode><prexplain>unknown color process</prexplain></prcodentry>
+<prcodentry><prcode>cld</prcode><prexplain>recolored black and white</prexplain></prcodentry>
+	<prcodentry><prcode>Tcol</prcode><prexplain>Technicolor - the best quality - three distinct layers</prexplain></prcodentry>
+	<prcodentry><prcode>Acol</prcode><prexplain>Anscocolor - another color process by Kodak</prexplain></prcodentry>
+     	<prcodentry><prcode>Agcol</prcode><prexplain>Agfacolor</prexplain></prcodentry>
+      <prcodentry><prcode>CFcol</prcode><prexplain>CFI color</prexplain></prcodentry>
+      <prcodentry><prcode>Ccol</prcode><prexplain>CFI color ?</prexplain></prcodentry>
+      <prcodentry><prcode>DeLuxe</prcode><prexplain>DeLuxe - a high intensity low-cost color process</prexplain></prcodentry>
+	<prcodentry><prcode>DuArt</prcode><prexplain>DuArt</prexplain></prcodentry>
+	<prcodentry><prcode>Ecol</prcode><prexplain>Eastmancolor by Kodak</prexplain></prcodentry>
+	<prcodentry><prcode>Fcol</prcode><prexplain>Fujicolor</prexplain></prcodentry>
+      <prcodentry><prcode>FotoKem</prcode><prexplain>FotoKem</prexplain></prcodentry>
+     <prcodentry><prcode>Kcol</prcode><prexplain>Kodak color </prexplain></prcodentry>
+	<prcodentry><prcode>Mlab</prcode><prexplain>Movielab</prexplain></prcodentry>
+	<prcodentry><prcode>TVCcol</prcode><prexplain></prexplain><prerror>what was that</prerror></prcodentry>
+	<prcodentry><prcode>TruCol</prcode><prexplain>True Color</prexplain></prcodentry>     <prcodentry><prcode>Wcol</prcode><prexplain>Warnercolor used by Warners</prexplain></prcodentry>
+	<prcodentry><prcode>Vcol</prcode><prexplain>Vista color</prexplain></prcodentry>
+     <prcodentry><prcode>3D</prcode><prexplain>3-D presentation</prexplain></prcodentry>
+<prcodentry><prcode>CN</prcode><prexplain>Cinerama</prexplain></prcodentry>
+<prcodentry><prcode>CS</prcode><prexplain>Cinemascope -- widescreen, mostly color,  72mm film</prexplain></prcodentry>
+<prcodentry><prcode>SS </prcode><prexplain>?</prexplain></prcodentry>
+<prcodentry><prcode>TR </prcode><prexplain>Technirama -- 70mm film -- widescreen color </prexplain></prcodentry>
+<prcodentry><prcode>TS </prcode><prexplain>Technicolor wide scope </prexplain></prcodentry>
+<prcodentry><prcode>Pan</prcode><prexplain>PanaVision   -- compressed wide screen, only noted at times.</prexplain></prcodentry>
+<prcodentry><prcode>Vst</prcode><prexplain>Vistavision </prexplain></prcodentry>
+ .</process>
+<!-- ------------------------------------------------------------------------------------------ ->
+<!-- Category  codes:  Used in cat field in Main ->
+<!-- Category  code table DTD: catcodeentry ( catcode, catexplain) -> 
+<categories>
+<catcodeentry><catcode>Actn</catcode><catexplain>violence</catexplain></catcodeentry>
+<catcodeentry><catcode>Advt</catcode><catexplain>adventure</catexplain></catcodeentry>
+<catcodeentry><catcode>AvGa</catcode><catexplain>Avant Garde</catexplain></catcodeentry>
+<catcodeentry><catcode>BioP</catcode><catexplain>biographical Picture</catexplain></catcodeentry>
+<catcodeentry><catcode>Camp</catcode><catexplain>now - camp</catexplain></catcodeentry>
+<catcodeentry><catcode>Cart</catcode><catexplain>cartoon</catexplain></catcodeentry>
+<catcodeentry><catcode>CnRb</catcode><catexplain>Cops and Robbers</catexplain></catcodeentry>
+<catcodeentry><catcode>Comd</catcode><catexplain>comedy</catexplain></catcodeentry>
+<catcodeentry><catcode>Disa</catcode><catexplain>Disaster</catexplain></catcodeentry>
+<catcodeentry><catcode>Docu</catcode><catexplain>documentary</catexplain></catcodeentry>
+<catcodeentry><catcode>Dram</catcode><catexplain>drama</catexplain></catcodeentry>
+<catcodeentry><catcode>Epic</catcode><catexplain>epic</catexplain></catcodeentry>
+<catcodeentry><catcode>Faml</catcode><catexplain>family</catexplain></catcodeentry>
+<catcodeentry><catcode>Hist</catcode><catexplain>history</catexplain></catcodeentry>
+<catcodeentry><catcode>Horr</catcode><catexplain>horror</catexplain></catcodeentry>
+<catcodeentry><catcode>Musc</catcode><catexplain>musical</catexplain></catcodeentry>
+<catcodeentry><catcode>Myst</catcode><catexplain>mystery</catexplain></catcodeentry>
+<catcodeentry><catcode>Noir</catcode><catexplain>black</catexplain></catcodeentry>
+<catcodeentry><catcode>Porn</catcode><catexplain>soft or hard pornography</catexplain></catcodeentry>
+<catcodeentry><catcode>Romt</catcode><catexplain>romantic</catexplain></catcodeentry>
+<catcodeentry><catcode>ScFi</catcode><catexplain>science fiction</catexplain></catcodeentry>
+<catcodeentry><catcode>Sprt</catcode><catexplain>sports: baseball, football, golf</catexplain></catcodeentry>    <<<addded>>>
+<catcodeentry><catcode>Surl</catcode><catexplain>sureal</catexplain></catcodeentry>
+<catcodeentry><catcode>Susp</catcode><catexplain>thriller</catexplain></catcodeentry>
+<catcodeentry><catcode>TV</catcode><catexplain>made for TV film</catexplain></catcodeentry>
+<catcodeentry><catcode>TVser</catcode><catexplain>TV seriees</catexplain></catcodeentry>
+<catcodeentry><catcode>TVmini</catcode><catexplain>TV miniseries</catexplain></catcodeentry>
+<catcodeentry></catcode>West</catcode><catexplain>western</catexplain></catcodeentry>
+</categories>
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- award codes, used in Main, People, Actors, Cast ->
+<!-- Award type table DTD awcodeentry(awcode, awname?, aworg, awcountry, awyear, awexplain?, awref?, awnotes?) ->
+<!--  Awardcodes have been reduced, by allowing tagging for Honorary, SDpecial, Lifetime, foreign -->
+<awardtypes>
+<awcodeentry><awcode>AA</awcode><awname>Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear>1927</awyear> <awexplain>Received Academy award (Oscar)</awexplain><awref></awref><awused></awused><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<!-- <awcodeentry><awcode>AAH</awcode><awname>Honorary Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Received Honorary Academy award (Oscar)</awexplain><awref></awref><awused></awused><awref></awref><awused>Actors, People</awused><awnotes>given in later years for specil   , see awyear field</awnotes></awcodeentry> -->
+<awcodeentry><awcode>AAN</awcode><awname>Oscar nomination</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear>1927</awyear> <awexplain>Received Academy award nomination </awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<!-- <awcodeentry><awcode>AAdir</awcode><awname>Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear>1927</awyear> <awexplain>Director received Academy award</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry </awnotes></awcodeentry> -->
+<!-- <awcodeentry><awcode>AAprod</awcode><awname>Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Producer received Academy award</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry </awnotes></awcodeentry> -->
+<awcodeentry><awcode>AAS</awcode><awname></awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Received Special Academy award (special Oscar)</awexplain><awref></awref><awused>People, Actors</awused><awnotes>applies to year of entry </awnotes></awcodeentry>
+<!-- <awcodeentry><awcode>AAL</awcode><awname>lifetime Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Received Lifetime Academy award</awexplain><awref></awref><awused>People, Actors</awused><awnotes>De Mille award?</awnotes></awcodeentry> -->
+<awcodeentry><awcode>AAfor</awcode><awname>foreign Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Received Academy award outside of U.S. competition </awexplain><awref></awref><awused>Main</awused><awnotes>sometimes given in later year, see awattr<awnotes></awcodeentry>
+<!-- <awcodeentry><awcode>AANfor</awcode><awname>foreign Oscar nomination</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Received Academy award outside of U.S. competition </awexplain><awref></awref><awused>Main</awused><awnotes>sometimes given in later year, see awattr<awnotes></awcodeentry> -->
+<awcodeentry><awcode>AFI</awcode><awname></awname><aworg>American Film Institute</aworg><awcountry></awcountry>USA<awyear>1973</awyear> <awexplain></awexplain><awref></awref><awused>Main</awused><awnotes>annual</awnotes></awcodeentry>
+<!-- <awcodeentry><awcode>AFIL</awcode><awname></awname><aworg>American Film Institute</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>American Film Institute,  best 77 movies or 50 actor # of the century</awexplain><awref></awref><awused></awused><awnotes>only used in Main and Actors, 1999</awnotes></awcodeentry> -->
+<awcodeentry><awcode>AFI77</awcode><awname></awname><aworg>American Film Institute</aworg><awcountry>USA</awcountry><awyear>1977</awyear> <awexplain>best 77 movies poll</awexplain><awref></awref> <awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>AFILA</awcode><awname>Legendary Actors</awname><aworg>American Film Institute</aworg><awcountry>USA</awcountry> <awyear>1999</awyear> <awexplain>50 legendary actors (25M/25F) of the century</awexplain><awref></awref> <awused>Actors</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>AFISp</awcode><awname>Best Suspense Films</awname><aworg>American Film Institute</aworg><awcountry>USA</awcountry> <awyear>2001</awyear> <awexplain>100 best Suspense films of the century</awexplain><awref></awref> <awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>AP</awcode><awname></awname><aworg>Associated Press</aworg><awcountry>USA</awcountry><awyear>1999</awyear> <awexplain>Best 25 Actors of the 20th century</awexplain> <awref></awref><awused></awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>Baer</awcode><awname>B\"ar</awname><aworg>Berlinale</aworg><awcountry>Germany</awcountry><awyear>1951</awyear> <awexplain>Received Berlin Film Festival  award, gold, Silver, bronze, Alfred Bauer prize</awexplain><awref>[24]</awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>BFA</awcode><awname>Stella</awname><aworg>British Film Academy</aworg>GB<awcountry></awcountry><awyear>1946</awyear> <awexplain>British Film Academy</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>BFAL</awcode><awname>Legendary Actor</awname><aworg>British Film Academy </aworg><awcountry>GB</awcountry><awyear></awyear> <awexplain>British Film Academy lifetime</awexplain><awref></awref><awused>Actors</awused><awnotes></awnotes></awcodeentry> <awexplain>lifetime</awexplain><awref></awref><awused></awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>BFL</awcode><awname>Lifetime Stella foreign</awname><aworg>British Film Academy </aworg><awcountry>GB</awcountry><awyear></awyear> <awexplain>British Film Academy lifetime</awexplain><awref></awref><awused></awused><awnotes>?? not in main</awnotes></awcodeentry>
+<awcodeentry><awcode>CC</awcode><awname></awname><aworg>Siena Research Institute</aworg><awcountry>USA</awcountry><awyear>1987</awyear> <awexplain>Best movie # per Centennial Committee of the Hollywood Chamber of Commerce, with Siena College, Loudonville NY</awexplain><awref></awref><awused></awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>Cesar</awcode><awname>Cesar</awname><aworg></aworg><awcountry>France</awcountry><awyear></awyear> <awexplain></awexplain><awref></awref><awused>Main</awused><awnotes>same as FAA?</awnotes></awcodeentry>
+<awcodeentry><awcode>Cesardir</awcode><awname>Cesar</awname><aworg></aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>awarded to director</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>CG</awcode><awname>Movie Rating</awname><aworg>Consumers Guide</aworg><awcountry>USA</awcountry><awyear>1986</awyear> <awexplain>* rating in Attributes</awexplain><awref>[5]</awref><awused></awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>Delluc</awcode><awname>Prix Louis Delluc</awname><aworg></aworg><awcountry>France</awcountry><awyear>1938</awyear> <awexplain></awexplain><awref></awref><awused>Main</awused><awnotes></awnotes><error>earlier year</error></awcodeentry>
+<awcodeentry><awcode>Edinburgh</awcode><awname></awname><aworg>Edinburgh Film Festival</aworg><awcountry>GB</awcountry><awyear></awyear> <awexplain>Received award at Edinburgh </awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>Emmy</awcode><awname>Emmy</awname><aworg>TV Academy</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Emmy</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>Emmydir</awcode><awname>Emmy</awname><aworg>TV Academy</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Emmy</awexplain><awref></awref><awused>Main</awused><awnotes>Emmy  awarded to director</awnotes></awcodeentry>
+<awcodeentry><awcode>FAA</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear></awyear> <awexplain>French Oscar</awexplain><awref></awref><awused></awused><awnotes>Only used in Main</awnotes></awentry>
+<awcodeentry><awcode>FAAdir</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear></awyear> <awexplain>French Oscar awarded to director</awexplain><awref></awref><awused></awused><awnotes>Only used in Main</awnotes></awentry>
+ <awcodeentry><awcode>Fun</awcode><awname>EW funniest</awname><aworg>Entertainment Weekly</aworg><awcountry>USA</awcountry><awyear>1992</awyear> <awexplain>listed as the 100 funniest movies on video, rank in attibute</awexplain><awref>[25]</awref><awused>Only used in Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>GG</awcode><awname>Golden Globe</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>Precedes, influences Oscar</awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>GGdir</awcode><awname>Golden Globe</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>awarded to director, influences Oscar</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>GGN</awcode><awname>Golden Globe nomination</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>nomination only</awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>H</awcode><awname>Halliwell</awname><aworg>Halliwell's Film Guide</aworg><awcountry>GB</awcountry><awyear>1986</awyear> <awexplain>Ratings in attr: {v for negative, not for not mentioned in Halliwell, although in period covered, 0, *, **, ***, ****</awexplain><awref>[4]</awref><awused></awused><awnotes>only used in Main</awnotes></awcodeentry>
+<awcodeentry><awcode>Hersholt</awcode><awname>Hersholt</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear>1983</awyear> <awexplain>humanitarian</awexplain><awref></awref><awused>Actors</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>MMA</awcode><awname></awname><aworg>Museum of Modern Art, NY</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>from MMA film Festival</awexplain><awref></awref><awused>Actors</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>NBR</awcode><awname></awname><aworg>National Board of Reviews</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain></awexplain><awref></awref><awused>MAIN</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>NBRdir</awcode><awname></awname><aworg>National Board of Reviews</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>for directors</awexplain><awref></awref><awused>MAIN</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>NFR</awcode><awname>National Film Registry</awname><aworg>Library of Congress</aworg><awcountry>USA</awcountry><awyear>1992</awyear> <awexplain>100 films, as of 1992, listed in registry according to Public Law 102-307.</awexplain><awref></awref><awused>MAIN</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>NSFC</awcode><awname></awname><aworg>National Society of Film Critics</aworg><awcountry>USA</awcountry><awyear>1965</awyear> <awexplain></awexplain><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>NYFC</awcode><awname></awname><aworg>New York Film Critics Circle</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>NewYork Film Critics</awexplain><awnotes>precedes Oscar</awnotes></awcodeentry>
+<awcodeentry><awcode>NYFCdir</awcode><awname></awname><aworg>New York Film Critics Circle</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>NewYork Film Critics awarded to director</awexplain><awnotes>precedes Oscar</awnotes></awcodeentry>
+<awcodeentry><awcode>Palm</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Received award at Cannes (Golden, International critics, Cast, GrandJury, Special) </awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>Palmdir</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Director received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>Palmprod</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Producer received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Producer received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>RE</awcode><awname>Roger & Ebert</awname><aworg>Roger and Ebert</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Stars and halves (+)  Roger and Ebert's reviews</awexplain><awref></awref><awused></awused><awnotes>only used in Main</awnotes></awcodeentry>
+<awcodeentry><awcode>RFP</awcode><awname>Royal Film Performance</awname><aworg>Cinema Trade Benevolent Organization</aworg><awcountry>\GB</awcountry><awyear>1964</awyear> <awexplain>?</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>SE</awcode><awname></awname><aworg>Siskell and Ebert</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>rated --,  +-,  ++, </awexplain><awref></awref><awused>Main</awused><awnotes></awnotes> </awcodeentry>
+<awcodeentry><awcode>T90</awcode><awname></awname><aworg>Time Magazine</aworg><awcountry>U SA</awcountry><awyear>1990</awyear> <awexplain>Movies of the dcecade</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes> </awcodeentry>
+<awcodeentry><awcode>VFF</awcode><awname>ard>Lion d'or</awname><aworg>Venice Film Festival</aworg><awcountry>Italy</awcountry><awyear></awyear> <awexplain>Received award at Venice</awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>VVFdir</awcode><awname></awname><aworg>Golden Palm</awname><aworg>Venice Film Festival</aworg><awcountry>Italy</awcountry><awyear></awyear> <awexplain>Director received award at Venice</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>VIP</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear></awyear> <awexplain>Recognized by an important person or group, see the attributefield, or reference</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>W50</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear>1978</awyear> <awexplain>listed as 50 worst movies of all time</awexplain><awref>[13]</awref><awused></awused><awnotes>by Harry Medved and Randy Dreyfuss,  Only used in Main</awnotes></awentry><notes></notes></awcodeentry>
+<awcodeentry><awcode>Z*</awcode><awname></awname><aworg>Zinman, David</aworg><awcountry></awcountry><awyear>1986</awyear> <awexplain>Fifty Grand Movies of the 1960s 1970s</awexplain><awref>[14]</awref><awused></awused><awnotes> Only used in Main</awnotes></awentry><notes></notes></awcodeentry>
+<!-- Use not yet validated  -- >
+<!-- <tr><td> Crystal Heart<td> Heartland Film Festival<td> <td> <1991<td>|  -->
+<!-- <tr><td> Felix<td> European Film Festival<td> Europe<td> 1988<td>|  -->
+<!-- <tr><td> Genie<td> Canadian Academy<td> Canada<td> <1991<td>|  -->
+<!-- <tr><td> KCyy<td> Kennedy Center Awards<td> USA<td> <td> since 1947<td> Note{only list for movie people)<td>|  -->
+<!-- <tr><td> LAA<td> American Film Institute<td> USA<td> Life Achievement Award, now AFIL<td>|  -->
+<!-- <tr><td> SFIFF<td> San Francisco International Film Festival<td> USA<td>|  -->
+<!-- <tr><td> TMA<td> Hollywood Academy of Motion Picture Arts and Sciences<td> USA<td> Thalberg Memorial Award<td>|  -->
+<!-- <tr><td> Tony<td> <td> USA<td> Tony<td> Nt(TV)<td>|  -->
+<!-- <tr><td> WAMPAS<td> Western Association of Motion Picture Advertisers<td> USA<td> WAMPAS<td> promising actress 1922-1934<td>not in actors<td>|  -->
+</awardtypes>
+
+<!-- ------------------------------------------------------------------------------------------ ->
+<!-- Site classification codes:  Used in siteclass  field in Main ->
+<!-- Sitetype codes tale DTD  aitetypecodeentry (sitetypecode, sitetypeexplain )   ->
+<siteclasses>
+<sitecodeentry><sitecode>am.park</sitecode><siteexplain>amusement park, circus, luna park, zoo</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>afterlife</sitecode><siteexplain>heaven, hell</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>airplane</sitecode><siteexplain>airplane,dirigible, balloon</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>bar</sitecode><siteexplain>bar, lounge, nightclub, restaurant</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>beach</sitecode><siteexplain>beach, coast, resort, surf, seaside</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>casino</sitecode><siteexplain>casino, gambling site</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>city</sitecode><siteexplain>city</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>country</sitecode><siteexplain>country, kingdom, duchy</siteexplain></sitecodeentry>      
+<sitecodeentry><sitecode>church </sitecode><siteexplain>church, convent, monastery</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>csd</sitecode><siteexplain>countryside, rural</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>desert</sitecode><siteexplain>desert</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>estate</sitecode><siteexplain>fancy estate, manor, mansion</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>home</sitecode><siteexplain>house, apartment house, condos, monastery, nunnery</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>hotel</sitecode><siteexplain>hotel, motel</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>hospital</sitecode><siteexplain>hospital, sanitarium, resthome, morgue<siteexplain><sitecodeentry>   
+<sitecodeentry><sitecode>jail</sitecode><siteexplain>jail, prison camp, prison, concentration camp</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>law</sitecode><siteexplain>courtroom, legal offices</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>mil.inst.</sitecode><siteexplain>military installation, battlefield</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>mountains</sitecode><siteexplain>mountains</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>movies</sitecode><siteexplain>film studios, TV shows, Radio shows</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>museum</sitecode><siteexplain>art gallery, museum, exhibit</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>palace</sitecode><siteexplain>palace, castle</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>roads</sitecode><siteexplain>roads, driving</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>public</sitecode><siteexplain>public place, airport, bathhouse, library, railroad station, restaurant, store</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>resort</sitecode><siteexplain>resort, spa</siteexplain></sitecodeentry>
+<<sitecodeentry><sitecode>store</sitecode><siteexplain>store</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>river</sitecode><siteexplain>river, canal, lake, wharf</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>school</sitecode><siteexplain>school, college, university, summer camp</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>ship</sitecode><siteexplain>ship, boat</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>slum</sitecode><siteexplain>slum</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>space</sitecode><siteexplain>space flight</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>sports</sitecode><siteexplain>sports fields, race track, sports competition</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>swamp</sitecode><siteexplain>swamp, morass</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>theater</sitecode><siteexplain>theater, cabaret, concert hall, opera, pageant</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>town</sitecode><siteexplain>town, suburb</siteexplain></sitecodeentry>   
+<sitecodeentry><sitecode>train</sitecode><siteexplain>train, bus</siteexplain></sitecodeentry>
+<sitecodeentry><sitecode>village</sitecode><siteexplain>village</siteexplain><ditetypecodeentry>   
+<sitecodeentry><sitecode>work</sitecode><siteexplain>workplace, factory, office, store</siteexplain></sitecodeentry>   
+</siteclasses>
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- Location codes, used in Main, actors, and people ->
+	<!-- Comment: Codes for countries, where movie plays, and origins and background of people. Also used for site location where actual countries are indicated. -->
+<!-- Major film producing countries ->
+<countries>
+<locentry><lccode>Am</lccode><lcname>USA</lcname><lcadjective>American</lcadjective><lcsite>USA</lcsite></locentry>   
+<locentry><lccode>Br</lccode><lcname>not used</lcname><lcadjective>British</lcadjective><lcsite>GB</lcsite></locentry> 
+<locentry><lccode>GB</lccode><lcname>Great Britain</lcname><lcadjective>English</lcadjective><lcsite>England</lcsite><lcnote>implies GB</lcnote</locentry> >
+<locentry><lccode>Fr</lccode><lcname>France</lccode><lcname>French</lcadjective><lcsite>France</lcsite></locentry> 
+<locentry><lccode>Ge</lccode><lcname>Germany</lcname><lcadjective>German</lcadjective><lcsite>Germany</lcsite></locentry> 
+<locentry><lccode>In</lccode><lcname>India</lcname><lcadjective>Indian</lcadjective><lcsite></lcsite>India</locentry> 
+<locentry><lccode>It</lccode><lcname>Italy</lcname><lcadjective>Italian</lcadjective><lcsite></lcsite>Italy</locentry> 
+<locentry><lccode>Ja</lccode><lcname>Japan</lcname><lcadjective>Japanese</lcadjective><lcsite></lcsite>Japan</locentry> 
+<!-- Alphabetical by code or country->
+<locentry><lccode>Ar</lccode><lcname>Argentina</lcname><lcadjective>Argentine</lcadjective><lcsite>Argentina</lcsite></locentry> 
+<locentry><lccode>Au</lccode><lcname>Australia</lcname><lcadjective>Australian</lcadjective><lcsite>Australia</lcsite></locentry> 
+<locentry><lccode>Be</lccode><lcname>Belgium</lcname><lcadjective>Belgian</lcadjective><lcsite>Belgium</lcsite></locentry> 
+<locentry><lccode>Bz</lccode><lcname>Brazil</lcname><lcadjective>Brazilian</lcadjective><lcsite>Brazil</lcsite></locentry> 
+<locentry><lccode>Ca</lccode><lcname>Canada</lcname><lcadjective>Canadian</lcadjective><lcsite>Canada</lcsite></locentry> 
+<locentry><lccode>Ch<</lccode><lcname>China</lcname><lcadjective>Chinese</lcadjective><lcsite>China</lcsite></locentry> 
+<locentry><lccode>Cz</lccode><lcname>Czechoslovakia</lcname><lcadjective>Czech</lcadjective><lcsite>Czechoslovakia</lcsite></locentry> 
+<locentry><lccode>Da</lccode><lcname>Denmark</lcname><lcadjective>Danish</lcadjective><lcsite>Danmark</lcsite></locentry> 
+<locentry><lccode>Gr</lccode><lcname>Greece</lcname><lcadjective>Greek</lcadjective><lcsite>Greece</lcsite></locentry> 
+<locentry><lccode>Du</lccode><lcname>The Netherlands</lcname><lcadjective>Dutch</lcadjective><lcsite>Holland</lcsite></locentry> 
+<locentry><lccode>Hu</lccode><lcname>Hungary</lcname><lcadjective>Hungarian</lcadjective><lcsite>Hungary</lcsite></locentry> 
+<locentry><lccode>Ir</lccode><lcname>Ireland</lcname><lcadjective>Irish</lcadjective><lcsite>Ireland</lcsite></locentry> 
+<locentry><lccode>Me</lccode><lcname>Mexico</lcname><lcadjective>Mexican</lcadjective><lcsite>Mexico</lcsite></locentry> 
+<locentry><lccode>Os</lccode><lcname>Austria</lcname><lcadjective>Austrian</lcadjective><lcsite>Austria</lcsite></locentry> 
+<locentry><lccode>Pe</lccode><lcname>Peru</lcname><lcadjective>Peruvian</lcadjective><lcsite>Peru</lcsite></locentry>  
+<locentry><lccode>Po</lccode><lcname>Poland</lcname><lcadjective>Polish</lcadjective><lcsite>Peru</lcsite></locentry>  
+<locentry><lccode>Ru</lccode><lcname>USSR</lcname><lcadjective></lcadjective><lcsite>USSR</lcsite></locentry> 
+<locentry><lccode>Ru</lccode><lcname>Russia</lcname><lcadjective>Russian</lcadjective><lcsite>Russia</lcsite></locentry> 
+<locentry><lccode>Sp</lccode><lcname>Spain</lcname><lcadjective>Spanish</lcadjective><lcsite></lcsite>Spain</locentry> 
+<locentry><lccode>SA</lccode><lcname>South-Africa</lcname><lcadjective>South-African</lcadjective><lcsite>S.A.</lcsite></locentry> 
+<locentry><lccode>Yu</lccode><lcname>Yugoslavia</lcname><lcadjective>Yugoslav</lcadjective><lcsite>Yugoslavia</lcsite></locentry> 
+<locentry><lccode>Zw</lccode><lcname>Switzerland</lcname><lcadjective>Swiss</lcadjective><lcsite>Switzerland</lcsite></locentry> 
+<!-- Designations only used as sites. alphabetical by  country or area. All US 2-letter state designations are also used->
+<locentry><lccode></lccode><lcname>Albania</lcname><lcadjective></lcadjective><lcsite>Albania</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Algiers (Africa)</lcname><lcadjective></lcadjective><lcsite>Algiers</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>XXX</lcname><lcadjective></lcadjective><lcsite>XXX</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Atlantic Ocean</lcname><lcadjective></lcadjective><lcsite>Atlantic</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Bahamas</lcname><lcadjective></lcadjective><lcsite>Bahamas</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Bangladesh</lcname><lcadjective></lcadjective><lcsite>Bangladesh</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Belize (Central America)</lcname><lcadjective></lcadjective><lcsite>Belize </lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Cambodia</lcname><lcadjective></lcadjective><lcsite>Cambodia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Carribean</lcname><lcadjective></lcadjective><lcsite>Carribean</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Chile</lcname><lcadjective>Chilean</lcadjective><lcsite>Chile</lcsite></locentry>
+<locentry><lccode></lccode><lcname>Congo</lcname><lcadjective>Congolese</lcadjective><lcsite>Congo</lcsite></locentry>
+<locentry><lccode></lccode><lcname>Costa Rica (Central America)</lcname><lcadjective></lcadjective><lcsite>Costa Rica</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Cuba</lcname><lcadjective></lcadjective><lcsite>Cuba</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Dutch East Indies</lcname><lcadjective>Pacific</lcadjective><lcsite>Dutch East Indies</lcsite><lccnote>after 1947: Indonesia</lcnote></locentry> 
+<locentry><lccode></lccode><lcname>Ethiopia (Africa)</lcname><lcadjective></lcadjective><lcsite>Ethiopia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>>Indian ocean</lcname><lcadjective></lcadjective><lcsite>Indian ocean</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Haiti</lcname><lcadjective>Haitian</lcadjective><lcsite>Haiti</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Indonesia</lcname><lcadjective>Indonesian</lcadjective><lcsite>Indonesia</lcsite></locentry>
+<locentry><lccode></lccode><lcname>Jamaica (Caribbean)</lcname><lcadjective>Jmaican</lcadjective><lcsite>Jamaica</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Kenya (Africa></lcname><lcadjective></lcadjective><lcsite>Kenya</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Korea</lcname><lcadjective></lcadjective><lcsite>Korea</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Libya (Africa)</lcname><lcadjective></lcadjective><lcsite>Libya</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Malaysia</lcname><lcadjective></lcadjective><lcsite>Malaysia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Mediteranean sea</lcname><lcadjective></lcadjective><lcsite>Mediteranean</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Mongolia</lcname><lcadjective></lcadjective><lcsite>Mongolia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Morocco (Africa></lcname><lcadjective></lcadjective><lcsite>Morocco</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>North Sea</lcname><lcadjective></lcadjective><lcsite>North Sea</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Oceania</lcname><lcadjective></lcadjective><lcsite>Oceania</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Pacific Ocean</lcname><lcadjective></lcadjective><lcsite>Pacific</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Panama  (Central America)</lcname><lcadjective></lcadjective><lcsite>Panama</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Palestine (Near East)</lcname><lcadjective></lcadjective><lcsite>Palestine</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Romania</lcname><lcadjective></lcadjective><lcsite>Romania</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Rwanda (Africa)</lcname><lcadjective></lcadjective><lcsite>Rwanda</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Saudi Arabia (Arabia)</lcname><lcadjective></lcadjective><lcsite>Saudi Arabia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Senegal (Africa)</lcname><lcadjective></lcadjective><lcsite>Senegal</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>South Africa</lcname><lcadjective></lcadjective><lcsite>S.A.</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Tanzania(Africa)</lcname><lcadjective></lcadjective><lcsite>Tanzania</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Togoland (Africa)</lcname><lcadjective></lcadjective><lcsite>Togoland</lcsite></locentry> <locentry><lccode></lccode><lcname>Universe</lcname><lcadjective></lcadjective><lcsite>Outer Space, Fantasy Land</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Venezuela</lcname><lcadjective></lcadjective><lcsite>Venezuala</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Vietnam</lcname><lcadjective></lcadjective><lcsite>Vietnam</lcsite></locentry> 
+<!--  Larger areas ->
+<locentry><lccode></lccode><lcname>Africa</lcname><lcadjective>African</lcadjective><lcsite>Africa</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Asia</lcname><lcadjective>Asian</lcadjective><lcsite>Asia</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Africa</lcname><lcadjective>African</lcadjective><lcsite>Africa</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Europe</lcname><lcadjective>European</lcadjective><lcsite>Europe</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Internet</lcname><lcadjective>virtual</lcadjective><lcsite>Internet</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>Universe</lcname><lcadjective>universal</lcadjective><lcsite>Universe</lcsite></locentry> 
+<locentry><lccode></lccode><lcname>World</lcname><lcadjective></lcadjective><lcsite>world</lcsite></locentry> 
+
+</countries>
+<!-- ------------------------------------------------------------------------ ->
+<!-- Rating codes ->
+<ratings>
+<ratingentry><rtcode>R<\rtcode><rtexplain>restricted rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>R16<\rtcode><rtexplain>restricted for under 16 rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>G<\rtcode><rtexplain>general rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>X<\rtcode><rtexplain>porn rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>PG<\rtcode><rtexplain>parental guidance</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>PG13<\rtcode><rtexplain>parental guidance for children under 13</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+<ratingentry><rtcode>TV14<\rtcode><rtexplain>restricted rating for TV films</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
+</ratings>
+<!-- ------------------------------------------------------------------------ ->
+<!-- Function codes, mainly used in PEOPLE, and ALSO notes, also used for errors, and roleattr. -> 
+<functions>
+<functionenty><fcode>A</fcode><fexplain>actors</fexplain></functionentry>
+<functionenty><fcode>B</fcode><fexplain>playwright or book author</fexplain></functionentry>
+<functionenty><fcode>C</fcode><fexplain>cinematographer</fexplain></functionentry>
+<functionenty><fcode>D:<TD director</fexplain></functionentry>
+<functionenty><fcode>E<TD> editor</fexplain></functionentry>
+<functionenty><fcode>G<TD> choreographer</fexplain></functionentry>
+<functionenty><fcode>M<TD> composer</fexplain></functionentry>
+<functionenty><fcode>P</fcode><fexplain>producer</fexplain></functionentry>
+<functionenty><fcode>V<TD> visual art director</fexplain></functionentry>
+<functionenty><fcode>W</fcode><fexplain>screenwriter</fexplain></functionentry>
+</functions>
+<!-- ------------------------------------------------------------------------ ->
+<!-- People reference codes, used mainly for Prodk producers in Main, Select codes exclusive of function -> 
+<!-- Could be added to directors names, other people names ac cinematographers. --------------------------- ->
+<PeopleRefernces>
+<peoplerefentry><rcode>R</rcode><fexplain>reference, appears in people file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>A</rcode><fexplain>reference, appears in actors file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>N</rcode><fexplain>name given, probably not in people file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>S</rcode><fexplain>spelling uncertain, not in people file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>O</rcode><fexplain>organization, does not appear in people file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>U</rcode><fexplain>unknown, no name given</fexplain></peopelrefentry>    <<<added>>>
+<peoplerefentry><rcode>X</rcode><fexplain>not classified</fexplain></peopelrefentry>
+<peoplerefentry><rcode>Y</rcode><fexplain>producer of reissue, in people file</fexplain></peopelrefentry>
+<peoplerefentry><rcode>Z</rcode><fexplain>producer of reissue, not in people file</fexplain></peopelrefentry>
+</PeopleRefernces>
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- Role types (always three characters), used in actors and casts ->
+<roletypes>
+<roleentry><rlcode>Adv</rlcode><rlexplain> adversary</rlexplain></roleentry> 
+<roleentry><rlcode>Agn</rlcode><rlexplain> agent</rlexplain></roleentry>
+<roleentry><rlcode>Ani</rlcode><rlexplain> animal</rlexplain></roleentry>
+<roleentry><rlcode>Bit</rlcode><rlexplain> bit role</rlexplain></roleentry>
+<roleentry><rlcode>Cam</rlcode><rlexplain> cameo role</rlexplain></roleentry> 
+<roleentry><rlcode>Com</rlcode><rlexplain> comedian</rlexplain></roleentry> 
+<roleentry><rlcode>Cro</rlcode><rlexplain> crook</rlexplain></roleentry>
+<roleentry><rlcode>Ent</rlcode><rlexplain> entertainer, dancer, singer</rlexplain></roleentry>
+<roleentry><rlcode>Grp</rlcode><rlexplain> group or band</rlexplain></roleentry>
+<roleentry><rlcode>Her</rlcode><rlexplain> hero</rlexplain></roleentry>
+<roleentry><rlcode>Inn</rlcode><rlexplain> innocent</rlexplain></roleentry>
+<roleentry><rlcode>Lov</rlcode><rlexplain> love interest</rlexplain></roleentry>
+<roleentry><rlcode>Sav</rlcode><rlexplain> savior</rlexplain></roleentry> 
+<roleentry><rlcode>Sci</rlcode><rlexplain> scientist</rlexplain></roleentry>
+<roleentry><rlcode>Sdk</rlcode><rlexplain> sidekick</rlexplain></roleentry>
+<roleentry><rlcode>Sus</rlcode><rlexplain> suspect</rlexplain></roleentry>
+<roleentry><rlcode>Rul</rlcode><rlexplain> ruler</rlexplain></roleentry>
+<roleentry><rlcode>Psy</rlcode><rlexplain> psychopath</rlexplain></roleentry>
+<roleentry><rlcode>Und</rlcode><rlexplain> undetermined</rlexplain></roleentry>
+<roleentry><rlcode>Vmp</rlcode><rlexplain> vamp</rlexplain></roleentry> 
+<roleentry><rlcode>Vic</rlcode><rlexplain> victim</rlexplain></roleentry>
+<roleentry><rlcode>Vil</rlcode><rlexplain> villain}</rlexplain></roleentry>
+<roleentry><rlcode>Voi</rlcode><rlexplain> voice only, narrator</rlexplain></roleentry>
+<roleentry><rlcode>Wmp</rlcode><rlexplain> wimp</rlexplain></roleentry>
+<roletypes>
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- Relationship codes.  Used in Actors, People ->
+<!--  Relationship code table DTD rlentry (rlcode, rlexplain, usedin, refersto, rlnotes)  ->
+<relationshiptypes>
+<rlentry><rlcode>Ch</rlcode><rlexplain>child of</rlexplain><usedin>PEOPLE ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes> code the same as country China </rlnotes></rlentry>
+<rlentry><rlcode>Inf</rlcode><rlexplain>influenced </rlexplain><usedin>PEOPLE, ACTORS</rlcode><refersto>PEOPLE , ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Inb</rlcode><rlexplain>influenced by </rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Lw</rlcode><rlexplain>Lived with</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Memb</rlcode><rlexplain>member of group</rlexplain><usedin>ACTORS</usedin> <refersto>ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Grp</rlcode><rlexplain>group member name</rlexplain><usedin>ACTORS</usedin> <refersto>ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Mt</rlcode><rlexplain>Married to</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Family</rlcode><rlexplain>grandchild, uncle, nephew or niece , as explainedlain><usedin>PEOPLE ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto></rlnotes</rlentry>
+<rlentry><rlcode>Pa</rlcode><rlexplain>parent of</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Si</rlcode><rlexplain>sibling, brother, sister</rlexplain><usedin> PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<rlentry><rlcode>Ww</rlcode><rlexplain>worked with</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
+<relationshiptypes>
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- Notes codes. Many are being converted to specific labels ->
+<notetypes>
+<ntentry><ntcode>Alias</ntcode><ntexplain>other professional names</ntcode></ntexplain><ntused>PEOPLE, ACTORS</ntused></ntentry> 
+<ntentry><ntcode>Also</ntcode><ntexplain>other professions</ntexplain><ntused>MAIN, ACTORS, PEOPLE</ntused></ntentry> 
+<ntentry><ntcode>Alt</ntcode><ntexplain>alternative title</ntexplain><ntused>MAIN</ntused></ntentry> 
+<ntentry><ntcode>A</ntcode><ntexplain>Actor</ntexplain><ntused>relationship in  ACTORS, PEOPLE </ntused></ntentry> 
+<ntentry><ntcode>B</ntcode><ntexplain>Book Author</ntexplain><ntused>MAIN, ACTORS, >PEOPLE </ntused></ntentry> 
+<ntentry><ntcode>C</ntcode><ntexplain>Cinematographer</ntexplain><ntused>MAIN, PEOPLE, ACTORS, PEOPLE </ntused></ntentry> 
+<ntentry><ntcode>CoD</ntcode><ntexplain>CoDirector</ntexplain><ntused>MAIN, PEOPLE </ntused></ntentry> 
+<ntentry><ntcode>Cost</ntcode><ntexplain>Cost to make film</ntexplain><ntused>MAIN</ntused></ntentry> 
+ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN</ntused></ntentry> 
+<ntentry><ntcode>N</ntcode><ntexplain>no referent</ntexplain><ntused>relationship in  ACTORS, PEOPLE </ntused></ntentry> 
+<ntentry><ntcode>Ph</ntcode><ntexplain>unusual physical characteristics, as height, weight</ntexplain><ntused>ACTORS </ntused></ntentry> 
+<ntentry><ntcode>Cost</ntcode><ntexplain>Cost to make film</ntexplain><ntused>MAIN</ntused></ntentry> 
+<ntentry><ntcode>St</ntcode><ntexplain>studio</ntexplain><ntused>ACTOR,  PEOPLE</ntused></ntentry> 
+<ntentry><ntcode>W</ntcode><ntexplain>Script writer</ntexplain><ntused>MAIN</ntused></ntentry> 
+</notetypes>
+
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- error codes ->
+</erentry><ercode>SP<\ercode><erexplain>the spelling is uncertain</erexplain></erentry>
+
+<!-- ----------------------------------------------------------------------------------------- ->
+<!-- miscellaneous codes ->  <!-- only denoted as comments now ->
+<!--  NKT for "No Known Title" --- used in Main file for titles --> 
+<!-- unknown for unknown --- used in <roletype>, <origin> in Actors  -> 
+<!-- <tr><TH>Code<TH>Contents<TH>Ocurrs in<TH>References what<TH>|
+<functionenty><fcode>Alias<TD>other professional names<TD> PEOPLE, ACTORS<TD>none <td>|  -->
+<!-- <tr><TD>Also<TD>other professions<TD>MAIN, ACTORS<TD>PEOPLE <td>|  --> 
+<!-- <tr><TD>Alt<TD>alternative title<TD>MAIN (SYNONYMS)<TD>none <td>|  --> 
+<!-- ---------------------------------------------------------------------------------------- ->
+	
+
+<!-- ---------------------------------------------------------------------------------- ->
+<!-: References, cited in [] in various fields, as pictures, awards, errors</H2>
+<!-- BOOKS ->
+<references>
+<rfentry><rfid>[0]</rfid><rfauthor>Wiederhold, Gio</rfauthor><rftitle>Movies Database</rftitle><rfpub>1989</rfpub><rfyear>1990-2000<</rfyear><rfnote>self-reference</rfnote></rfentry>
+<rfentry><rfid>[1]</rfid><rfauthor>Halliwell, Leslie</rfauthor><rftitle>The Filmgoers Companion" 8th edition</rftitle><rfpub> Charles Scribners' Sons</rfpub><rfyear>1984.</rfyear></rfentry>
+<rfentry><rfid>[2]</rfid><rfauthor>Kael, Pauline</rfauthor><rftitle>5001 Nights at the Movies</rftitle><rfpub> Holt Rinehart Winston</rfpub><rfyear>1985.</rfyear></rfentry>
+<rfentry><rfid>[4]</rfid><rfauthor>Halliwell, Leslie</rfauthor><rftitle>Halliwell's Film and Video Guide" 6th ed</rftitle><rfpub> Scribner</rfpub><rfyear>1987 </rfyear></rfentry>
+<rfentry><rfid>[5]</rfid><rfauthor>Brown, Jay A.@Consumers Guide</rfauthor><rftitle>Rating The Movies</rftitle><rfpub> Beekman House</rfpub><rfyear>1986</rfyear></rfentry>
+<rfentry><rfid>[6]</rfid><rfauthor>Katz, Ephraim</rfauthor><rftitle>The Film Encyclopedia</rftitle><rfpub> Putnam</rfpub><rfyear>1979.</rfyear></rfentry>
+<rfentry><rfid>[7]</rfid><rfauthor>Maxwell</rfauthor><rftitle> Encyclopedia of Film</rftitle><rfpub>?</rfpub><rfyear>?</rfyear></rfentry>
+<rfentry><rfid>[8]</rfid><rfauthor>Eastman, John</rfauthor><rftitle>Behind the scenes of 500 Classic Movies</rftitle><rfpub> Ballantine Books</rfpub><rfyear>1989</rfyear></rfentry>
+<rfentry><rfid>[9]</rfid><rfauthor>Pickard, Roy</rfauthor><rftitle>Who Played Who On The Screen</rftitle><rfpub> B.T.Batsford ltd, London</rfpub><rfyear>1988</rfyear></rfentry>
+<rfentry><rfid>[10]</rfid><rfauthor>Ebert, Roger</rfauthor><rftitle>Roger Ebert's Movie home Companion</rfpub><rfyear>1990 edition</rftitle><rfpub> Andrews and McNeal</rfpub><rfyear>1989.</rfyear><refnote>coded as RE**+ in awards.</rfnote></rfentry>
+<rfentry><rfid>[11]</rfid><rfauthor>Bawden,Liz Ann(ed)</rfauthor><rftitle>The Oxford Companion to Film</rftitle><rfpub>Oxford Univ.Press,  London<rfpub><rfyear>1976</rfyear></rfentry>
+<rfentry><rfid>[12]</rfid><rfauthor>Tichy, Wolfram</rfauthor><rftitle>RoRoRo Film Lexicon</rftitle><rfpub>Rowohlt Verlag, Hamburg FRG</rfpub><rfyear>1978</rfyear><rfnotes>German edition of [11].</rfnotes></rfentry>
+<rfentry><rfid>[13]</rfid><rfauthor>Harry Medved and Randy Dreyfuss</rfauthor><rftitle>The Fifty Worst Films of All Time</rftitle><rfpub>Popular Library, New York</rfpub><rfyear>1978</rfyear><rfnotes> Coded as W50 in awards.</rfnotes></rfentry>
+<rfentry><rfid>[14]</rfid><rfauthor>Zinman, David</rfauthor><rftitle>Fifty Grand Movies of the 1960s 1970s</rftitle><rfpub> Crown pubs NY</rfpub><rfyear>1986</rfyear><rfnote>[4],  present of Bob Molter, entries marked Z*. </rfnote></rfentry>
+<rfentry><rfid>[15]</rfid><rfauthor>Simpson, James B.</rfauthor><rftitle> Simpson's Contemporary Quotations</rftitle><rfpub>Houghton-Mifflin</rfpub><rfyear>1988</rfyear></rfentry>
+<rfentry><rfid>[16]</rfid><rfauthor>Weldon, Michael</rfauthor><rftitle>The Psychotronic Encyclopedia of Film</rftitle><rfpub> Ballantine books</rfpub><rfyear>1983</rfyear></rfentry>
+<rfentry><rfid>[17]</rfid><rfauthor>Everson, William K.</rfauthor><rftitle>The Bad Guys</rftitle><rfpub> Citadel Press</rfpub><rfyear>1964</rfyear></rfentry>
+<rfentry><rfid>[18]</rfid><rfauthor>Griffith, Richard and Mayer, Arthur</rfauthor><rftitle>The Movies</rftitle><rfpub> Bonanza books</rfpub><rfyear>1957</rfyear></rfentry>
+<rfentry><rfid>[19]</rfid><rfauthor>Hosoda, Craig</rfauthor><rftitle>The Bare Facts Video Guide</rftitle><rfpub> The Bare Facts, Santa Clara CA</rfpub><rfyear>1991</rfyear></rfentry>
+<rfentry><rfid>[20]</rfid><rfauthor>Kerr,Paul(ed.)</rfauthor><rftitle>The Hollywood Film Industry</rftitle><rfpub> Routledge and Kegan Paul, London</rfpub><rfyear>1986</rfyear></rfentry>
+<rfentry><rfid>[21]</rfid><rfauthor>Michael,Paul</rfauthor><rftitle>The Academy Awards</rfauthor><rftitle><refyear>1968</rfyear></rfentry>
+<rfentry><rfid>[22]</rfid><rfauthor>Wiley,Mason and Bona,Damien</rfauthor><rftitle>Inside Oscar, The Unofficial History of the Academy Awards</rftitle><rfpub> Ballantine Books</rfpub><rfyear>1986</rfyear></rfentry>
+<rfentry><rfid>[23]</rfid><rfauthor>Kaplan, Mike(ed.)</rfauthor><rftitle>Variety Who's Who in Show Business</rftitle><rfpub> Garland Pub.</rfpub><rfyear>1983</rfyear></rfentry>
+<rfentry><rfid>[24]</rfid><rfauthor>Jacobson, William</rfauthor><rftitle>Berlinale, Internationale Festspiele Berlin</rftitle><rfpub>Argon</rfpub><rfyear>1990.</rfyear></rfentry>
+<rfentry><rfid>[25]</rfid><rftitle>The 100 Funniest Movies on Video</rftitle><rfpub>Entertainment weekly</rfpub><rfyear>1992</rfyear><rfno>16Oct</rfno><rfnote> coded as  F01..F100.</rfnote></rfentry>
+<rfentry><rfid>[26]</rfid><rftitle>Cin\'ema, Cannes: un Demi-si\`ecle de chefs-d'oeuvre</rftitle><rfpub>Les Cahiers de l'Express</rfpub><rfyear>1994</rfyear><rfno>Mai, No.27.</rfno></rfentry>
+<rfentry><rfid>[27]</rfid><rfauthor>Edward Margulies and Stephen Rebello</rfauthor><rftitle>Bad Movies We Love</rftitle><rfpub> Plume, a division of Penguin</rfpub><rfyear>1993</rfyear></rfentry>
+<rfentry><rfid>[30]</rfid><rfauthor>Rohmer,Eric and Chabol,Claude</rfauthor><rftitle>Hitchcock, The First fourty-four Films</rftitle><rfpub> Ungar New York</rfpub><rfyear>1979</rfyear></rfentry>
+<rfentry><rfid>[31]</rfid><rfauthor>Truffaut</rfauthor><rftitle>Hitchcock</rftitle><rfpub> Simon and Schuster</rfpub><rfyear>1983</rfyear></rfentry>
+<rfentry><rfid>[32]</rfid><rfauthor>Sinyard,Neil</rfauthor><rftitle>The Films of Alfred Hitchcock</rftitle><rfpub> Gallery Books</rfpub><rfyear>1986</rfyear></rfentry>
+<rfentry><rfid>[33]</rfid><rfauthor>Spoto,Donald</rfauthor><rftitle>The Art of Alfred Hitchcock</rftitle><rfpub> Doubleday</rfpub><rfyear>1976.</rfyear></rfentry>
+<rfentry><rfid>[34]</rfid><rfauthor>McCarty,John and Kelleher, Brian</rfauthor><rftitle>Alfred Hitchcock Presents</rftitle><rfpub> St.Martin's Press</rfpub><rfyear>1995</rfyear><refnote>present of Randy Wiederhold.</rfnote></rfentry>
+<rfentry><rfid>[35]</rfid><rfauthor>Leff,Leonard J.</rfauthor><rftitle>Hitchcock and Selznick</rftitle><rfpub> Weidenfeld and Nicolson</rfpub><rfyear>1988</rfyear></rfentry>
+<rfentry><rfid>[36]</rfid><rfauthor>Nevins, Francis M. and Greenberg, Martin Harry</rfauthor><rftitle>Hitchcock in Prime Time</rftitle><rfpub> Avon</rfpub><rfyear>1985</rfyear></rfentry>
+<rfentry><rfid>[37]</rfid><rfauthor>Spoto, Donald</rfauthor><rftitle>The Dark Side of Genius: The Life of Alfred Hitchcock</rftitle><rfpub> Ballantine</rfpub><rfyear>1983</rfyear></rfentry>
+<rfentry><rfid>[38]</rfid><rfauthor>Auiler, Dan</rfauthor><rftitle>Vertigo, the Making of a Hitchcock Classic</rftitle><rfpub> St.Martin's Press</rfpub><rfyear>1998</rfyear></rfentry>
+<rfentry><rfid>[41]</rfid><rfauthor>Everson, William K.</rfauthor><rftitle>The Films of Laurel and Hardy</rftitle><rfpub>Citadel Press, NY</rfpub><rfyear>1970</rfyear></rfentry>
+<rfentry><rfid>[42]</rfid><rfauthor>Gilliatt, Penelope</rfauthor><rftitle>Jean Renoir, Essays, Conversations, Reviews</rftitle><rfpub>McGraw-Hill</rfpub><rfyear>1975</rfyear></rfentry>
+<rfentry><rfid>[43]</rfid><rfauthor>Hardy, Phil</rfauthor><rftitle>The Encyclopdia of Horror Movies</rftitle><rfpub>Aurum Press</rfpub><rfyear>1986</rfyear></rfentry>
+<rfentry><rfid>[44]</rfid><rfauthor>Newman, Kim</rfauthor><rftitle>Nightmare Movies</rftitle><rfpub>Harmony Books</rfpub><rfyear>1988</rfyear></rfentry>
+<rfentry><rfid>[45]</rfid><rfauthor>Kendrick, Walter</rfauthor><rftitle>Thrill of Fear</rftitle><rfpub>Grove Weidenfeld</rfpub><rfyear>1991</rfyear></rfentry>
+<rfentry><rfid>[46]</rfid><rfauthor>Skal, David J.</rfauthor><rftitle>The Monster Show</rftitle><rfpub>Norton</rfpub><rfyear>1993</rfyear></rfentry>
+<rfentry><rfid>[47]</rfid><rfauthor>Vidal, Gore</rfauthor><rftitle>Screening History</rftitle><rfpub>1993</rfyear><rfnote>cited as GVSH in Main</rfnotes></rfentry>
+<rfentry><rfid>[48]</rfid><rfauthor>Mosley, Philip</rfauthor><rftitle>From Book to Film: Andr\'e Delvaux's Alchemy of the Image</rftitle><rfpub>The French Review</rfpub><rfyear>1994.</rfyear></rfno> Vol.67 No.5, April 1994.</rfno></rfentry>
+<rfentry><rfid>[50]</rfid><rftitle>Catalog Of 1400 Classic Movies</rftitle><rfpub>Home Film Festival</refpub><rfyear>1990</rfyear></rfno><refnote>call  (800) 258-3456.</rfnote></rfentry>
+<rfentry><rfid>[51]</rfid><rftitle> Catalog of Movie Soundtracks</rftitle><rfpub> Intrada<rfpub><rfyear>1992.</rfyear><refnote>1488 Vallejo, S.F. 94109, (415) 776-1333.</rfnoter></rfentry>
+<rfentry><rfid>[52]</rfid><rftitle>Catalog of Movie Music CDs</rftitle><rfpub>Screen Archives Entertainment<rfpub><rfyear>1992</rfyear><refnote>PO Box 34792, Washington DC 94109, (202) 328-1434.</rfnote></rfentry>
+<rfentry><rfid>[53]</rfid><rftitle>Source of US and Foreign Movie Music</rftitle><rfpub>STAR<rfpub><rfyear>1992.</rfyear><refnote>PO Box 287, New Holland PA (717) 656-0121.</rfnote></rfentry>
+<rfentry><rfid>[54]</rfid><rftitle>Max Steiner Movie Music</rftitle><rfpub>Reising<rfpub><rfyear>1992.</rfyear><refnote>PO Box 1392, Northbrook IL 60065-1392.</rfnote></rfentry>
+<rfentry><rfid>[55]</rfid><rfauthor>Lucas, Tim</rfauthor><rftitle>The Video Watchdog Book</rftitle><rfpub>Video Watchdog</rfpub><rfyear>1992</rfyear></rfentry>
+<rfentry><rfid>[56]</rfid><rfauthor>James Gilbert</rfauthor><rftitle>American Religion in an Age of Science</rftitle><rfpub>Univ.Chicago Press</rfpub><rfyear>1997</rfyear></rfentry>
+<rfentry><rfid>[71]</rfid><rfauthor>John Douglas Eames</rfauthor><rftitle>The MGM Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>1977</rfyear></rfentry>
+<rfentry><rfid>[72]</rfid><rfauthor>Hirschhorn,Clive</rfauthor><rftitle>The Warner Bros. Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>1979</rfyear></rfentry>
+<rfentry><rfid>[73]</rfid><rfauthor>Hirschhorn,Clive</rfauthor><rftitle>The Columbia Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>1989</rfyear></rfentry>
+<rfentry><rfid>[74]</rfid><rfauthor>John Douglas Eames</rfauthor><rftitle>The Paramount Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>1985</rfyear></rfentry>
+<rfentry><rfid>[75]</rfid><rftitle>The United Artists Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>19xx</rfyear></rfentry>
+<rfentry><rfid>[77]</rfid><rfauthor>Hirschhorn,Clive</rfauthor><rftitle>The Universal Story</rftitle><rfpub> Crown publishers</rfpub><rfyear>1983</rfyear></rfentry>
+<rfentry><rfid>[78]</rfid><rfauthor>Frank Thomas et al.</rfauthor><rftitle>  The Illusion of Life</rftitle><rfpub>198x</rfpub><refnote>about Disney animation.</rfnote></rfentry>
+<rfentry><rfid>[80]</rfid><rfauthor>Thomson, David</rfauthor><rftitle>A Biographical Dictionary of Film</rftitle><rfpub> Knopf?</rfpub><rfyear>1980</rfyear></rfentry>
+<rfentry><rfid>[81]</rfid><rfauthor>Thomson, David</rfauthor><rftitle>Suspects</rftitle><rfpub> Knopf</rfpub><rfyear>1980</rfyear><rfnote>Knopf?  made up from movie characters.</rfnote></rfentry>
+<rfentry><rfid>[82]</rfid><rfauthor>Thomson, David</rfauthor><rftitle>Silver Light</rftitle><rfpub> Knopf</rfpub><rfyear>1990</rfyear><rfnote>Knopf?   = on Western Legends.</rfyear></rfentry>
+<rfentry><rfid>[83]</rfid><rfauthor>Sennett, Robert S.</rfauthor><rftitle>Setting the Scene, The Great Hollywood Art Directors</rftitle><rfpub> Harry N.\ Abrams</rfpub><rfyear>1994.</rfyear></rfentry>
+<rfentry><rfid>[84]</rfid><rfauthor>Zhang, Ying-Jin</rfauthor><rftitle>The City in Modern Chinese Literature  and Film: Configurations of Space, Time, and Gender</rftitle><rfpub> Stanford University Press</rfpub><rfyear>1996. </rfyear></rfentry>
+<rfentry><rfid>[85]</rfid><rfauthor>Zhang, Ying-Jin (editor)</rfauthor><rftitle>Cinema and Urban Culture in Shanghai</rfpub><rfyear>1922-1943</rftitle><rfpub> Stanford University Press</rfpub><rfyear>1999. </rfyear></rfentry>
+<rfentry><rfid>[86]</rfid><rfauthor>Lynda Obst</rfauthor><rftitle>Hello, He Lied, and Other Truths from the Hollywood Trenches</rftitle><rfpub> 1999</rfyear></rfentry>
+<rfentry><rfid>[91]</rfid><rfauthor>Perry, George</rfauthor><rftitle>The Complete Phantom of The Opera</rftitle><rfpub> 1987</rfyear><rfnote> Henry Holt Co., NY.</rfnote></rfentry>
+<rfentry><rfid>[99]</rfid><rfauthor>..</rfauthor><rftitle>Obituaries 1991</rftitle><rfpub> 1991</rfyear><rfnote>used for dod</rfnote></rfentry>
+<!-- Electronic material ->
+<rfentry><rfid>[100]</rfid><rfauthor>Magill</rfauthor><rftitle>Magill's Survey of Cinema</rftitle><rfpub> <http://COMPUSERVE, forum (GO MAGILL)</refpub><rfnote> It lists that they have in-depth articles on over 30,000 films released since 1902,</rfyear></rfentry>
+<rfentry><rfid>[101]</rfid><rftitle>Movie Alert</rftitle><rfpub>http://sanfrancisco.sidewalk.com</rfpub><rfyear>1999</rfyear></rfentry>
+<rfentry><rfid>[102]</rfid><rftitle>Movie Schedules</rftitle><rfpub>http://hollywood.com</refpub><rfyear>1999</rfyear></rfentry>
+<rfentry><rfid>[103]</rfid><rftitle>memorabilia Auction site</rftitle><rfpub>http://BigE.com</refpub><rfyear>1999</rfyear></rfentry>
+<rfentry><rfid>[110]</rfid><rfauthor>Brett Tjaden</rfauthor><rftitle>The Oracle of Bacon</rftitle><rfpub>http://www.cs.virginia.edu/oracle</refpub><rfyear>1999</rfyear><rfnote> relates actors to  Kevin Bacon with degree of seperation, April</rfnote></rfentry>
+<rfentry><rfid>[111]</rfid><rfauthor>Brett Tjaden</rfauthor><rftitle>Star Links</rftitle><rfpub> http://www.cs.virginia.edu</refpub><rfyear>1999</rfyear><rfnote>relates actors to  Each other with degree of seperation, April</rfnote></rfentry>
+<!-- Books about Actors ->
+<rfentry><rfid>[150]</rfid><rfauthor>Eyles,Allen</rfauthor><rftitle>James Stewart</rftitle><rfpub>Stein and Day</rfpub><rfyear>1984</rfyear></rfentry>
+<rfentry><rfid>[151]</rfid><rfauthor>Aros (A.Rosenthal)</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1962</rfyear><rfnote>in German</rfnote></rfentry>
+<rfentry><rfid>[152]</rfid><rfauthor>Knopf, Maria Riva</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1992.</rfyear><rfnote>by daughter</rfnote></rfentry>
+<rfentry><rfid>[153]</rfid><rfauthor>Spoto, Donald</rfauthor><rftitle>Marlene Dietrich</rftitle><rfpub> 19xx</rfyear></rfentry>
+<rfentry><rfid>[154]</rfid><rftitle>Brockhaus Enzyclop\"adie</rftitle><rfpub>A.F.Brockhaus, Wiesbaden FRG</refpub><rfyear>1968</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[155]</rfid><rfauthor>Dietrich, Marlene</rfauthor><rftitle>Marlene Dietrich's ABC</rftitle><rfpub>  1962.</rfyear></rfentry>
+<rfentry><rfid>[156]</rfid><rfauthor>Dietrich, Marlene</rfauthor><rftitle>Nehmt nur mein Leben, Reflexionen</rftitle><rfpub>C.Bertelsmann Verlag</rfpub><rfyear>1979</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[157]</rfid><rfauthor>Droz,R.</rfauthor><rftitle>Marlene Dietrich und die Psychologie des Vamps</rftitle><rfyear>1961</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[158]</rfid><rfauthor>Erman,H.</rfauthor><rftitle>Eine Grosse Dame, Marlene Dietrich</rftitle><rfyear>1955</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[159]</rfid><rfauthor>Frewin,L.</rfauthor><rftitle>Blond Venus. A Life of Marlene Dietrich</rftitle><rfyear>1955.</rfyear></rfentry>
+<rfentry><rfid>[160]</rfid><rfauthor>Georg,M.</rfauthor><rftitle>Marlene Dietrich</rfauthor></rftitle><rfyear>1931</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[161]</rfid><rfauthor>Griffith, R.</rfauthor><rftitle>Marlene Dietrich, Image and Legend</rftitle><rfpub> New York</rfpub><rfyear>1951</rfyear></rfentry>
+<rfentry><rfid>[162]</rfid><rfauthor>Hessel F.</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1931</rfyear><rfnote> in German</rfnote></rfentry>
+<rfentry><rfid>[163]</rfid><rfauthor>Noah, W.</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1962</rfyear></rfentry>
+<rfentry><rfid>[164]</rfid><rfauthor>Bach, Stephen</rfauthor><rftitle>Marlene Dietrich</rftitle></rfentry>
+<rfentry><rfid>[165]</rfid><rfauthor>Madhabi Mukherje, Dilip K. Basu, and Dayani K.Basu</rfauthor><rftitle>My Life, My Love</rftitle><rfpub> The Stanford Theater Foundation</rfpub><rfyear>1999</rfyear></rfentry>
+<!-- Web pages -> 
+<rfentry><rfid>[200]</rfid><rfpub> http://www.motionpictureguide.com</rfpub><refnote> contains 30,000 films</rfnote></rfentry>
+<rfentry><rfid>[201]</rfid><rftitle>sirens of the golden age</rftitle><rfpub> Http://users.deltanet.com/users/dstickne </rfpub></rfentry>
+<rfentry><rfid>[V:89]</rfid><rfpub>Variety: Annual Issue</rfpub><rfyear>1990</rfyear><rfno>Jan</rfno></rfentry>
+<rfentry><rfid>[V:90]</rfid><rfpub>Variety: Annual Issue</rfpub><rfyear>1991</rfyear></rfentry>
+<!-- BOOKS:  Some of the ooks Gio  has for Movie Stories. ->
+<rfentry><rfid>[H27]</rfid><rfauthor>John Buchan.</rfauthor><rftitle> The 39 Steps</rftitle><rfpub> Houghton Mifflin</rfpub><rfyear>1915.</rfyear></rfentry>
+<rfentry><rfid>[HBn30]</rfid><rfauthor>P.C.\ Wren.</rfauthor><rftitle> Beau Geste</rftitle><rfpub> Grosset and Dunlap</rfpub><rfyear>1926.</rfyear></rfentry>
+<rfentry><rfid>[KeR10]</rfid><rfauthor>Simon Green.</rfauthor><rftitle> Robin Hood: Prince of Thieves</rftitle><rfpub> Berkley</rfpub><rfyear>1991.</rfyear></rfentry>
+<rfentry><rfid>[IH19]</rfid><rfauthor>Herman Melville.</rfauthor><rftitle> Moby Dick</rftitle><rfpub> Signet</rfpub><rfyear>1851.</rfyear></rfentry>
+<rfentry><rfid>[RM3]</rfid><rfauthor>Robert Louis Stevenson.</rfauthor><rftitle> Dr.~Jekyll and Mr.~Hyde</rftitle><rfpub> Bantam</rfpub><rfyear>1886.</rfyear></rfentry>
+<rfentry><rfid>[JW2]</rfid><rfauthor>Mary Wollstonecraft Shelley.</rfauthor><rftitle> Frankenstein</rftitle><rfpub> Bantam</rfpub><rfyear>1816.</rfyear></rfentry>
+<rfentry><rfid>[MO]</rfid><rfpub>Musee d'Orsay, Paris</rfpub><rfyear>1987</rfyear></rfentry>
+<rfentry><rfid>[AM]</rfid><rfpub>Musee d'Arts et Metiers, Paris</rfpub><rfyear>1987</rfyear></rfentry>
+</references>
+<!-- ------------------------------------------------------------------------------- ->
+<!-- ================================================ ->
+

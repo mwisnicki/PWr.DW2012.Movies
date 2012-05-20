@@ -1,0 +1,82 @@
+<!Doctype html public "-//W3O//DTD/ W3 HTML 2.0//EN">
+<!-- The XML DTD schema for the People file of Movies Database -- >
+<!-- - cleaned up June 2003, revised 1 Oct 2003 -->
+
+<!ELEMENT person (pname, pcodes, did?, yearstart, yeardirstart?, yearend?, familynm, givennm,alias*, dob, dod. background, award, GeF?, rels?, notes, error ) >                  <!-- all movie people, except actors only, stating with the same letter  -->
+   <!ELEMENT pname > <!--  Comment:   The name of the movie person in standardized form. These names are made to be unique.  Intials may be prependended, and  special character codes omitted.  This field is referenced by the "director" field  and by P:{references} in the MOVIES table.  . --> 
+   <!ELEMENT pcodes (pcode+)   >  <!--  Comment:   Set of codes giving functions known for this movie person , except only  actor. --> 
+      <!ELEMENT pcode >		<!--  Comment:   one of {PDBWEACMGV} for  Producer, Director, Book or play author, Writer, Editor (rarely), Actor, Cinematographer, choreoGrapher,  Musician or composer, or a Visual or art director.    Arranged in the person's functions chronological order.  --> 
+   <!ELEMENT did	 > 		<!--  Comment:   If the person is a director (Pcode includes D), then this field contains an internally defined, unique 1, 2, or 3 letter identification code for the director.   It is made up from one or two letters of the given name, no or one letter of any middlename, and no, one or two letters of the family name of the director.  Because of the high frequency of `John', it is encoded as `I'. The did is used a prefix to generate unique film_id's for all films directed by this director.  . --> 
+   <!ELEMENT yearstart 	>	<!--  Comment:   First year of work, start of the years interval, mainly for non-directors . --> 
+   <!ELEMENT yeardirstart	>   	<!--  Comment:   First year of work for directors,  the first year he/she  directed a movie --> 
+   <!ELEMENT yearend 	>	<!--  Comment:   Last year of work, or that the director directed. . --> 
+   <!ELEMENT familynm 	>	<!--  Comment:  The last name of the movie-person, spelled more precisely than the pname. --> 
+   <!ELEMENT givennm 	>	<!--  Comment:   Given or first name of the movie-person.  Nick-names etc. are in (). . --> 
+   <!ELEMENT alias	>	<!--  Comment:   Alternate stage names. . --> 
+   <!ELEMENT dob 	>	<!--  Comment:   Date of Birth. If not found in [ref]. If found, but date unknown * . --> 
+   <!ELEMENT dod 	>	<!--  Comment:   Date of Death, or 190x for at least . --> 
+   <!ELEMENT background  (bkgnd?)>	<!--  Comment:   The director's birth country. If unknown \Ct. . --> 
+      <!ELEMENT bkgnd	<!--  Comment:   more detail about the baackground --> 
+   <!ELEMENT GeF 	>	<!--  Comment:   Female movie-people are identified as GeF, else assumed to be male. --> 
+   <!ELEMENT awards(aw+) > 	<!--  Comment:   Award information, Used  for  Awards not associated with any film  -->
+      <!ELEMENT aw(awtype, awf?, awyear?, awfor?, awnote? ) <!--  Comment:   specific award . -->
+         <!ELEMENT awtype	> <!--  Comment:   award type. Coded with award entry in codes. -->
+         <!ELEMENT awdet 	> <!--  Comment:   detail about award given. -->
+         <!ELEMENT awyear	> <!--  Comment:   year of award.. -->
+         <!ELEMENT awfor	> <!--  Comment:   award given for what. -->
+         <!ELEMENT awnote	> <!--  Comment:   about award. -->
+   <!ELEMENT rels (founder*, studios?, livedwith?, marriedto?,  parents?,. childof ?, family?, sibling*, workedwith?, influencedby?, influenced?, relnote?>                                                                         <!--  Comment:   Misc. relationships. --> 
+      <!ELEMENT founder(fnyear?)> 	<!--  Comment:   founder of studio  COMBINE  with STUDIO -->   
+         <!ELEMENT fnyear> 	<!--  Comment:   years active in studio  -->
+   <!ELEMENT studios(studio*)> 	<!--  Comment:   Indicates primary studios if strong relationship  -->
+      <!ELEMENT studio (styear?, strole? )> 	<!--  Comment:   refers to studio name in studios list  -->
+         <!ELEMENT styear> 	<!--  Comment:   years active in studio  -->
+         <!ELEMENT strole> 	<!--  Comment:   role in studio  -->
+   <!ELEMENT livedwith(lover*)	> <!--  Comment:   Cross reference, mainly to actors, can be multiple  -->
+      <!ELEMENT lover(name, lv-is*)	> 	<!--  Comment:   data about love  -->
+	   <!ELEMENT name	> 	<!--  Comment:   name of love  -->
+         <!ELEMENT lv-is	> 	 	<!--  Comment:   lover type, determines format of name for reference  -->
+   <!ELEMENT marriedto(spouse*)	> 	<!--  Comment:   Cross reference, mainly to actors, can be multiple  -->
+      <!ELEMENT spouse(name, sp-is*)	> 	<!--  Comment:   data about spouse  -->
+	   <!ELEMENT name	> 	<!--  Comment:   name of  spouse  -->
+   <!ELEMENT sp-is	> 	<!--  Comment:   spouse type, , determines format of name for reference  -->
+      <!ELEMENT parent (name, ch-is*, chnote?) > 	<!--  Comment:   Cross reference, mainly to film people, multiple entries for children -->
+         <!ELEMENT name	> 	<!--  Comment:   name of child  -->
+         <!ELEMENT ch-is	> 	<!--  Comment:   Child type,, determines format of name for reference  -->
+         <!ELEMENT chnote	> 	<!--  Comment:   Child note  -->
+   <!ELEMENT childof (parentis+) > 	<!--  Comment:   Cross reference, mainly to mainly to film people, one or two entries  -->
+      <!ELEMENT parentis (name, pa-is?) > 	<!--  Comment:   Cross reference, to parent  -->
+	   <!ELEMENT name	> 	<!--  Comment:   name of  parent  -->
+         <!ELEMENT pa-is	> 	<!--  Comment:   Parent type, determines format of name for reference  -->
+   <!ELEMENT sibling (name, sib-is? > 	<!--  Comment:   Cross reference, mainly to mainly to film people, multiple   -->
+	<!ELEMENT name	> 	<!--  Comment:   name of sibling  -->
+	<!ELEMENT sib-is	> 	<!--  Comment:   sibling type, , determines format of name for reference  -->
+   <!ELEMENT family (fm*)	> 	<!--  Comment:   Cross reference to second-level family members   -->
+      <!ELEMENT fm(name, fmtype?, fmrel? > 	<!--  Comment:   more remote family member on film industry. --> 
+         <!ELEMENT name	> 	<!--  Comment:   name of grandchild, nephew, niece,. uncle, aunt  -->
+         <!ELEMENT me-is	> 	<!--  Comment:   family member type , determines format of name for reference  -->
+         <!ELEMENT fmrel	> 	<!--  Comment:   family relationship  -->
+   <!ELEMENT workedwith (colleague+)> <!--  Comment:   Cross reference, mainly to mainly to film people, multiple  -->
+	<!ELEMENT colleague (name?, on?, is?, during?)> 	<!--  Comment:   names of coworker  -->
+  	   <!ELEMENT name	> 	<!--  Comment:   name of coworker  -->
+	   <!ELEMENT on	> 	<!--  Comment:   project   -->	 
+	   <!ELEMENT co-is	> 	<!--  Comment:   type of colleague, determines format for reference   -->
+  	   <!ELEMENT during	> 	<!--  Comment:   period (rare)   -->	
+   <!ELEMENT influencedby (mentor+)> 		<!--  Comment:   Cross reference, can have multiple entries  -->
+	<!ELEMENT mentor(name?, in-is? during?> 	<!--  Comment:   names of influences on person  -->
+         <!ELEMENT name	> 	<!--  Comment:   name of inflencer  -->
+	   <!ELEMENT in-is	> 	<!--  Comment:   type of influencer, determines format of name for reference   -->
+   <!ELEMENT influenced  (affected+)	> 	<!--  Comment:   Cross reference, can have multiple entries  --> 
+	<!ELEMENT affected (name?, af-is? during?> 	<!--  Comment:   names of movie people influenced  -->
+         <!ELEMENT name	> 	<!--  Comment:   name of person  influenced  -->
+         <!ELEMENT af-is	> 	<!--  Comment:   type of person influenced, determines format of name for reference  -->
+         <!ELEMENT relnote	> 		<!--  Comment:   general relationship note, exceptions  -->
+<!ELEMENT notes (mainly?, also*,. type* , ref*, textmore?>                         <!--  Comment:   Misc. relationships. --> 
+     <!ELEMENT mainly> 	<!--  Comment:   Indicates primary occupation, TV indicates TV director  -->
+     <!ELEMENT also> 		<!--  Comment:   Indicates occupation outside of films  -->
+     <!ELEMENT type> 		<!--  Comment:   Indicates Type of movies contributed to   -->
+     <!ELEMENT ref> 		<!--  Comment:   Indicates source references, if ! missing in source   -->
+     <!ELEMENT textmore> 	<!--  Comment:   text related to notes   -->
+<!ELEMENT error	> 	<!--  Comment:  This field is used for maintenance. --> 
+
+

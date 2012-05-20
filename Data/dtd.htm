@@ -1,0 +1,821 @@
+<!Doctype html public "-//W3O//DTD/ W3 HTML 2.0//EN">
+<TITLE>Movie XML DTD references</TITLE>
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./dtd_files/filelist.xml">
+<link rel=Edit-Time-Data href="./dtd_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Gio  Wiederhold</o:Author>
+  <o:LastAuthor>Gio Wiederhold</o:LastAuthor>
+  <o:Revision>8</o:Revision>
+  <o:TotalTime>18</o:TotalTime>
+  <o:Created>2003-08-28T22:30:00Z</o:Created>
+  <o:LastSaved>2004-07-19T17:46:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>2379</o:Words>
+  <o:Characters>13565</o:Characters>
+  <o:Company>Stanford University, CS Dept., DB Group</o:Company>
+  <o:Lines>113</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>16658</o:CharactersWithSpaces>
+  <o:Version>9.6926</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>150</w:Zoom>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{margin-right:0in;
+	mso-margin-top-alt:auto;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:382295076;
+	mso-list-type:hybrid;
+	mso-list-template-ids:340293580 705755286 696135064 1926931610 1224495114 335678270 -928874640 1244004784 1058292284 1328040810;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:412632768;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-77272546 96921820 -781411548 626287254 2082487012 -1193665058 793119558 -1078966178 -1537411774 -1446745688;}
+@list l2
+	{mso-list-id:1058826046;
+	mso-list-type:hybrid;
+	mso-list-template-ids:130693402 455776780 1542494242 -927556414 1880511698 -1909433004 -1285408118 1051987212 -910916088 1562526554;}
+@list l3
+	{mso-list-id:1213494671;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2038472548 835208140 914282326 -1140012314 2065213296 373591720 658823228 70697958 -1055599400 253021372;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1519004734;
+	mso-list-type:hybrid;
+	mso-list-template-ids:319869616 1056068508 -189356876 990685854 -11664614 925007854 1640389698 -1375449212 -473820178 25840088;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:1986622258;
+	mso-list-type:hybrid;
+	mso-list-template-ids:455922366 1133826570 1901877656 -1783623800 1449835218 -1975198240 -1685952104 -2036855102 -1612947864 1192267788;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:2136095595;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1949373362 566929812 116421432 -1480285034 -1473497666 119432970 -2129995878 -547745066 112248724 -201838118;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=blue style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2>References to the XML Files and DTD Schemas of the Movies Database</h2>
+
+<p>Updated 28April2004</p>
+
+<p>The XML version of the movies database should contain 7 XML files, with
+their corresponding dtd files. The intent is to eventually also have them
+available in .rdf form for the DAML Ontoagents project. Background about these
+files is found on <a href="doc.html">a documentation file</a> for the earlier
+TeX and HTML versions.</p>
+
+<p>The files are named as data#.xml or data#.dtd, where data is the type of
+data they contain, the # gives the version number that they are derived from in
+the master files kept on the Varese computer in .doc or .txt formats. Errors in
+the .xml files were corrected using the XLint program of Vincent Chu and Juan
+Arguello. </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="mains243.xml">mains243.xml</a>;
+     main list of about 12 000 movies, fully converted and validated. <br>
+     <a href="main32.dtd">main32.dtd</a>; dtd for main list of movies, not yet
+     validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="people55.xml">people55.xml</a>;
+     list of about 3 500 important people in the movies, fully converted and checked with IE. <br>
+     <a href="peopl11.dtd">peopl11.dtd</a>; dtd for people, not yet validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="actors63.xml">actors63.xml</a>;
+     list of about 6800 movie actors, converted and completely checked with IE. <br>
+     <a href="actor6.dtd">actor6.dtd</a>; dtd for people, not yet validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="casts124.xml">casts124.xml</a>;
+     cast listings with about 48 000 entries showing actors and their roles
+in about 9000 movies by 2700 directors, converted and checked with IE. <br>
+     <a href="cast93.dtd">cast93.dtd</a>; dtd for casts, updated, not yet
+     validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="remakes05.xml">remakes05.xml</a>;
+     linkages for about 1300 remade movies, converted and completely checked. <br>
+     <a href="remake4.dtd">remake4.dtd</a>; dtd for remakes, not yet validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="studios00.xml">studios00.xml</a>;
+     list of studios, not yet converted. <br>
+     <a href="studios01.dtd">studios01.dtd</a>; dtd for studios, not yet
+     validated.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo3;tab-stops:list .5in'><a href="codes09.xml">codes09.xml</a>;
+     code tables for variables used in various movie files. <br>
+     <a href="codes00.dtd">codes00.dtd</a>; dtd for codes, not yet created.</li>
+</ol>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<h2>Other files</h2>
+
+<p>Much of this material has been integrated into codes.xml. See the file
+describing earlier versions, <a href="doc.doc">doc.doc</a> for missing codes. </p>
+
+<h4>2.11 -- REFERENCES -- </h4>
+
+<p class=MsoNormal>Books that provided material for this database are listed
+within this documentation file as <a
+href="http://www-db.stanford.edu/pub/movies/doc.html#REFS">Appendix A</a>. </p>
+
+<h4>2.12 -- GEOGRAPHY -- </h4>
+
+<p class=MsoNormal>Codes for countries and origins are listed within this
+documentation file as section 4.3: <a
+href="http://www-db.stanford.edu/pub/movies/doc.html#GEO">doc.html GEO</a>. </p>
+
+<h4>2.13 -- CATEGORIES -- </h4>
+
+<p class=MsoNormal>Codes for movie categories are listed within this documentation
+file as Section 4.4: <a
+href="http://www-db.stanford.edu/pub/movies/doc.html#CATS">doc.html CATS</a>. </p>
+
+<h4>2.14 -- COLOR-CODES -- </h4>
+
+<p class=MsoNormal>Codes for color processes used for movies are listed within
+this documentation file as Section 4.5: <a
+href="http://www-db.stanford.edu/pub/movies/doc.html#COLS">doc.html COLS</a>. </p>
+
+<h4>2.15 -- ROLE-TYPES -- </h4>
+
+<p class=MsoNormal>Codes that specify role-types for actors </p>
+
+<p class=MsoNormal>are listed in the preamble for <a
+href="http://www-db.stanford.edu/pub/movies/casts.html#ROLES">casts.html ROLES</a>.
+</p>
+
+<h4>2.16 -- FIELD-IDENTIFIERS -- </h4>
+
+<p class=MsoNormal>Codes that identify subfields in various files are listed
+within this documentation file as Section 4.2: <a
+href="http://www-db.stanford.edu/pub/movies/doc.html#FIELDS">doc.html FIELDS</a>.
+</p>
+
+<h4>2.17 - AWARD TYPES -- </h4>
+
+<p class=MsoNormal>Lists the <a
+href="http://www-db.stanford.edu/pub/movies/awtypes.html">award types</a> used
+in MAIN, ACTORS, and PEOPLE, with the organizations who award them, and the
+span of years they were awarded. </p>
+
+<h4>2.19 -- IMAGES -- </h4>
+
+<p class=MsoNormal>there is a small collection of .tiff files for actors and
+directors. They are kept individually in an images subdirectory. </p>
+
+<h4>2.20 -- ICONS -- </h4>
+
+<p class=MsoNormal>There are about a dozan icons to be used to identify
+subfiles. Some of them come from the New Yorker Magazine Jan.1993. There are
+kept individually in an icons subdirectory. </p>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<h2><a name=REFS>Appendix A: References</a></h2>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='mso-bookmark:REFS'>Books,
+etc. </span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [0]! Wiederhold,Gio: ``Movies Database''; 1989, 1990, 1994,
+     1996. Nt(self-reference) </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [1]! Halliwell,Leslie &quot;The Filmgoers Companion&quot;
+     8th edition; Charles Scribners' Sons, 1984. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [2]! Kael,Pauline: &quot;5001 Nights at the Movies&quot;;
+     Holt Rinehart Winston, 1985. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [4]! Halliwell,Leslie &quot;Halliwell's Film and Video
+     Guide&quot; 6th ed; Scribner, 1987 [3] . </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [5] Brown, Jay A.@Consumers Guide: &quot;Rating The Movies&quot;;
+     Beekman House, 1986. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [6]! Katz,Ephraim: &quot;The Film Encyclopedia&quot;;
+     Putnam, 1979. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [7]! Maxwell: Encyclopedia of Film; ??. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [8]! Eastman,John: &quot;Behind the scenes of 500 Classic
+     Movies&quot;; Ballantine Books, 1989. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [9]! Pickard,Roy: &quot;Who Played Who On The Screen&quot;;
+     B.T.Batsford ltd, London, 1988. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [10]! Ebert, Roger: &quot;Roger Ebert's Movie home
+     Companion, 1990 edition&quot;; Andrews and McNeal, 1989. coded as RE**+ in
+     awards. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [11]! Bawden,Liz Ann(ed): ``The Oxford Companion to Film'';
+     Oxford Univ.Press, London 1976; </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [12]! Tichy,Wolfram: ``RoRoRo Film Lexicon''; Rowohlt
+     Verlag, Hamburg FRG, 1978; German edition of [11]. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [13] Harry Medved and Randy Dreyfuss: ``The Fifty Worst
+     Films of All Time''; Popular Library, New York, 1978. Coded as W50 in
+     awards. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [14]! Zinman,David: &quot;Fifty Grand Movies of the 1960s
+     1970s&quot;; Crown pubs NY, 1986 [4], present of Bob Molter, entries
+     marked Z*. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [15] Simpson, James B.: Simpson's Contemporary Quotations;
+     Houghton-Mifflin, 1988. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [16] ! Weldon,Michael: &quot;The Psychotronic Encyclopedia
+     of Film&quot;; Ballantine books, 1983. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [17] ! Everson,William K.: &quot;The Bad Guys&quot;;
+     Citadel Press, 1964. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [18] ! Griffith, Richard and Mayer,Arthur: &quot;The
+     Movies&quot;; Bonanza books, 1957. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [19] ! Hosoda,Craig: &quot;The Bare Facts Video
+     Guide&quot;; The Bare Facts, Santa Clara CA, 1991. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [20]! Kerr,Paul(ed.): &quot;The Hollywood Film
+     Industry&quot;; Routledge and Kegan Paul, London, 1986. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [21]! Michael,Paul &quot;The Academy Awards&quot;, 1968. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [22]! Wiley,Mason and Bona,Damien: &quot;Inside Oscar, The
+     Unofficial History of the Academy Awards&quot;; Ballantine Books, 1986. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [23]! Kaplan, Mike(ed.): &quot;Variety Who's Who in Show
+     Business&quot;; Garland Pub., 1983. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [24]! Jacobson, William: ``Berlinale, Internationale
+     Festspiele Berlin''; Argon, 1990. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [25]! ``The 100 Funniest Movies on Video''; Entertainment
+     weekly, 16Oct1992, F01..F100. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [26]! ``Cin\'ema, Cannes: un Demi-si\`ecle de
+     chefs-d'oeuvre''; Les Cahiers de l'Express, Mai 1994, No.27. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [27]! Edward Margulies and Stephen Rebello: “Bad Movies We
+     Love”; Plume, a division of Penguin, 1993. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [30]! Rohmer,Eric and Chabol,Claude: &quot;Hitchcock, The
+     First fourty-four Films&quot;; Ungar New York, 1979. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [31]! Truffaut &quot;Hitchcock&quot;; Simon and Schuster,
+     1983. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [32]! Sinyard,Neil: &quot;The Films of Alfred
+     Hitchcock&quot;; Gallery Books, 1986. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [33]! Spoto,Donald: &quot;The Art of Alfred
+     Hitchcock&quot;; Doubleday, 1976. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [34]! McCarty,John and Kelleher, Brian: &quot;Alfred
+     Hitchcock Presents&quot;; St.Martin's Press, 195, present of Randy
+     Wiederhold. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [35]! Leff,Leonard J.: &quot;Hitchcock and Selznick&quot;;
+     Weidenfeld and Nicolson, 1988. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [36]! Nevins, Francis M. and Greenberg, Martin Harry:
+     &quot;Hitchcock in Prime Time&quot;; Avon, 1985. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [37]! Spoto, Donald: &quot;The Dark Side of Genius: The
+     Life of Alfred Hitchcock&quot;; Ballantine, 1983. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [38]! Auiler, Dan: &quot;Vertigo, the Making of a Hitchcock
+     Classic&quot;; St.Martin’s Press, 1998. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [41] Everson, William K.: ``The Films of Laurel and
+     Hardy''; Citadel Press, NY, 1970. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [42] Gilliatt, Penelope: ``Jean Renoir, Essays,
+     Conversations, Reviews''; McGraw-Hill, 1975. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [43] Hardy, Phil: ``The Encyclopdia of Horror Movies'';
+     Aurum Press, 1986. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [44] Newman, Kim: ``Nightmare Movies''; Harmony Books,
+     1988. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [45] Kendrick, Walter: ``Thrill of Fear''; Grove
+     Weidenfeld, 1991. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [46] Skal, David J.: ``The Monster Show''; Norton, 1993. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [47] Vidal, Gore: ``Screening History''; 1993. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [48] Mosley, Philip: ``From Book to Film: Andr\'e Delvaux's
+     Alchemy of the Image''; The French Review, Vol.67 No.5, April 1994. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [50] Catalog Of 1400 Classic Movies; Home Film Festival,
+     1990, (800) 258-3456. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [51] Catalog of Movie Soundtracks; Intrada, 1992, 1488
+     Vallejo, S.F. 94109, (415) 776-1333. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [52] Catalog of Movie Music CDs; Screen Archives
+     Entertainment, 1992, PO Box 34792, Washington DC 94109, (202) 328-1434. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [53] Source of US and Foreign Movie Music; STAR, 1992, PO
+     Box 287, New Holland PA (717) 656-0121. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [54] Max Steiner Movie Music; Reising, 1992, PO Box 1392,
+     Northbrook IL 60065-1392. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [55] Lucas, Tim: ``The Video Watchdog Book''; Video
+     Watchdog, 1992. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [56] James Gilbert: ``American Religion in an Age of
+     Science''; Univ.Chicago Press, 1997. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [71] John Douglas Eames: &quot;The MGM Story&quot;; Crown
+     publishers, 1977. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [72] Hirschhorn,Clive: &quot;The Warner Bros. Story&quot;;
+     Crown publishers, 1979. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [73] Hirschhorn,Clive: &quot;The Columbia Story&quot;;
+     Crown publishers, 1989. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [74] John Douglas Eames: &quot;The Paramount Story&quot;;
+     Crown publishers, 1985. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [75] : &quot;The United Artists Story&quot;; Crown
+     publishers, 19xx. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [77] Hirschhorn,Clive: &quot;The Universal Story&quot;;
+     Crown publishers, 1983. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [78] Frank Thomas et al.: The Illusion of Life; 198x; about
+     Disney animation. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [80] Thomson, David: &quot;A Biographical Dictionary of
+     Film&quot;; Knopf?, 1980. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [81] Thomson, David: &quot;Suspects&quot;; Knopf?, 1980, =
+     made up from movie characters. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [82] Thomson, David: &quot;Silver Light&quot;; Knopf?,
+     1990, = on Western Legends. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [83] Sennett, Robert S.: &quot;Setting the Scene, The Great
+     Hollywood Art Directors&quot;; Harry N.\ Abrams, 1994.. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [84] Zhang, Ying-Jin: “The City in Modern Chinese
+     Literature and Film: Configurations of Space, Time, and Gender”; Stanford
+     University Press, 1996. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [85] Zhang, Ying-Jin (editor): “Cinema and Urban Culture in
+     Shanghai, 1922-1943”; Stanford University Press, 1999. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: Lynda Obst: “Hello, He Lied, and Other Truths from the
+     Hollywood Trenches”; 1999. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [91] Perry, George: &quot;The Complete Phantom of The
+     Opera&quot;; 1987, Henry Holt Co., NY. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo6;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [99] .. &quot;Obituaries 1991&quot;; 1991; (used for dod). </span></li>
+</ul>
+
+<h3><span style='mso-bookmark:REFS'>Books about Actors</span></h3>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [150]! Eyles,Allen: ``James Stewart''; Stein and Day, 1984.
+     </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [151]! Aros (A.Rosenthal): &quot;Marlene Dietrich&quot;, in
+     German; 1962. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [152]! Knopf, Maria Riva: &quot;Marlene Dietrich&quot;; (by
+     daughter); 1992. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [153]! Spoto, Donald: &quot;Marlene Dietrich&quot;; 19xx. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [154]! &quot;Brockhaus Enzyclop\&quot;adie&quot;, in
+     German; A.F.Brockhaus, Wiesbaden FRG, 1968. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [155]! Dietrich, Marlene: &quot;Marlene Dietrich's
+     ABC&quot;; 1962. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [156]! Dietrich, Marlene: &quot;Nehmt nur mein Leben,
+     Reflexionen&quot;, in German; C.Bertelsmann Verlag, 1979. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [157]! Droz,R.: &quot;Marlene Dietrich und die Psychologie
+     des Vamps&quot;, in German; 1961. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [158]! Erman,H.: &quot;Eine Grosse Dame, Marlene
+     Dietrich&quot;, in German; 1955. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [159]! Frewin,L.: &quot;Blond Venus. A Life of Marlene
+     Dietrich&quot;; 1955 . </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [160]! Georg,M.: &quot;Marlene Dietrich&quot;, in German;
+     1931. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [161]! Griffith,R. &quot;Marlene Dietrich, Image and
+     Legend&quot;; New York, 1951. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [162]! Hessel,F.: &quot;Marlene Dietrich&quot;, in German;
+     1931. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [163]! Noah,W.: &quot;Marlene Dietrich&quot;, in German;
+     1962. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [164]! Bach, Stephen: &quot;Marlene Dietrich&quot;;. </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo9;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [165]! Madhabi Mukherje, Dilip K. Basu, and Dayani K.Basu:
+     “My Life, My Love”; The Stanford Theater Foundation, 1999 </span></li>
+</ul>
+
+<h3><span style='mso-bookmark:REFS'>Web pages</span></h3>
+
+<h4><span style='mso-bookmark:REFS'>Electronic material</span></h4>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [200] Magill: &quot;Magill's Survey of Cinema&quot;;
+     COMPUSERVE, forum (GO MAGILL). It lists that they have in-depth articles on
+     over 30,000 films released since 1902, </span></li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'><span style='mso-bookmark:
+     REFS'>Refcode: [201] Movie Alert </span><a
+     href="http://sanfrancisco.sidewalk.com/">sanfrancisco.sidewalk.com</a>
+     1999 </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [202] Movie
+     Schedules. <a href="http://hollywood.com">hollywood.com</a> </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [203] memorabilia
+     Auction site. <a href="BigE.com">BigE.com</a> </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [204] Donald Pick:
+     MORSE recommendation system <a
+     href="http://www.labs.bt.com/innovate/multimed/morse/">http://www.labs.bt.com/innovate/multimed/morse/</a>.
+     </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [205]<a
+     href="http://sanfrancisco.sidewalk.com/html/sanfrancisco/sf/otw/updates">http://sanfrancisco.sidewalk.com/html/sanfrancisco/sf/otw/updates</a>
+     </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [206] Roxie
+     schedule <a href="http://www.roxie.com/schedule.html%20">http://www.roxie.com/schedule.html</a>.
+     </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [207] Microsoft <a
+     href="http://entertainment.msn.com/">http://entertainment.msn.com/ </a>. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [208] Gio
+     Wiederhold, archive version<a
+     href="http://kdd.ics.uci.edu/databases/movies/movies.html%20"> http://kdd.ics.uci.edu/databases/movies/movies.html</a>.
+     </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [209]Epinions <a
+     href="http://www.epinions.com/">http://www.epinions.com/</a>, movies are
+     prefixed by mvie-yyyy_nnnn_mmm where yyyy is the yaer and nnnn_mmm is the
+     title. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [210] Brett Tjaden:
+     “The Oracle of Bacon”; <a href="http://www.cs.virginia.edu/oracle">www.cs.virginia.edu/oracle</a>;
+     relates actors to Kevin Bacon with degree of seperation, April 1999. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [211] Brett Tjaden:
+     “Star Links”; <a href="http://www.cs.virginia.edu/">; relates actors to
+     Each other with degree of seperation</a>, April 1999. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [212]! <a
+     href="http://www.motionpictureguide.com">www.motionpictureguide.com</a>;
+     contains 30,000 films. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l6 level1 lfo12;tab-stops:list .5in'>Refcode: [213]! <a
+     href="http://users.deltanet.com/users/dstickne">users.deltanet.com/users/dstickne</a>;
+     sirens of the golden age. </li>
+</ul>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l5 level1 lfo15;tab-stops:list .5in'>Refcode: [V:89] Variety:
+     Annual Issue, Jan.1990. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l5 level1 lfo15;tab-stops:list .5in'>Refcode: [V:90] Variety:
+     Annual Issue, Jan.1991. </li>
+</ul>
+
+<p class=MsoNormal>BOOKS I have for Movie Stories: </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [H27] John Buchan: The
+     39 Steps; Hougton Mifflin, 1915. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [HBn30] P.C.\ Wren:
+     Beau Geste; Grosset and Dunlap, 1926. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [KeR10] Simon
+     Green: Robin Hood: Prince of Thieves; Berkley, 1991. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [IH19] Herman
+     Melville: Moby Dick; Signet, 1851. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [RM3] Robert Louis
+     Stevenson: Dr.~Jekyll and Mr.~Hyde; Bantam, 1886. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: [JW2] Mary
+     Wollstonecraft Shelley: Frankenstein; Bantam, 1816. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l4 level1 lfo18;tab-stops:list .5in'>Refcode: update! </li>
+</ul>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+
+<h2>Appendix B: CONVERSION</h2>
+
+<p class=MsoNormal>This section refers to the original HTML files. The notes are
+still being developed. </p>
+
+<p>To convert the source files from HTML format to another type of database: </p>
+
+<p>(we use [] to denote HTML `french' brackets.) </p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: remove header notes
+     </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: remove
+     miscellaneous HTML commands, as [HTML], [/HTML], [BODY], [/BODY], [HR],
+     ... </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: for relational
+     files ignore all lines starting with [tr][th]. These are header lines
+     suitable for schema definitions. They could also become the roots of large
+     director objects for the main and cast files. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: remove tabs and
+     carriage returns. All content lines end with [td]| . </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: records are divided
+     into fields, as documented in the file schemas above, by [td]. A space
+     follows [td] entries, preceding the content of the next field. Missing
+     fields are indicated by two `[td] [td]', or by `[td] dummy entry[td]', as
+     indicated in the file descriptions above. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: Many fields can
+     have multiple entries. Simple relational transforms may drop such fields,
+     others may require normalized sub-relations.<br>
+     Multiple values in a field a separated by </li>
+ <ol start=1 type=1>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l1 level2 lfo21;tab-stops:list 1.0in'>Refcode: 1. `,' if
+      the values are of the same type, as [td] Romt, Dram[td] </li>
+  <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+      auto;mso-list:l1 level2 lfo21;tab-stops:list 1.0in'>Refcode: 2. `;' or
+      `:' if they are of different types, as W(Ben Hecht; AAN)</li>
+ </ol>
+</ol>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in'>If both `;' and `,' appear in a field, then the `;' typically
+distinguishes a major group relative to the `,' value separator, as [td]
+island, South Pacific; court, SF, CA[td]. </p>
+
+<ol start=7 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: In the Note fields
+     may be a variable number of different types of entries, each of the form<br>
+     TypeCode(field), as W(Eliot Stannard) </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo21;tab-stops:list .5in'>Refcode: When names of producers,
+     writers, etc, in fields do not contain blanks, as [td] P:A.Hughes[td],
+     then the name exists in the people.html file, and can be used as an
+     interfile reference.</li>
+</ol>
+
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
