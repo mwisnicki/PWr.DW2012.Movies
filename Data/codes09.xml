@@ -2,13 +2,13 @@
 <rdf:RDF xmlns:s="http://www.w3.org/TR/1999/PR-rdf-schema-19990303#"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns="http://www.semanticweb.org/movies/codes#">
-<!-- File containing a variety of code tables for the movie database ->
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- Includes Process codes, Category Codes, Location codes, Award codes, Rating codes, Roletypes, Notes codes, Error codes, and literature references ->
-<!-- Some codes are used in multiple places in the movie files. ->
-<!-- ------------------------------------------------------------------------------------------ ->
-<!-- Process  codes:  Used in prc field in Main ->
-<!-- Process codes tale DTD  prcodentry (prcode, prexplain )   ->
+<!-- File containing a variety of code tables for the movie database -->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- Includes Process codes, Category Codes, Location codes, Award codes, Rating codes, Roletypes, Notes codes, Error codes, and literature references -->
+<!-- Some codes are used in multiple places in the movie files. -->
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- Process  codes:  Used in prc field in Main -->
+<!-- Process codes tale DTD  prcodentry (prcode, prexplain )   -->
 <process>
 <prcodentry><prcode>bnw</prcode><prexplain>black and white</prexplain></prcodentry>
 <prcodentry><prcode>col</prcode><prexplain>color, unspecified method</prexplain></prcodentry>
@@ -43,9 +43,9 @@
 <prcodentry><prcode>Pan</prcode><prexplain>PanaVision   -- compressed wide screen, only noted at times.</prexplain></prcodentry>
 <prcodentry><prcode>Vst</prcode><prexplain>Vistavision </prexplain></prcodentry>
  .</process>
-<!-- ------------------------------------------------------------------------------------------ ->
-<!-- Category  codes:  Used in cat field in Main ->
-<!-- Category  code table DTD: catcodeentry ( catcode, catexplain) -> 
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- Category  codes:  Used in cat field in Main -->
+<!-- Category  code table DTD: catcodeentry ( catcode, catexplain) --> 
 <categories>
 <catcodeentry><catcode>Actn</catcode><catexplain>violence</catexplain></catcodeentry>
 <catcodeentry><catcode>Advt</catcode><catexplain>adventure</catexplain></catcodeentry>
@@ -76,9 +76,9 @@
 <catcodeentry><catcode>TVmini</catcode><catexplain>TV miniseries</catexplain></catcodeentry>
 <catcodeentry></catcode>West</catcode><catexplain>western</catexplain></catcodeentry>
 </categories>
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- award codes, used in Main, People, Actors, Cast ->
-<!-- Award type table DTD awcodeentry(awcode, awname?, aworg, awcountry, awyear, awexplain?, awref?, awnotes?) ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- award codes, used in Main, People, Actors, Cast -->
+<!-- Award type table DTD awcodeentry(awcode, awname?, aworg, awcountry, awyear, awexplain?, awref?, awnotes?) -->
 <!--  Awardcodes have been reduced, by allowing tagging for Honorary, SDpecial, Lifetime, foreign -->
 <awardtypes>
 <awcodeentry><awcode>AA</awcode><awname>Oscar</awname><aworg>Hollywood Academy of Motion Picture Arts and Sciences</aworg><awcountry>USA</awcountry><awyear>1927</awyear> <awexplain>Received Academy award (Oscar)</awexplain><awref></awref><awused></awused><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
@@ -110,7 +110,7 @@
 <awcodeentry><awcode>Emmydir</awcode><awname>Emmy</awname><aworg>TV Academy</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Emmy</awexplain><awref></awref><awused>Main</awused><awnotes>Emmy  awarded to director</awnotes></awcodeentry>
 <awcodeentry><awcode>FAA</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear></awyear> <awexplain>French Oscar</awexplain><awref></awref><awused></awused><awnotes>Only used in Main</awnotes></awentry>
 <awcodeentry><awcode>FAAdir</awcode><awname></awname><aworg></aworg><awcountry></awcountry><awyear></awyear> <awexplain>French Oscar awarded to director</awexplain><awref></awref><awused></awused><awnotes>Only used in Main</awnotes></awentry>
- <awcodeentry><awcode>Fun</awcode><awname>EW funniest</awname><aworg>Entertainment Weekly</aworg><awcountry>USA</awcountry><awyear>1992</awyear> <awexplain>listed as the 100 funniest movies on video, rank in attibute</awexplain><awref>[25]</awref><awused>Only used in Main</awused><awnotes></awnotes></awcodeentry>
+<awcodeentry><awcode>Fun</awcode><awname>EW funniest</awname><aworg>Entertainment Weekly</aworg><awcountry>USA</awcountry><awyear>1992</awyear> <awexplain>listed as the 100 funniest movies on video, rank in attibute</awexplain><awref>[25]</awref><awused>Only used in Main</awused><awnotes></awnotes></awcodeentry>
 <awcodeentry><awcode>GG</awcode><awname>Golden Globe</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>Precedes, influences Oscar</awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
 <awcodeentry><awcode>GGdir</awcode><awname>Golden Globe</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>awarded to director, influences Oscar</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
 <awcodeentry><awcode>GGN</awcode><awname>Golden Globe nomination</awname><aworg>Foreign Press Association, New York, NY</aworg><awcountry>USA</awcountry><awyear>1943</awyear> <awexplain>nomination only</awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
@@ -126,7 +126,7 @@
 <awcodeentry><awcode>Palm</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Received award at Cannes (Golden, International critics, Cast, GrandJury, Special) </awexplain><awref></awref><awused>Main, Cast</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
 <awcodeentry><awcode>Palmdir</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Director received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
 <awcodeentry><awcode>Palmprod</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Producer received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
-awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Producer received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
+<awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film Festival</aworg><awcountry>France</awcountry><awyear></awyear> <awexplain>Producer received award at Cannes</awexplain><awref></awref><awused>Main</awused><awnotes>applies to year of entry</awnotes></awcodeentry>
 <awcodeentry><awcode>RE</awcode><awname>Roger & Ebert</awname><aworg>Roger and Ebert</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>Stars and halves (+)  Roger and Ebert's reviews</awexplain><awref></awref><awused></awused><awnotes>only used in Main</awnotes></awcodeentry>
 <awcodeentry><awcode>RFP</awcode><awname>Royal Film Performance</awname><aworg>Cinema Trade Benevolent Organization</aworg><awcountry>\GB</awcountry><awyear>1964</awyear> <awexplain>?</awexplain><awref></awref><awused>Main</awused><awnotes></awnotes></awcodeentry>
 <awcodeentry><awcode>SE</awcode><awname></awname><aworg>Siskell and Ebert</aworg><awcountry>USA</awcountry><awyear></awyear> <awexplain>rated --,  +-,  ++, </awexplain><awref></awref><awused>Main</awused><awnotes></awnotes> </awcodeentry>
@@ -148,9 +148,9 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <!-- <tr><td> WAMPAS<td> Western Association of Motion Picture Advertisers<td> USA<td> WAMPAS<td> promising actress 1922-1934<td>not in actors<td>|  -->
 </awardtypes>
 
-<!-- ------------------------------------------------------------------------------------------ ->
-<!-- Site classification codes:  Used in siteclass  field in Main ->
-<!-- Sitetype codes tale DTD  aitetypecodeentry (sitetypecode, sitetypeexplain )   ->
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- Site classification codes:  Used in siteclass  field in Main -->
+<!-- Sitetype codes tale DTD  aitetypecodeentry (sitetypecode, sitetypeexplain )   -->
 <siteclasses>
 <sitecodeentry><sitecode>am.park</sitecode><siteexplain>amusement park, circus, luna park, zoo</siteexplain></sitecodeentry>
 <sitecodeentry><sitecode>afterlife</sitecode><siteexplain>heaven, hell</siteexplain></sitecodeentry>
@@ -191,10 +191,10 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <sitecodeentry><sitecode>village</sitecode><siteexplain>village</siteexplain><ditetypecodeentry>   
 <sitecodeentry><sitecode>work</sitecode><siteexplain>workplace, factory, office, store</siteexplain></sitecodeentry>   
 </siteclasses>
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- Location codes, used in Main, actors, and people ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- Location codes, used in Main, actors, and people -->
 	<!-- Comment: Codes for countries, where movie plays, and origins and background of people. Also used for site location where actual countries are indicated. -->
-<!-- Major film producing countries ->
+<!-- Major film producing countries -->
 <countries>
 <locentry><lccode>Am</lccode><lcname>USA</lcname><lcadjective>American</lcadjective><lcsite>USA</lcsite></locentry>   
 <locentry><lccode>Br</lccode><lcname>not used</lcname><lcadjective>British</lcadjective><lcsite>GB</lcsite></locentry> 
@@ -204,7 +204,7 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <locentry><lccode>In</lccode><lcname>India</lcname><lcadjective>Indian</lcadjective><lcsite></lcsite>India</locentry> 
 <locentry><lccode>It</lccode><lcname>Italy</lcname><lcadjective>Italian</lcadjective><lcsite></lcsite>Italy</locentry> 
 <locentry><lccode>Ja</lccode><lcname>Japan</lcname><lcadjective>Japanese</lcadjective><lcsite></lcsite>Japan</locentry> 
-<!-- Alphabetical by code or country->
+<!-- Alphabetical by code or country -->
 <locentry><lccode>Ar</lccode><lcname>Argentina</lcname><lcadjective>Argentine</lcadjective><lcsite>Argentina</lcsite></locentry> 
 <locentry><lccode>Au</lccode><lcname>Australia</lcname><lcadjective>Australian</lcadjective><lcsite>Australia</lcsite></locentry> 
 <locentry><lccode>Be</lccode><lcname>Belgium</lcname><lcadjective>Belgian</lcadjective><lcsite>Belgium</lcsite></locentry> 
@@ -268,7 +268,7 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <locentry><lccode></lccode><lcname>Togoland (Africa)</lcname><lcadjective></lcadjective><lcsite>Togoland</lcsite></locentry> <locentry><lccode></lccode><lcname>Universe</lcname><lcadjective></lcadjective><lcsite>Outer Space, Fantasy Land</lcsite></locentry> 
 <locentry><lccode></lccode><lcname>Venezuela</lcname><lcadjective></lcadjective><lcsite>Venezuala</lcsite></locentry> 
 <locentry><lccode></lccode><lcname>Vietnam</lcname><lcadjective></lcadjective><lcsite>Vietnam</lcsite></locentry> 
-<!--  Larger areas ->
+<!--  Larger areas -->
 <locentry><lccode></lccode><lcname>Africa</lcname><lcadjective>African</lcadjective><lcsite>Africa</lcsite></locentry> 
 <locentry><lccode></lccode><lcname>Asia</lcname><lcadjective>Asian</lcadjective><lcsite>Asia</lcsite></locentry> 
 <locentry><lccode></lccode><lcname>Africa</lcname><lcadjective>African</lcadjective><lcsite>Africa</lcsite></locentry> 
@@ -278,8 +278,8 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <locentry><lccode></lccode><lcname>World</lcname><lcadjective></lcadjective><lcsite>world</lcsite></locentry> 
 
 </countries>
-<!-- ------------------------------------------------------------------------ ->
-<!-- Rating codes ->
+<!-- ------------------------------------------------------------------------ -->
+<!-- Rating codes -->
 <ratings>
 <ratingentry><rtcode>R<\rtcode><rtexplain>restricted rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
 <ratingentry><rtcode>R16<\rtcode><rtexplain>restricted for under 16 rating</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
@@ -289,8 +289,8 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <ratingentry><rtcode>PG13<\rtcode><rtexplain>parental guidance for children under 13</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
 <ratingentry><rtcode>TV14<\rtcode><rtexplain>restricted rating for TV films</rlexplain><rtnotes>only used in Main Rating</rlnotes></ratingentry>
 </ratings>
-<!-- ------------------------------------------------------------------------ ->
-<!-- Function codes, mainly used in PEOPLE, and ALSO notes, also used for errors, and roleattr. -> 
+<!-- ------------------------------------------------------------------------ -->
+<!-- Function codes, mainly used in PEOPLE, and ALSO notes, also used for errors, and roleattr. --> 
 <functions>
 <functionenty><fcode>A</fcode><fexplain>actors</fexplain></functionentry>
 <functionenty><fcode>B</fcode><fexplain>playwright or book author</fexplain></functionentry>
@@ -303,9 +303,9 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <functionenty><fcode>V<TD> visual art director</fexplain></functionentry>
 <functionenty><fcode>W</fcode><fexplain>screenwriter</fexplain></functionentry>
 </functions>
-<!-- ------------------------------------------------------------------------ ->
-<!-- People reference codes, used mainly for Prodk producers in Main, Select codes exclusive of function -> 
-<!-- Could be added to directors names, other people names ac cinematographers. --------------------------- ->
+<!-- ------------------------------------------------------------------------ -->
+<!-- People reference codes, used mainly for Prodk producers in Main, Select codes exclusive of function --> 
+<!-- Could be added to directors names, other people names ac cinematographers. --------------------------- -->
 <PeopleRefernces>
 <peoplerefentry><rcode>R</rcode><fexplain>reference, appears in people file</fexplain></peopelrefentry>
 <peoplerefentry><rcode>A</rcode><fexplain>reference, appears in actors file</fexplain></peopelrefentry>
@@ -317,8 +317,8 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <peoplerefentry><rcode>Y</rcode><fexplain>producer of reissue, in people file</fexplain></peopelrefentry>
 <peoplerefentry><rcode>Z</rcode><fexplain>producer of reissue, not in people file</fexplain></peopelrefentry>
 </PeopleRefernces>
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- Role types (always three characters), used in actors and casts ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- Role types (always three characters), used in actors and casts -->
 <roletypes>
 <roleentry><rlcode>Adv</rlcode><rlexplain> adversary</rlexplain></roleentry> 
 <roleentry><rlcode>Agn</rlcode><rlexplain> agent</rlexplain></roleentry>
@@ -345,9 +345,9 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <roleentry><rlcode>Voi</rlcode><rlexplain> voice only, narrator</rlexplain></roleentry>
 <roleentry><rlcode>Wmp</rlcode><rlexplain> wimp</rlexplain></roleentry>
 <roletypes>
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- Relationship codes.  Used in Actors, People ->
-<!--  Relationship code table DTD rlentry (rlcode, rlexplain, usedin, refersto, rlnotes)  ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- Relationship codes.  Used in Actors, People -->
+<!--  Relationship code table DTD rlentry (rlcode, rlexplain, usedin, refersto, rlnotes)  -->
 <relationshiptypes>
 <rlentry><rlcode>Ch</rlcode><rlexplain>child of</rlexplain><usedin>PEOPLE ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes> code the same as country China </rlnotes></rlentry>
 <rlentry><rlcode>Inf</rlcode><rlexplain>influenced </rlexplain><usedin>PEOPLE, ACTORS</rlcode><refersto>PEOPLE , ACTORS</refersto><rlnotes></rlnotes></rlentry>
@@ -361,8 +361,8 @@ awcodeentry><awcode>PRF</awcode><awname>Golden Palm</awname><aworg>Cannes Film F
 <rlentry><rlcode>Si</rlcode><rlexplain>sibling, brother, sister</rlexplain><usedin> PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
 <rlentry><rlcode>Ww</rlcode><rlexplain>worked with</rlexplain><usedin>PEOPLE, ACTORS</usedin><refersto>PEOPLE, ACTORS</refersto><rlnotes></rlnotes></rlentry>
 <relationshiptypes>
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- Notes codes. Many are being converted to specific labels ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- Notes codes. Many are being converted to specific labels -->
 <notetypes>
 <ntentry><ntcode>Alias</ntcode><ntexplain>other professional names</ntcode></ntexplain><ntused>PEOPLE, ACTORS</ntused></ntentry> 
 <ntentry><ntcode>Also</ntcode><ntexplain>other professions</ntexplain><ntused>MAIN, ACTORS, PEOPLE</ntused></ntentry> 
@@ -380,24 +380,24 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <ntentry><ntcode>W</ntcode><ntexplain>Script writer</ntexplain><ntused>MAIN</ntused></ntentry> 
 </notetypes>
 
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- error codes ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- error codes -->
 </erentry><ercode>SP<\ercode><erexplain>the spelling is uncertain</erexplain></erentry>
 
-<!-- ----------------------------------------------------------------------------------------- ->
-<!-- miscellaneous codes ->  <!-- only denoted as comments now ->
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- miscellaneous codes -->  <!-- only denoted as comments now -->
 <!--  NKT for "No Known Title" --- used in Main file for titles --> 
-<!-- unknown for unknown --- used in <roletype>, <origin> in Actors  -> 
+<!-- unknown for unknown --- used in <roletype>, <origin> in Actors  --> 
 <!-- <tr><TH>Code<TH>Contents<TH>Ocurrs in<TH>References what<TH>|
 <functionenty><fcode>Alias<TD>other professional names<TD> PEOPLE, ACTORS<TD>none <td>|  -->
 <!-- <tr><TD>Also<TD>other professions<TD>MAIN, ACTORS<TD>PEOPLE <td>|  --> 
 <!-- <tr><TD>Alt<TD>alternative title<TD>MAIN (SYNONYMS)<TD>none <td>|  --> 
-<!-- ---------------------------------------------------------------------------------------- ->
+<!-- ---------------------------------------------------------------------------------------- -->
 	
 
-<!-- ---------------------------------------------------------------------------------- ->
+<!-- ---------------------------------------------------------------------------------- -->
 <!-: References, cited in [] in various fields, as pictures, awards, errors</H2>
-<!-- BOOKS ->
+<!-- BOOKS -->
 <references>
 <rfentry><rfid>[0]</rfid><rfauthor>Wiederhold, Gio</rfauthor><rftitle>Movies Database</rftitle><rfpub>1989</rfpub><rfyear>1990-2000<</rfyear><rfnote>self-reference</rfnote></rfentry>
 <rfentry><rfid>[1]</rfid><rfauthor>Halliwell, Leslie</rfauthor><rftitle>The Filmgoers Companion" 8th edition</rftitle><rfpub> Charles Scribners' Sons</rfpub><rfyear>1984.</rfyear></rfentry>
@@ -466,14 +466,14 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <rfentry><rfid>[86]</rfid><rfauthor>Lynda Obst</rfauthor><rftitle>Hello, He Lied, and Other Truths from the Hollywood Trenches</rftitle><rfpub> 1999</rfyear></rfentry>
 <rfentry><rfid>[91]</rfid><rfauthor>Perry, George</rfauthor><rftitle>The Complete Phantom of The Opera</rftitle><rfpub> 1987</rfyear><rfnote> Henry Holt Co., NY.</rfnote></rfentry>
 <rfentry><rfid>[99]</rfid><rfauthor>..</rfauthor><rftitle>Obituaries 1991</rftitle><rfpub> 1991</rfyear><rfnote>used for dod</rfnote></rfentry>
-<!-- Electronic material ->
+<!-- Electronic material -->
 <rfentry><rfid>[100]</rfid><rfauthor>Magill</rfauthor><rftitle>Magill's Survey of Cinema</rftitle><rfpub> <http://COMPUSERVE, forum (GO MAGILL)</refpub><rfnote> It lists that they have in-depth articles on over 30,000 films released since 1902,</rfyear></rfentry>
 <rfentry><rfid>[101]</rfid><rftitle>Movie Alert</rftitle><rfpub>http://sanfrancisco.sidewalk.com</rfpub><rfyear>1999</rfyear></rfentry>
 <rfentry><rfid>[102]</rfid><rftitle>Movie Schedules</rftitle><rfpub>http://hollywood.com</refpub><rfyear>1999</rfyear></rfentry>
 <rfentry><rfid>[103]</rfid><rftitle>memorabilia Auction site</rftitle><rfpub>http://BigE.com</refpub><rfyear>1999</rfyear></rfentry>
 <rfentry><rfid>[110]</rfid><rfauthor>Brett Tjaden</rfauthor><rftitle>The Oracle of Bacon</rftitle><rfpub>http://www.cs.virginia.edu/oracle</refpub><rfyear>1999</rfyear><rfnote> relates actors to  Kevin Bacon with degree of seperation, April</rfnote></rfentry>
 <rfentry><rfid>[111]</rfid><rfauthor>Brett Tjaden</rfauthor><rftitle>Star Links</rftitle><rfpub> http://www.cs.virginia.edu</refpub><rfyear>1999</rfyear><rfnote>relates actors to  Each other with degree of seperation, April</rfnote></rfentry>
-<!-- Books about Actors ->
+<!-- Books about Actors -->
 <rfentry><rfid>[150]</rfid><rfauthor>Eyles,Allen</rfauthor><rftitle>James Stewart</rftitle><rfpub>Stein and Day</rfpub><rfyear>1984</rfyear></rfentry>
 <rfentry><rfid>[151]</rfid><rfauthor>Aros (A.Rosenthal)</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1962</rfyear><rfnote>in German</rfnote></rfentry>
 <rfentry><rfid>[152]</rfid><rfauthor>Knopf, Maria Riva</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1992.</rfyear><rfnote>by daughter</rfnote></rfentry>
@@ -490,12 +490,12 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <rfentry><rfid>[163]</rfid><rfauthor>Noah, W.</rfauthor><rftitle>Marlene Dietrich</rftitle><rfyear>1962</rfyear></rfentry>
 <rfentry><rfid>[164]</rfid><rfauthor>Bach, Stephen</rfauthor><rftitle>Marlene Dietrich</rftitle></rfentry>
 <rfentry><rfid>[165]</rfid><rfauthor>Madhabi Mukherje, Dilip K. Basu, and Dayani K.Basu</rfauthor><rftitle>My Life, My Love</rftitle><rfpub> The Stanford Theater Foundation</rfpub><rfyear>1999</rfyear></rfentry>
-<!-- Web pages -> 
+<!-- Web pages --> 
 <rfentry><rfid>[200]</rfid><rfpub> http://www.motionpictureguide.com</rfpub><refnote> contains 30,000 films</rfnote></rfentry>
 <rfentry><rfid>[201]</rfid><rftitle>sirens of the golden age</rftitle><rfpub> Http://users.deltanet.com/users/dstickne </rfpub></rfentry>
 <rfentry><rfid>[V:89]</rfid><rfpub>Variety: Annual Issue</rfpub><rfyear>1990</rfyear><rfno>Jan</rfno></rfentry>
 <rfentry><rfid>[V:90]</rfid><rfpub>Variety: Annual Issue</rfpub><rfyear>1991</rfyear></rfentry>
-<!-- BOOKS:  Some of the ooks Gio  has for Movie Stories. ->
+<!-- BOOKS:  Some of the ooks Gio  has for Movie Stories. -->
 <rfentry><rfid>[H27]</rfid><rfauthor>John Buchan.</rfauthor><rftitle> The 39 Steps</rftitle><rfpub> Houghton Mifflin</rfpub><rfyear>1915.</rfyear></rfentry>
 <rfentry><rfid>[HBn30]</rfid><rfauthor>P.C.\ Wren.</rfauthor><rftitle> Beau Geste</rftitle><rfpub> Grosset and Dunlap</rfpub><rfyear>1926.</rfyear></rfentry>
 <rfentry><rfid>[KeR10]</rfid><rfauthor>Simon Green.</rfauthor><rftitle> Robin Hood: Prince of Thieves</rftitle><rfpub> Berkley</rfpub><rfyear>1991.</rfyear></rfentry>
@@ -505,6 +505,6 @@ ntentry><ntcode>Inc</ntcode><ntexplain>Income from film</ntexplain><ntused>MAIN<
 <rfentry><rfid>[MO]</rfid><rfpub>Musee d'Orsay, Paris</rfpub><rfyear>1987</rfyear></rfentry>
 <rfentry><rfid>[AM]</rfid><rfpub>Musee d'Arts et Metiers, Paris</rfpub><rfyear>1987</rfyear></rfentry>
 </references>
-<!-- ------------------------------------------------------------------------------- ->
-<!-- ================================================ ->
+<!-- ------------------------------------------------------------------------------- -->
+<!-- ================================================ -->
 
