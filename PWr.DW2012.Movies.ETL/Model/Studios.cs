@@ -28,6 +28,8 @@ namespace PWr.DW2012.Movies.Model {
         public string Founder { get; set; }
         public string/*Studio*/ Successor { get; set; }
         public string Notes { get; set; }
+
+        public ISet<Movie> ProducedMovies { get; set; }
     }
 
     // Production Information table ?

@@ -41,6 +41,7 @@ namespace PWr.DW2012.Movies.Model {
         /// </remarks>
         /// </summary>
         public ISet<Person> Producers { get; set; }
+#endif
         /// <summary>
         /// <remarks>
         /// S => Existing Studio
@@ -49,6 +50,7 @@ namespace PWr.DW2012.Movies.Model {
         /// </remarks>
         /// </summary>
         public ISet<Studio> Studios { get; set; }
+#if false
         /// <summary>
         /// <remarks>
         /// SD => Existing or generated Studio
@@ -109,6 +111,7 @@ namespace PWr.DW2012.Movies.Model {
 
         public Movie() {
             Categories = new HashSet<MovieCategory>();
+            Studios = new HashSet<Studio>();
         }
     }
 
@@ -144,7 +147,13 @@ namespace PWr.DW2012.Movies.Model {
                 movie.Year = ParseYear(xe.Value);
             //movie.Director = r[3];
             //movie.Producers.Add(r[4]); !
-            //movie.Studios.Add(r[5]);
+            var studios = row.XPathSelectElements("studios/studio");
+            if (studios != null) {
+                foreach (var studio in studios) {
+                    var oStudio = db.Studios.Find(studio.Value);
+                    movie.Studios.Add(oStudio);
+                }
+            }
             //movie.Process = r[6];
             var cats = row.XPathSelectElements("cats/cat");
             if (cats != null) {
