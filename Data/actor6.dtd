@@ -1,12 +1,12 @@
 <!-- . The ACTORS Table ->
 <!-- The actors are arranged alphabetically by last stagename. ->
 <|- There is one entry for each actor, but not all actors listed in CAST are documented. ->
-<!-- There are also comment entries  for each letter of the alphabet.<BR>
+<!-- There are also comment entries  for each letter of the alphabet.<BR> -->
 
 <!ELEMENT actor (stagename, alias?, dowstart, dowend?,  familyname?, givenname?, alias*gender?, dob?, dod?, type?, origin, picref, studio?, relationships, awards?, notes, error?)  >
 
 <!ELEMENT stagename 	> <!--  Comment:  Name  used by the actor in movies. This is nearly the key of the table.
-There are a few actors with identical names. Then the birthyear  (dob) becomes important.  ->
+There are a few actors with identical names. Then the birthyear  (dob) becomes important.  -->
 <!ELEMENT dowstart	> <!--  Comment: Beginning of "dates of work" interval: year of first movie . --> 
 <!ELEMENT dowend 	> <!--  Comment: End of "dates of work" interval. . --> 
 <!ELEMENT familyname	> <!--  Comment: Original last name. --> 
@@ -25,7 +25,7 @@ There are a few actors with identical names. Then the birthyear  (dob) becomes i
 <!ELEMENT relationships (relship*) > 
    <!ELEMENT relship (reltype, towhom*) > 
       <!ELEMENT reltype > <!--  Coded as relcode, for instance, -->
-                <!- Marriages(Mt), Lived-with(Lw), Parent (Pa), Child (Ch),
+                <!-- Marriages(Mt), Lived-with(Lw), Parent (Pa), Child (Ch),
        Family(Fa),  Worked-with(Ww), InfluencedBy (Inb), Groupmember (Mem) -->.
       <!ELEMENT towhom(relname, relattr* relnote?)>  <!-- subject of relship -->
          <!ELEMENT relname >  	<!-- related subject's name, maybe in actors or people file.  -->
