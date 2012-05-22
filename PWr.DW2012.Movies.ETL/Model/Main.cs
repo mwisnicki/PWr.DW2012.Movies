@@ -68,8 +68,8 @@ namespace PWr.DW2012.Movies.Model {
         /// </remarks>
         /// </summary>
         public ProcessCode Process { get; set; }
-        public ISet<MovieCategory> Categories { get; set; }
 #endif
+        public ISet<MovieCategory> Categories { get; set; }
         public ISet<Award> Awards { get; set; }
         public ISet<Cast> Cast { get; set; }
 #if false
@@ -106,6 +106,10 @@ namespace PWr.DW2012.Movies.Model {
         public string Notes { get; set; } // Nt()
         // ignore: Seen, VT
         #endregion
+
+        public Movie() {
+            Categories = new HashSet<MovieCategory>();
+        }
     }
 
 
@@ -142,7 +146,13 @@ namespace PWr.DW2012.Movies.Model {
             //movie.Producers.Add(r[4]); !
             //movie.Studios.Add(r[5]);
             //movie.Process = r[6];
-            //movie.Categories.Add(r[7]);
+            var cats = row.XPathSelectElements("cats/cat");
+            if (cats != null) {
+                foreach (var cat in cats) {
+                    var oCat = db.MovieCategories.Find(cat.Value);
+                    movie.Categories.Add(oCat);
+                }
+            }
             //movie.Awards.Add(r[8]);
             //movie.Locations.Add(r[9]);
             xe = row.XPathSelectElement("notes");
