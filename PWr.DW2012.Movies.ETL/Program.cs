@@ -56,73 +56,9 @@ namespace PWr.DW2012.Movies {
         void LoadData() {
             new StudiosLoader(this).Load();
             new AwardsLoader(this).Load();
-            return;
             new ActorsLoader(this).Load();
+            return;
             new MoviesLoader(this).Load();
-        }
-
-        class ActorsLoader : TableLoader<Actor, string> {
-
-            public ActorsLoader(Program session) : base("actors.htm", session) { }
-
-            protected override string GetKey(Actor row) {
-                return row.StageName;
-            }
-
-            protected override void ProcessRow(XElement row, string[] cells) {
-                var r = new string[11];
-                var i = 0;
-                var j = 0;
-
-                while (i < cells.Length && j < r.Length && cells[i] != "|") {
-                    if (i < 1 && IsDateLike(cells[i]))
-                        j = 1;
-                    r[j] = cells[i];
-                    i++;
-                    j++;
-                }
-
-                var actor = new Actor {
-                    StageName = r[0],
-                    FamilyName = r[2],
-                    FirstName = r[3],
-                    /*
-                    WorkStart = r[1],
-                    WorkEnd = r[1],
-                    DateOfBirth = r[5],
-                    DateOfDeath = r[6],
-                     */
-                    Type = r[7],
-                    //Origin = r[8],
-                    Notes = r[9],
-                    Family = r[10]
-                };
-
-                if (r[1] != null && r[1] != "dow") {
-                    var cDow = r[1].Split('-');
-                    if (cDow[0] != "")
-                        actor.WorkStart = ParseYear(cDow[0]);
-                    if (cDow.Length > 1 && cDow[1] != "")
-                        actor.WorkEnd = ParseYear(cDow[1]);
-                }
-                if (r[5] != null && IsDateLike(r[5]))
-                    actor.DateOfBirth = ParseYear(r[5]);
-                if (r[6] != null && IsDateLike(r[6]))
-                    actor.DateOfDeath = ParseYear(r[6]);
-
-                switch (r[4]) {
-                case "M":
-                    actor.Gender = Gender.Male;
-                    break;
-                case "F":
-                    actor.Gender = Gender.Female;
-                    break;
-                }
-
-                TryAddRow(actor, db.Actors);
-                // FIXME some actors have same names with no way to distinguish them
-                // maybe both existing and duplicate rows should be dropped ?
-            }
         }
 
         class MoviesLoader : TableLoader<Movie, string> {
