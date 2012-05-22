@@ -15,6 +15,7 @@ namespace PWr.DW2012.Movies.Model {
         public DbSet<Person> People { get; set; }
         public DbSet<Award> Awards { get; set; }
         public DbSet<Actor> Actors { get; set; }
+        public DbSet<Studio> Studios { get; set; }
 
         public DbSet<MovieCategory> MovieCategories { get; set; }
         public DbSet<ProcessCode> ProcessCodes { get; set; }

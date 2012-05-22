@@ -28,7 +28,7 @@ namespace PWr.DW2012.Movies {
         TimeSpan time;
 
         void Run() {
-            dataDir = new DirectoryInfo("../../../Data/Clean");
+            dataDir = new DirectoryInfo("../../../Data");
             Debug.Assert(dataDir.Exists);
 
             timeStart = DateTime.Now;
@@ -40,7 +40,7 @@ namespace PWr.DW2012.Movies {
                 db.Database.CreateIfNotExists();
                 log.WriteLine(db.SaveChanges());
 
-                //LoadData();
+                LoadData();
                 db.SaveChanges();
 
                 timeEnd = DateTime.Now;
@@ -54,6 +54,8 @@ namespace PWr.DW2012.Movies {
         }
 
         void LoadData() {
+            new StudiosLoader(this).Load();
+            return;
             new AwardsLoader(this).Load();
             new ActorsLoader(this).Load();
             new MoviesLoader(this).Load();
@@ -199,7 +201,7 @@ namespace PWr.DW2012.Movies {
             }
         }
 
-        abstract class TableLoader<TRow, TKey>
+        public abstract class TableLoader<TRow, TKey>
             where TRow : class {
 
             public string FileName { get; protected set; }
