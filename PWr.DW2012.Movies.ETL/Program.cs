@@ -57,49 +57,8 @@ namespace PWr.DW2012.Movies {
             new AwardsLoader(this).Load();
             new MovieCategoryLoader(this).Load();
             new StudiosLoader(this).Load();
-            new ActorsLoader(this).Load();
-            return;
+            //new ActorsLoader(this).Load();
             new MoviesLoader(this).Load();
-        }
-
-        class MoviesLoader : TableLoader<Movie, string> {
-
-            public MoviesLoader(Program session) : base("main.htm", session) { }
-
-            protected override string GetKey(Movie row) {
-                return row.RefName;
-            }
-
-            protected override void ProcessRow(XElement row, string[] cells) {
-                var r = new string[13];
-                var i = 0;
-                var j = 0;
-
-                while (i < cells.Length && j < r.Length && cells[i] != "|") {
-                    if (i < 2 && IsDateLike(cells[i]))
-                        j = 2;
-                    r[j] = cells[i];
-                    i++;
-                    j++;
-                }
-
-                var movie = new Movie();
-                movie.RefName = r[0];
-                movie.Title = r[1];
-                var year = 0;
-                if (int.TryParse(r[2], out year))
-                    movie.Year = year;
-                //movie.Director = r[3];
-                //movie.Producers.Add(r[4]);
-                //movie.Studios.Add(r[5]);
-                //movie.Process = r[6];
-                //movie.Categories.Add(r[7]);
-                //movie.Awards.Add(r[8]);
-                //movie.Locations.Add(r[9]);
-                movie.Notes = r[10];
-
-                TryAddRow(movie, db.Movies);
-            }
         }
 
         public abstract class TableLoader<TRow, TKey>

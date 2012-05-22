@@ -28,7 +28,8 @@ namespace PWr.DW2012.Movies.Model {
         [Key]
         public string RefName { get; set; }
         public string Title { get; set; }
-        public int? Year { get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime? Year { get; set; }
         public Person Director { get; set; }
 #if false
         /// <summary>
@@ -105,6 +106,51 @@ namespace PWr.DW2012.Movies.Model {
         public string Notes { get; set; } // Nt()
         // ignore: Seen, VT
         #endregion
+    }
+
+
+    class MoviesLoader : PWr.DW2012.Movies.Program.TableLoader<Movie, string> {
+
+        public MoviesLoader(Program session) : base("mains243.xml", session) { }
+
+        protected override string GetKey(Movie row) {
+            return row.RefName;
+        }
+
+        protected override XNode GetTable(XDocument doc) {
+            return doc.XPathSelectElement("//movies");
+        }
+
+        protected override IEnumerable<XElement> GetRows(XNode table) {
+            return table.XPathSelectElements(".//film");
+        }
+
+        protected override void ProcessRow(XElement row, string[] cells) {
+            var movie = new Movie();
+            var xe = null as XElement;
+
+            xe = row.XPathSelectElement("fid");
+            if (xe == null)
+                xe = row.XPathSelectElement("filmed");
+            movie.RefName = xe.Value;
+            movie.Title = row.XPathSelectElement("t").Value;
+            var year = 0;
+            xe = row.XPathSelectElement("year");
+            if (xe != null)
+                movie.Year = ParseYear(xe.Value);
+            //movie.Director = r[3];
+            //movie.Producers.Add(r[4]); !
+            //movie.Studios.Add(r[5]);
+            //movie.Process = r[6];
+            //movie.Categories.Add(r[7]);
+            //movie.Awards.Add(r[8]);
+            //movie.Locations.Add(r[9]);
+            xe = row.XPathSelectElement("notes");
+            if (xe != null)
+                movie.Notes = xe.Value;
+
+            TryAddRow(movie, db.Movies);
+        }
     }
 
     public class AlternateTitle {
