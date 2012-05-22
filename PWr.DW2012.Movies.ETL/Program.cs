@@ -55,46 +55,10 @@ namespace PWr.DW2012.Movies {
 
         void LoadData() {
             new StudiosLoader(this).Load();
-            return;
             new AwardsLoader(this).Load();
+            return;
             new ActorsLoader(this).Load();
             new MoviesLoader(this).Load();
-        }
-
-        class AwardsLoader : TableLoader<Award, string> {
-
-            public AwardsLoader(Program session) : base("awtypes.htm", session) { }
-
-            protected override string GetKey(Award row) {
-                return row.Id;
-            }
-
-            protected override XNode GetTable(XDocument doc) {
-                return doc.XPathSelectElement("//table[normalize-space(caption/text())='Award Givers']");
-            }
-
-            protected override void ProcessRow(XElement row, string[] cells) {
-                var r = new string[6]; // see award below
-                var i = 0;
-
-                while (i < cells.Length && i < r.Length && cells[i] != "|") {
-                    if (i < 4 && IsDateLike(cells[i]))
-                        i = 4;
-                    r[i] = cells[i];
-                    i++;
-                }
-
-                var award = new Award {
-                    Id = r[0],
-                    Organization = r[1],
-                    Country = r[2],
-                    Colloquial = r[3],
-                    Year = r[4],
-                    Notes = r[5]
-                };
-
-                TryAddRow(award, db.Awards);
-            }
         }
 
         class ActorsLoader : TableLoader<Actor, string> {
