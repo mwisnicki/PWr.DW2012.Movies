@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using System.Xml.XPath;
+using System.Xml;
 
 namespace PWr.DW2012.Movies.Model {
 
@@ -154,6 +158,7 @@ namespace PWr.DW2012.Movies.Model {
 
         public ISet<Movie> Movies { get; set; }
 
+#if false
         public static readonly MovieCategory BioP = new MovieCategory { Id = "BioP", Name = "Biography?" };
         public static readonly MovieCategory Disa = new MovieCategory { Id = "Disa", Name = "Disaster" };
         public static readonly MovieCategory Dram = new MovieCategory { Id = "Dram", Name = "Drama" };
@@ -171,6 +176,37 @@ namespace PWr.DW2012.Movies.Model {
         public static readonly List<MovieCategory> Values = new List<MovieCategory> {
             BioP, Disa, Dram, CnR, Comd, Faml, Hist, Horr, Musc, Noir, Romt, ScFi, Susp
         };
+#endif
+    }
+
+    class MovieCategoryLoader : PWr.DW2012.Movies.Program.TableLoader<MovieCategory, string> {
+        XmlNamespaceManager ns;
+
+        public MovieCategoryLoader(Program session)
+            : base("codes09.xml", session) {
+            ns = new XmlNamespaceManager(new NameTable());
+            ns.AddNamespace("x", "http://www.semanticweb.org/movies/codes#");
+        }
+
+        protected override string GetKey(MovieCategory row) {
+            return row.Id;
+        }
+
+        protected override XNode GetTable(XDocument doc) {
+            return doc.XPathSelectElement("//x:categories", ns);
+        }
+
+        protected override IEnumerable<XElement> GetRows(XNode table) {
+            return table.XPathSelectElements(".//x:catcodeentry", ns);
+        }
+
+        protected override void ProcessRow(XElement row, string[] cells) {
+            var cat = new MovieCategory();
+            cat.Id = row.XPathSelectElement("x:catcode", ns).Value;
+            cat.Name = row.XPathSelectElement("x:catexplain", ns).Value;
+
+            TryAddRow(cat, db.MovieCategories);
+        }
     }
 
 }

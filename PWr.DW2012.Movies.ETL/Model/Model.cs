@@ -21,7 +21,7 @@ namespace PWr.DW2012.Movies.Model {
         public DbSet<ProcessCode> ProcessCodes { get; set; }
 
         protected void Seed() {
-            MovieCategory.Values.ForEach(c => MovieCategories.Add(c));
+            //MovieCategory.Values.ForEach(c => MovieCategories.Add(c));
             ProcessCode.Values.ForEach(c => ProcessCodes.Add(c));
         }
 

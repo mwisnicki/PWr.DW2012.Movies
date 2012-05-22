@@ -54,8 +54,9 @@ namespace PWr.DW2012.Movies {
         }
 
         void LoadData() {
-            new StudiosLoader(this).Load();
             new AwardsLoader(this).Load();
+            new MovieCategoryLoader(this).Load();
+            new StudiosLoader(this).Load();
             new ActorsLoader(this).Load();
             return;
             new MoviesLoader(this).Load();
