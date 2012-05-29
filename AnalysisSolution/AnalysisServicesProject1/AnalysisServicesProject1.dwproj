@@ -6,6 +6,18 @@
     <Name>AnalysisServicesProject1.database</Name>
     <FullPath>AnalysisServicesProject1.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>MoviesAnalysisDSV.cube</Name>
+      <FullPath>MoviesAnalysisDSV.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>MoviesAnalysisDSV.partitions</Name>
+          <FullPath>MoviesAnalysisDSV.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Time.dim</Name>
