@@ -71,7 +71,7 @@ namespace PWr.DW2012.Movies.Model
                 }
             }
 
-            if (oMovie != null) {
+            if (oMovie != null && cast.Actor != null) {
                 oMovie.Cast.Add(cast);
                 db.Cast.Add(cast);
                 Context.ObjectStateManager.ChangeRelationshipState(oMovie, cast, m => m.Cast, EntityState.Added);
