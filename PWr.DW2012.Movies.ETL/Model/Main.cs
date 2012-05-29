@@ -111,6 +111,7 @@ namespace PWr.DW2012.Movies.Model {
 
         public Movie() {
             Awards = new HashSet<Award>();
+            Cast = new HashSet<Cast>();
             Categories = new HashSet<MovieCategory>();
             Studios = new HashSet<Studio>();
         }

@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using PWr.DW2012.Movies.Model;
+using System.Data.Objects;
 
 namespace PWr.DW2012.Movies {
     class Program {
@@ -57,8 +58,9 @@ namespace PWr.DW2012.Movies {
             new AwardsLoader(this).Load();
             new MovieCategoryLoader(this).Load();
             new StudiosLoader(this).Load();
-            //new ActorsLoader(this).Load();
+            new ActorsLoader(this).Load();
             new MoviesLoader(this).Load();
+            new CastLoader(this).Load();
         }
 
         public abstract class TableLoader<TRow, TKey>
@@ -97,6 +99,16 @@ namespace PWr.DW2012.Movies {
                         OnRowDuplicate(row, existing);
                 } else
                     OnRowSkipped(row);
+            }
+
+            protected void Update(object entity) {
+                var osm = Context.ObjectStateManager;
+                //osm.ChangeObjectState(entity, System.Data.EntityState.Modified);
+                db.Entry(entity).State = System.Data.EntityState.Modified;
+            }
+
+            protected ObjectContext Context {
+                get { return (db as IObjectContextAdapter).ObjectContext; }
             }
 
             protected virtual XNode GetTable(XDocument doc) {
