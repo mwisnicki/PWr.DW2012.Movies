@@ -19,6 +19,10 @@
       <Name>Awards.dim</Name>
       <FullPath>Awards.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Movies.dim</Name>
+      <FullPath>Movies.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
