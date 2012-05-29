@@ -23,7 +23,12 @@
   </DataSourceViews>
   <MiningModels />
   <Roles />
-  <Miscellaneous />
+  <Miscellaneous>
+    <ProjectItem>
+      <Name>Create_Table_dimCountryContinents.sql</Name>
+      <FullPath>Create_Table_dimCountryContinents.sql</FullPath>
+    </ProjectItem>
+  </Miscellaneous>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
