@@ -15,7 +15,12 @@
       <FullPath>MoviesDB.ds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSourceViews />
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>MoviesDSV.dsv</Name>
+      <FullPath>MoviesDSV.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <MiningModels />
   <Roles />
   <Miscellaneous />
