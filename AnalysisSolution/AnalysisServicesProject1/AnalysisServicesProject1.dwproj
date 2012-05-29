@@ -6,6 +6,12 @@
     <Name>AnalysisServicesProject1.database</Name>
     <FullPath>AnalysisServicesProject1.database</FullPath>
   </Database>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>MoviesDB.ds</Name>
