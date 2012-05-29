@@ -2,6 +2,8 @@
 *.*proj.user
 Debug/
 Release/
+bin/
+obj/
 /packages/
 Data/Clean/
 /_ReSharper.*
