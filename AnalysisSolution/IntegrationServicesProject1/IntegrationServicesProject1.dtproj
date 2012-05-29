@@ -9,7 +9,12 @@
   </Database>
   <Cubes />
   <Dimensions />
-  <DataSources />
+  <DataSources>
+    <ProjectItem>
+      <Name>MoviesDB.ds</Name>
+      <FullPath>MoviesDB.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
   <DataSourceViews />
   <MiningModels />
   <Roles />
@@ -19,9 +24,21 @@
       <Name>Development</Name>
       <Options>
         <OutputPath>bin</OutputPath>
-        <ConnectionMappings />
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>MoviesDB</Id>
+            <Name>MoviesDB</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI10.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=PWr.DW2012.Movies.Model.MoviesContext</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
         <ConnectionProviderMappings />
-        <ConnectionSecurityMappings />
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>MoviesDB</Id>
+            <Name>MoviesDB</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
         <DatabaseStorageLocations />
       </Options>
     </Configuration>

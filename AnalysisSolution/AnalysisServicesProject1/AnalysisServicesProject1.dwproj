@@ -6,10 +6,31 @@
     <Name>AnalysisServicesProject1.database</Name>
     <FullPath>AnalysisServicesProject1.database</FullPath>
   </Database>
+  <DataSources>
+    <ProjectItem>
+      <Name>MoviesDB.ds</Name>
+      <FullPath>MoviesDB.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>MoviesDB</Id>
+            <Name>MoviesDB</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI10.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=PWr.DW2012.Movies.Model.MoviesContext</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>MoviesDB</Id>
+            <Name>MoviesDB</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

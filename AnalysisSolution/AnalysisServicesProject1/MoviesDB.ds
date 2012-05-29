@@ -1,0 +1,23 @@
+﻿<DataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" xsi:type="RelationalDataSource" dwd:design-time-name="36d0dcd1-3454-4837-8592-36dcaab18719" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MoviesDB</ID>
+  <Name>MoviesDB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>ProjectReference</Name>
+      <Value>ac698e6e-aee7-4a28-b5f4-2fd59032325d</Value>
+    </Annotation>
+    <Annotation>
+      <Name>DataSourceReference</Name>
+      <Value>ac698e6e-aee7-4a28-b5f4-2fd59032325d#MoviesDB</Value>
+    </Annotation>
+  </Annotations>
+  <ConnectionString>Provider=SQLNCLI10.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=PWr.DW2012.Movies.Model.MoviesContext</ConnectionString>
+  <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+  <ImpersonationInfo>
+    <ImpersonationMode>ImpersonateCurrentUser</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </ImpersonationInfo>
+  <Timeout>PT0S</Timeout>
+</DataSource>
