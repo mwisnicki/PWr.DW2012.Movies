@@ -110,6 +110,7 @@ namespace PWr.DW2012.Movies.Model {
         #endregion
 
         public Movie() {
+            Awards = new HashSet<Award>();
             Categories = new HashSet<MovieCategory>();
             Studios = new HashSet<Studio>();
         }
@@ -162,7 +163,13 @@ namespace PWr.DW2012.Movies.Model {
                     movie.Categories.Add(oCat);
                 }
             }
-            //movie.Awards.Add(r[8]);
+            var awards = row.XPathSelectElements("awards/aw/awtype");
+            if (awards != null) {
+                foreach (var awtype in awards) {
+                    var oAward = db.Awards.Find(awtype.Value);
+                    movie.Awards.Add(oAward);
+                }
+            }
             //movie.Locations.Add(r[9]);
             xe = row.XPathSelectElement("notes");
             if (xe != null)
