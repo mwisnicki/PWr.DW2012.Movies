@@ -3,20 +3,10 @@
   <Name>MoviesDB</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-  <Annotations>
-    <Annotation>
-      <Name>ProjectReference</Name>
-      <Value>ac698e6e-aee7-4a28-b5f4-2fd59032325d</Value>
-    </Annotation>
-    <Annotation>
-      <Name>DataSourceReference</Name>
-      <Value>ac698e6e-aee7-4a28-b5f4-2fd59032325d#MoviesDB</Value>
-    </Annotation>
-  </Annotations>
-  <ConnectionString>Provider=SQLNCLI10.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=PWr.DW2012.Movies.Model.MoviesContext</ConnectionString>
-  <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+  <ConnectionString>Provider=SQLNCLI10.1;Data Source=(local);Password=;User ID=;Initial Catalog=PWr.DW2012.Movies.Model.MoviesContext</ConnectionString>
+  <ConnectionStringSecurity>PasswordRemoved</ConnectionStringSecurity>
   <ImpersonationInfo>
-    <ImpersonationMode>ImpersonateCurrentUser</ImpersonationMode>
+    <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
     <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
   </ImpersonationInfo>
   <Timeout>PT0S</Timeout>
