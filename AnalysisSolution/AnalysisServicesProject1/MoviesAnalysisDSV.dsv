@@ -1,0 +1,85 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c630ef0e-d17f-4a3b-810f-95c1993ff4c0" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MoviesAnalysisDSV</ID>
+  <Name>MoviesAnalysisDSV</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>MoviesDB</DataSourceID>
+  <Schema>
+    <xs:schema id="MoviesAnalysisDSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="MoviesAnalysisDSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="f346943e-7550-45bc-a007-01ec7b945692">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_dimAwards" msprop:FriendlyName="dimAwards" msprop:DbSchemaName="dbo" msprop:DbTableName="dimAwards" msprop:design-time-name="37e6a1a9-edfe-4f36-ade1-20dbb6f34d95" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Id" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="d6e4ba6d-5750-4c46-af05-5df28609dc81">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="bd9a19cb-bd7a-4797-a719-2b6db1acd4d9" type="xs:string" minOccurs="0" />
+                  <xs:element name="Country" msprop:FriendlyName="Country" msprop:DbColumnName="Country" msprop:design-time-name="b4874681-0ec9-4419-acfa-9131e7dbcb03" type="xs:string" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dimMovies" msprop:FriendlyName="dimMovies" msprop:DbSchemaName="dbo" msprop:DbTableName="dimMovies" msprop:design-time-name="5645cad7-4cd0-428d-9761-bb745f65a4ea" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RefName" msprop:FriendlyName="RefName" msprop:DbColumnName="RefName" msprop:design-time-name="7ad28b3c-006f-4e24-8f26-b9d7b90183e2">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="128" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Title" msprop:FriendlyName="Title" msprop:DbColumnName="Title" msprop:design-time-name="d9a6536f-bd50-4856-800e-3d4c28aee231" type="xs:string" minOccurs="0" />
+                  <xs:element name="Country" msprop:FriendlyName="Country" msprop:DbColumnName="Country" msprop:design-time-name="2e169f05-8343-4e4c-92ae-a200ee5805a3" type="xs:string" minOccurs="0" />
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="7a532e95-5ae3-455c-aed3-38cac85f0ba8" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" />
+  </Schema>
+</DataSourceView>

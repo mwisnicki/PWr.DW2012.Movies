@@ -12,6 +12,12 @@
       <FullPath>MoviesDB.ds</FullPath>
     </ProjectItem>
   </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>MoviesAnalysisDSV.dsv</Name>
+      <FullPath>MoviesAnalysisDSV.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
