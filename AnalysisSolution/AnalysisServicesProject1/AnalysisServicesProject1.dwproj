@@ -11,6 +11,10 @@
       <Name>Time.dim</Name>
       <FullPath>Time.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>CountryContinents.dim</Name>
+      <FullPath>CountryContinents.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
