@@ -15,6 +15,10 @@
       <Name>CountryContinents.dim</Name>
       <FullPath>CountryContinents.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Awards.dim</Name>
+      <FullPath>Awards.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
